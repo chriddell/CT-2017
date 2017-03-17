@@ -202,7 +202,6 @@ function otm_render_related_solutions() {
 	endif;
 }
 
-
 /**
  * Get and set post views
  */

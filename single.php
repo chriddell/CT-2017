@@ -12,7 +12,7 @@
 
 get_header(); ?>
 
-<main id="main" role="main">
+<main id="main" role="main" class="u-clearfix">
 	<?php
 		/* Start the Loop */
 		while ( have_posts() ) : the_post();

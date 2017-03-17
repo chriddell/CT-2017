@@ -19,37 +19,40 @@ get_header(); ?>
 
 <?php otm_featured_posts(); ?>
 
-<p>Currently showing latest content from <span>All topics <!-- List all categories here --></span></p>
+<div class="l-site-wrapper">
 
-<?php
-	if ( have_posts() ) :
+	<p>Currently showing latest content from <span>All topics <!-- List all categories here --></span></p>
 
-		// Render title
-		echo '<h2>' . __('Latest') . '</h2>';
+	<?php
+		if ( have_posts() ) :
 
-		// Modify the query
-		query_posts( 'posts_per_page=5' );
+			// Render title
+			echo '<h2>' . __('Latest') . '</h2>';
 
-		/* Start the Loop */
-		while ( have_posts() ) : the_post();
+			// Modify the query
+			query_posts( 'posts_per_page=5' );
 
-			/*
-			 * Include the Post-Format-specific template for the content.
-			 * If you want to override this in a child theme, then include a file
-			 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-			 */
-			get_template_part( 'template-parts/content', get_post_format() );
+			/* Start the Loop */
+			while ( have_posts() ) : the_post();
 
-		endwhile;
+				/*
+				 * Include the Post-Format-specific template for the content.
+				 * If you want to override this in a child theme, then include a file
+				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+				 */
+				get_template_part( 'template-parts/content', get_post_format() );
 
-	endif;
-?>
+			endwhile;
 
-<?php
-	/* Ajax Load More */
-	echo do_shortcode( '[ajax_load_more id="1" container_type="div" post_type="post" offset="5" pause="true" scroll="false" transition="fade" images_loaded="true" button_label="Load 5 more" button_loading_label="Loading..."]' );
-?>
+		endif;
+	?>
 
-<?php get_template_part( 'template-parts/sidebar' ); ?>
+	<?php
+		/* Ajax Load More */
+		echo do_shortcode( '[ajax_load_more id="1" container_type="div" post_type="post" offset="5" pause="true" scroll="false" transition="fade" images_loaded="true" button_label="Load 5 more" button_loading_label="Loading..."]' );
+	?>
+
+	<?php get_template_part( 'template-parts/sidebar' ); ?>
+</div>
 
 <?php get_footer();
