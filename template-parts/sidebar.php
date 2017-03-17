@@ -1,8 +1,6 @@
 <?php
 /**
- * The template for displaying the footer
- *
- * Contains the closing of the #content div and all content after.
+ * The sidebar containing the main widget area
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
@@ -11,9 +9,13 @@
  * @since 1.0
  * @version 1.0
  */
+?>
 
-wp_footer(); ?>
+<aside role="complementary">
 
-</div><!-- #main-content -->
-</body>
-</html>
+	<!-- Most Popular posts go here -->
+
+	<!-- Tags -->
+	<?php otm_render_global_tags(); ?>
+	
+</aside>
