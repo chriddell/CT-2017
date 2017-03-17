@@ -121,13 +121,11 @@ function otm_related_posts() {
 			printf( '<h2>%s</h2>', __( 'Related content', 'otm' ) );
 
 			// Loop
-			while ( $my_query->have_posts() ) {
-
-				$my_query->the_post();
+			while ( $my_query->have_posts() ) : $my_query->the_post();
 
 				// Get the template for the post content
 				get_template_part( 'template-parts/content' );
-			}
+			endwhile;
 
 		endif;
 	}
@@ -202,4 +200,73 @@ function otm_render_related_solutions() {
 			echo '<li>' . '<a href="//' . get_field( 'external_url', $solution ) . '" target="_blank">' . $solution->name . '</a>' . '</li>';
 		}
 	endif;
+}
+
+
+/**
+ * Get and set post views
+ */
+function otm_get_post_views( $postID ) {
+
+	$count_key = 'post_views_count';
+	$count = get_post_meta( $postID, $count_key, true );
+
+	if ( $count === '' ) :
+
+		delete_post_meta( $postID, $count_key );
+		add_post_meta( $postID, $count_key, '0' );
+		return '0 views';
+
+	endif;
+
+	return $count . ' views';
+}
+function otm_set_post_views( $postID ) {
+
+	$count_key = 'post_views_count';
+	$count = get_post_meta( $postID, $count_key, true );
+
+	if ( $count == '' ) :
+
+		$count = 0;
+		delete_post_meta( $postID, $count_key );
+		add_post_meta( $postID, $count_key, '0' );
+
+	else :
+
+		$count++;
+		update_post_meta( $postID, $count_key, $count );
+
+	endif;
+}
+// Remove issues with prefetching adding extra views
+remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
+
+/**
+ * Show featured posts (based on boolean ACF)
+ */
+function otm_featured_posts() {
+
+	$my_query = new WP_Query( array( 
+		'meta_key' 				=> 'is_featured',
+		'post_type'				=> 'post',
+		'meta_value'			=> true,
+		'numberposts' 		=> 3
+	) );
+
+	// If our query has posts
+	if ( $my_query->have_posts() ) :
+
+		// Section Title
+		printf( '<h2>%s</h2>', __( 'Featured posts', 'otm' ) );
+
+		while ( $my_query->have_posts() ) : $my_query->the_post();
+
+			// Post title
+			the_title('<h3>', '</h3>');
+
+		endwhile;
+	endif;
+
+	wp_reset_query();
 }

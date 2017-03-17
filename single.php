@@ -17,6 +17,9 @@ get_header(); ?>
 		/* Start the Loop */
 		while ( have_posts() ) : the_post();
 
+			// Set page views
+			otm_set_post_views( get_the_ID() );
+
 			if ( is_single() ) :
 				get_template_part( 'template-parts/content-single', get_post_format() );
 			else :

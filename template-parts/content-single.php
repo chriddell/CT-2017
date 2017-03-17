@@ -29,6 +29,7 @@
 		get_the_title()
 	) );
 
+	// Show related solutions (custom taxonomy / ACF)
 	otm_render_related_solutions();
 ?>
 

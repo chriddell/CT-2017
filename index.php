@@ -17,7 +17,7 @@
 
 get_header(); ?>
 
-<!-- Featured posts will go here -->
+<?php otm_featured_posts(); ?>
 
 <p>Currently showing latest content from <span>All topics <!-- List all categories here --></span></p>
 
