@@ -26,18 +26,18 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<a class="skip-link sr-only" href="#main-content"><?php _e( 'Skip to content', 'otm' ); ?></a>
+	<a class="skip-link u-sr-only" href="#main-content"><?php _e( 'Skip to content', 'otm' ); ?></a>
 
-	<header role="banner">
-		<h1 class="site-title">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?>	</a>
-		</h1>
+	<header role="banner" class="c-site-header">
+		<div class="l-site-wrapper">
+			<h1 class="c-site-title c-site-header__title">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?>	</a>
+			</h1>
 
-		<?php 
-		if ( function_exists( 'the_custom_logo' ) ) {
-			the_custom_logo();
-		}
-		?>
+			<span class="c-site-logo c-site-header__logo">
+				<h2 class="u-sr-only">SS&amp;C Advent</h2>
+			</span>
+		</div>
 	</header>
 
 	<div id="main-content">

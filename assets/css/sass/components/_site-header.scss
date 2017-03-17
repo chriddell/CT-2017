@@ -1,0 +1,81 @@
+/* ==========================================================================
+    SITE HEADER
+
+    Header is a global component which is used across a lot of SS&C Advent
+    sites, and so for that reason I've resisted using Sass variables here. This 
+    should make the styles below easier to port if necessary.
+
+    To keep it even more portable we're also controlling layout in this file, as
+    opposed to with grid classes (.l-col-y-x etc.). I know this is not in 
+    keeping with the rest of the site, however I feel this is acceptable in this
+    instance.
+   ========================================================================== */
+
+.c-site-header {
+	padding: 18px 0;
+	border-top: 6px solid #0a85c7;
+
+	line-height: 0; // this is fine because text will never wrap
+
+	white-space: nowrap; // fix inline-block/50% width bug (http://stackoverflow.com/a/10592283)
+
+	&:before {
+		content: '';
+		display: inline-block;
+		vertical-align: middle;
+		height: 100%;
+	}
+
+	@include respond-to( 'desktop' ) {
+		padding: 32px 0 20px;
+	}
+}
+
+.c-site-header__title,
+.c-site-header__logo {
+	width: 50%;
+
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.c-site-header__title {
+	margin: 0;
+
+	// Shift title down for alignment purposes
+	position: relative;
+	top: 5px;
+
+	font-family: 'Gotham', 'Helvetica', 'Arial', sans-serif;
+	font-weight: normal;
+	font-size: 22px;
+
+	// WP
+	> a {
+		text-decoration: none;
+		color: #4d4d4d;
+
+		&:hover {
+			text-decoration: underline;
+
+			.touch &:hover {
+				// Prevent double-tap on touch
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+.c-site-header__logo {
+	height: 37px;
+
+	overflow: hidden;
+
+	background-image: url(../media/img/SSC-Advent.svg);
+	background-repeat: no-repeat;
+	background-position: right;
+
+	@include respond-to( 'desktop' ) {
+		height: 51px;
+	}
+}
