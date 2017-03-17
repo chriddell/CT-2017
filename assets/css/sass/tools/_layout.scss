@@ -1,0 +1,67 @@
+/* ==========================================================================
+    LAYOUT
+
+    Generate OO grid classes and main site container.
+   ========================================================================== */
+
+.l-site-wrapper {
+	padding: 0 20px;
+
+	@include container;
+}
+
+/**
+ * Generate grid classes
+ * 
+ * These are in separate loops
+ * for a reason.
+ */
+@for $i from 1 through map-get( $susy, columns ) {
+  .l-col-#{$i} {
+    @include span( $i );
+  }
+
+  .l-col-#{$i}-last {
+    @include span( $i last );
+  }
+
+  .l-col-push-#{$i} {
+    @include push( $i );
+  }
+}
+
+@for $i from 1 through map-get( $susy, columns ) {
+  .l-col-sml-#{$i} {
+    @include respond-to( 'tablet' ) {
+      @include span( $i );
+    }
+  }
+
+  .l-col-sml-#{$i}-last {
+    @include respond-to( 'tablet' ) {
+      @include span( $i last );
+    }
+  }
+
+  .l-col-sml-push-#{$i} {
+    @include push( $i );
+  }
+}
+
+@for $i from 1 through map-get( $susy, columns ) {
+  .l-col-med-#{$i} {
+    @include respond-to( 'desktop' ) {
+      @include span( $i );
+    }
+  }
+
+  .l-col-med-#{$i}-last {
+    @include respond-to( 'desktop' ) {
+      @include span( $i last );
+    }
+  }
+
+  .l-col-med-push-#{$i} {
+    @include push( $i );
+  }
+}

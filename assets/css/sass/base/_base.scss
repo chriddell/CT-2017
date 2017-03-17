@@ -1,0 +1,43 @@
+/* ==========================================================================
+    BASE
+
+    Base styles, no classes or IDs.
+   ========================================================================== */
+
+html,
+body {
+	width: 100%;
+
+	overflow-x: hidden;
+}
+
+html {
+	font-size: 16px;
+	font-family: $fontMain;
+}
+
+body {
+	background-color: #f4f4f4;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+	/**
+	 * Remove margin-top from everything b/c
+	 * they collapse and it's annoying
+	 */
+	margin-top: 0;
+}
+
+a {
+	color: $clrDarkTeal;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}

@@ -10,3 +10,68 @@ $breakpoints: (
   'desktop'							: 1025px,
   'desktop-large'				: 1500px
 );
+
+// Colors
+$clrBlue				: #0a85c7;
+$clrDarkTeal		: #235164;
+$clrTeal				: #1c7293;
+$clrLilac				: #70a8ae;
+$clrPurple			: #592d5f;
+$clrOrange			: #cc6932;
+$clrDarkGrey	 	: #4d4d4d;
+$clrLightGrey 	: #6d6e71;
+
+// Category Colors
+$clrInfographic	: $clrTeal;
+$clrWhitepaper	: $clrOrange;
+$clrInsights		: $clrLilac;
+$clrCampaign		: $clrPurple;
+
+// Match colors to categories
+$categoriesMap: (
+	'insights'		: $clrInsights,
+	'infographic'	: $clrInfographic, 
+	'whitepaper'	: $clrWhitepaper, 
+	'campaign'		: $clrCampaign
+);
+
+/* Fonts
+   ========================================================================== */
+
+@font-face {
+  font-family: 'Gotham';
+  src: url(../fonts/Gotham-Book.eot?) format('eot'), url(../fonts/Gotham-Book.woff) format('woff'), url(../fonts/Gotham-Book.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Gotham';
+  font-weight: bold;
+  src: url(../fonts/Gotham-Light.eot?) format('eot'), url(../fonts/Gotham-Light.woff) format('woff'), url(../fonts/Gotham-Light.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'MyriadPro';
+  src: url(../fonts/MyriadPro-Regular.eot?) format('eot'), url(../fonts/MyriadPro-Regular.woff) format('woff'), url(../fonts/MyriadPro-Regular.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'MyriadPro';
+  font-style: italic;
+  src: url(../fonts/MyriadPro-It.eot?) format('eot'), url(../fonts/MyriadPro-It.woff) format('woff'), url(../fonts/MyriadPro-It.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'MyriadPro';
+  font-weight: bold;
+  src: url(../fonts/MyriadPro-Bold.eot?) format('eot'), url(../fonts/MyriadPro-Bold.woff) format('woff'), url(../fonts/MyriadPro-Bold.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'MyriadPro';
+  font-style: italic;
+  font-weight: bold;
+  src: url(../fonts/MyriadPro-BoldIt.eot?) format('eot'), url(../fonts/MyriadPro-BoldIt.woff) format('woff'), url(../fonts/MyriadPro-BoldIt.otf) format('opentype');
+}
+
+$fontMain				: 'MyriadPro', Helvetica, Arial, sans-serif;
+$fontHeading	 	: 'Gotham', Helvetica, Arial, sans-serif;
