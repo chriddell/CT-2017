@@ -1,0 +1,1530 @@
+/* ==========================================================================
+   style.css
+   ========================================================================== */
+/* Settings
+   ========================================================================== */
+/* ==========================================================================
+   SETTINGS
+
+   Global config settings.
+   ========================================================================== */
+/* Fonts
+   ========================================================================== */
+@font-face {
+  font-family: 'Gotham';
+  src: url(../fonts/Gotham-Book.eot?) format("eot"), url(../fonts/Gotham-Book.woff) format("woff"), url(../fonts/Gotham-Book.otf) format("opentype");
+}
+
+@font-face {
+  font-family: 'Gotham';
+  font-weight: bold;
+  src: url(../fonts/Gotham-Light.eot?) format("eot"), url(../fonts/Gotham-Light.woff) format("woff"), url(../fonts/Gotham-Light.otf) format("opentype");
+}
+
+@font-face {
+  font-family: 'MyriadPro';
+  src: url(../fonts/MyriadPro-Regular.eot?) format("eot"), url(../fonts/MyriadPro-Regular.woff) format("woff"), url(../fonts/MyriadPro-Regular.otf) format("opentype");
+}
+
+@font-face {
+  font-family: 'MyriadPro';
+  font-style: italic;
+  src: url(../fonts/MyriadPro-It.eot?) format("eot"), url(../fonts/MyriadPro-It.woff) format("woff"), url(../fonts/MyriadPro-It.otf) format("opentype");
+}
+
+@font-face {
+  font-family: 'MyriadPro';
+  font-weight: bold;
+  src: url(../fonts/MyriadPro-Bold.eot?) format("eot"), url(../fonts/MyriadPro-Bold.woff) format("woff"), url(../fonts/MyriadPro-Bold.otf) format("opentype");
+}
+
+@font-face {
+  font-family: 'MyriadPro';
+  font-style: italic;
+  font-weight: bold;
+  src: url(../fonts/MyriadPro-BoldIt.eot?) format("eot"), url(../fonts/MyriadPro-BoldIt.woff) format("woff"), url(../fonts/MyriadPro-BoldIt.otf) format("opentype");
+}
+
+/* ==========================================================================
+    GRID
+
+    Grid set-up/config.
+   ========================================================================== */
+/* Tools
+   ========================================================================== */
+/* ==========================================================================
+    MIXINS & FUNCTIONS
+   
+    Mixins for use globally. Please use individual partials for more specific
+    mixins.
+   ========================================================================== */
+/* ==========================================================================
+    LAYOUT
+
+    Generate OO grid classes and main site container.
+   ========================================================================== */
+.l-site-wrapper {
+  padding: 0 20px;
+  max-width: 930px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.l-site-wrapper:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+/**
+ * Generate grid classes
+ * 
+ * These are in separate loops
+ * for a reason.
+ */
+.l-col-1 {
+  width: 7.6335877863%;
+  float: left;
+  margin-right: 0.7633587786%;
+}
+
+.l-col-1-last {
+  width: 7.6335877863%;
+  float: right;
+  margin-right: 0;
+}
+
+.l-col-push-1 {
+  margin-left: 8.3969465649%;
+}
+
+.l-col-2 {
+  width: 16.0305343511%;
+  float: left;
+  margin-right: 0.7633587786%;
+}
+
+.l-col-2-last {
+  width: 16.0305343511%;
+  float: right;
+  margin-right: 0;
+}
+
+.l-col-push-2 {
+  margin-left: 16.7938931298%;
+}
+
+.l-col-3 {
+  width: 24.427480916%;
+  float: left;
+  margin-right: 0.7633587786%;
+}
+
+.l-col-3-last {
+  width: 24.427480916%;
+  float: right;
+  margin-right: 0;
+}
+
+.l-col-push-3 {
+  margin-left: 25.1908396947%;
+}
+
+.l-col-4 {
+  width: 32.8244274809%;
+  float: left;
+  margin-right: 0.7633587786%;
+}
+
+.l-col-4-last {
+  width: 32.8244274809%;
+  float: right;
+  margin-right: 0;
+}
+
+.l-col-push-4 {
+  margin-left: 33.5877862595%;
+}
+
+.l-col-5 {
+  width: 41.2213740458%;
+  float: left;
+  margin-right: 0.7633587786%;
+}
+
+.l-col-5-last {
+  width: 41.2213740458%;
+  float: right;
+  margin-right: 0;
+}
+
+.l-col-push-5 {
+  margin-left: 41.9847328244%;
+}
+
+.l-col-6 {
+  width: 49.6183206107%;
+  float: left;
+  margin-right: 0.7633587786%;
+}
+
+.l-col-6-last {
+  width: 49.6183206107%;
+  float: right;
+  margin-right: 0;
+}
+
+.l-col-push-6 {
+  margin-left: 50.3816793893%;
+}
+
+.l-col-7 {
+  width: 58.0152671756%;
+  float: left;
+  margin-right: 0.7633587786%;
+}
+
+.l-col-7-last {
+  width: 58.0152671756%;
+  float: right;
+  margin-right: 0;
+}
+
+.l-col-push-7 {
+  margin-left: 58.7786259542%;
+}
+
+.l-col-8 {
+  width: 66.4122137405%;
+  float: left;
+  margin-right: 0.7633587786%;
+}
+
+.l-col-8-last {
+  width: 66.4122137405%;
+  float: right;
+  margin-right: 0;
+}
+
+.l-col-push-8 {
+  margin-left: 67.1755725191%;
+}
+
+.l-col-9 {
+  width: 74.8091603053%;
+  float: left;
+  margin-right: 0.7633587786%;
+}
+
+.l-col-9-last {
+  width: 74.8091603053%;
+  float: right;
+  margin-right: 0;
+}
+
+.l-col-push-9 {
+  margin-left: 75.572519084%;
+}
+
+.l-col-10 {
+  width: 83.2061068702%;
+  float: left;
+  margin-right: 0.7633587786%;
+}
+
+.l-col-10-last {
+  width: 83.2061068702%;
+  float: right;
+  margin-right: 0;
+}
+
+.l-col-push-10 {
+  margin-left: 83.9694656489%;
+}
+
+.l-col-11 {
+  width: 91.6030534351%;
+  float: left;
+  margin-right: 0.7633587786%;
+}
+
+.l-col-11-last {
+  width: 91.6030534351%;
+  float: right;
+  margin-right: 0;
+}
+
+.l-col-push-11 {
+  margin-left: 92.3664122137%;
+}
+
+.l-col-12 {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.l-col-12-last {
+  width: 100%;
+  float: right;
+  margin-right: 0;
+}
+
+.l-col-push-12 {
+  margin-left: 100.763358779%;
+}
+
+@media (min-width: 767px) {
+  .l-col-sml-1 {
+    width: 7.6335877863%;
+    float: left;
+    margin-right: 0.7633587786%;
+  }
+}
+
+@media (min-width: 767px) {
+  .l-col-sml-1-last {
+    width: 7.6335877863%;
+    float: right;
+    margin-right: 0;
+  }
+}
+
+.l-col-sml-push-1 {
+  margin-left: 8.3969465649%;
+}
+
+@media (min-width: 767px) {
+  .l-col-sml-2 {
+    width: 16.0305343511%;
+    float: left;
+    margin-right: 0.7633587786%;
+  }
+}
+
+@media (min-width: 767px) {
+  .l-col-sml-2-last {
+    width: 16.0305343511%;
+    float: right;
+    margin-right: 0;
+  }
+}
+
+.l-col-sml-push-2 {
+  margin-left: 16.7938931298%;
+}
+
+@media (min-width: 767px) {
+  .l-col-sml-3 {
+    width: 24.427480916%;
+    float: left;
+    margin-right: 0.7633587786%;
+  }
+}
+
+@media (min-width: 767px) {
+  .l-col-sml-3-last {
+    width: 24.427480916%;
+    float: right;
+    margin-right: 0;
+  }
+}
+
+.l-col-sml-push-3 {
+  margin-left: 25.1908396947%;
+}
+
+@media (min-width: 767px) {
+  .l-col-sml-4 {
+    width: 32.8244274809%;
+    float: left;
+    margin-right: 0.7633587786%;
+  }
+}
+
+@media (min-width: 767px) {
+  .l-col-sml-4-last {
+    width: 32.8244274809%;
+    float: right;
+    margin-right: 0;
+  }
+}
+
+.l-col-sml-push-4 {
+  margin-left: 33.5877862595%;
+}
+
+@media (min-width: 767px) {
+  .l-col-sml-5 {
+    width: 41.2213740458%;
+    float: left;
+    margin-right: 0.7633587786%;
+  }
+}
+
+@media (min-width: 767px) {
+  .l-col-sml-5-last {
+    width: 41.2213740458%;
+    float: right;
+    margin-right: 0;
+  }
+}
+
+.l-col-sml-push-5 {
+  margin-left: 41.9847328244%;
+}
+
+@media (min-width: 767px) {
+  .l-col-sml-6 {
+    width: 49.6183206107%;
+    float: left;
+    margin-right: 0.7633587786%;
+  }
+}
+
+@media (min-width: 767px) {
+  .l-col-sml-6-last {
+    width: 49.6183206107%;
+    float: right;
+    margin-right: 0;
+  }
+}
+
+.l-col-sml-push-6 {
+  margin-left: 50.3816793893%;
+}
+
+@media (min-width: 767px) {
+  .l-col-sml-7 {
+    width: 58.0152671756%;
+    float: left;
+    margin-right: 0.7633587786%;
+  }
+}
+
+@media (min-width: 767px) {
+  .l-col-sml-7-last {
+    width: 58.0152671756%;
+    float: right;
+    margin-right: 0;
+  }
+}
+
+.l-col-sml-push-7 {
+  margin-left: 58.7786259542%;
+}
+
+@media (min-width: 767px) {
+  .l-col-sml-8 {
+    width: 66.4122137405%;
+    float: left;
+    margin-right: 0.7633587786%;
+  }
+}
+
+@media (min-width: 767px) {
+  .l-col-sml-8-last {
+    width: 66.4122137405%;
+    float: right;
+    margin-right: 0;
+  }
+}
+
+.l-col-sml-push-8 {
+  margin-left: 67.1755725191%;
+}
+
+@media (min-width: 767px) {
+  .l-col-sml-9 {
+    width: 74.8091603053%;
+    float: left;
+    margin-right: 0.7633587786%;
+  }
+}
+
+@media (min-width: 767px) {
+  .l-col-sml-9-last {
+    width: 74.8091603053%;
+    float: right;
+    margin-right: 0;
+  }
+}
+
+.l-col-sml-push-9 {
+  margin-left: 75.572519084%;
+}
+
+@media (min-width: 767px) {
+  .l-col-sml-10 {
+    width: 83.2061068702%;
+    float: left;
+    margin-right: 0.7633587786%;
+  }
+}
+
+@media (min-width: 767px) {
+  .l-col-sml-10-last {
+    width: 83.2061068702%;
+    float: right;
+    margin-right: 0;
+  }
+}
+
+.l-col-sml-push-10 {
+  margin-left: 83.9694656489%;
+}
+
+@media (min-width: 767px) {
+  .l-col-sml-11 {
+    width: 91.6030534351%;
+    float: left;
+    margin-right: 0.7633587786%;
+  }
+}
+
+@media (min-width: 767px) {
+  .l-col-sml-11-last {
+    width: 91.6030534351%;
+    float: right;
+    margin-right: 0;
+  }
+}
+
+.l-col-sml-push-11 {
+  margin-left: 92.3664122137%;
+}
+
+@media (min-width: 767px) {
+  .l-col-sml-12 {
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 767px) {
+  .l-col-sml-12-last {
+    width: 100%;
+    float: right;
+    margin-right: 0;
+  }
+}
+
+.l-col-sml-push-12 {
+  margin-left: 100.763358779%;
+}
+
+@media (min-width: 1025px) {
+  .l-col-med-1 {
+    width: 7.6335877863%;
+    float: left;
+    margin-right: 0.7633587786%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .l-col-med-1-last {
+    width: 7.6335877863%;
+    float: right;
+    margin-right: 0;
+  }
+}
+
+.l-col-med-push-1 {
+  margin-left: 8.3969465649%;
+}
+
+@media (min-width: 1025px) {
+  .l-col-med-2 {
+    width: 16.0305343511%;
+    float: left;
+    margin-right: 0.7633587786%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .l-col-med-2-last {
+    width: 16.0305343511%;
+    float: right;
+    margin-right: 0;
+  }
+}
+
+.l-col-med-push-2 {
+  margin-left: 16.7938931298%;
+}
+
+@media (min-width: 1025px) {
+  .l-col-med-3 {
+    width: 24.427480916%;
+    float: left;
+    margin-right: 0.7633587786%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .l-col-med-3-last {
+    width: 24.427480916%;
+    float: right;
+    margin-right: 0;
+  }
+}
+
+.l-col-med-push-3 {
+  margin-left: 25.1908396947%;
+}
+
+@media (min-width: 1025px) {
+  .l-col-med-4 {
+    width: 32.8244274809%;
+    float: left;
+    margin-right: 0.7633587786%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .l-col-med-4-last {
+    width: 32.8244274809%;
+    float: right;
+    margin-right: 0;
+  }
+}
+
+.l-col-med-push-4 {
+  margin-left: 33.5877862595%;
+}
+
+@media (min-width: 1025px) {
+  .l-col-med-5 {
+    width: 41.2213740458%;
+    float: left;
+    margin-right: 0.7633587786%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .l-col-med-5-last {
+    width: 41.2213740458%;
+    float: right;
+    margin-right: 0;
+  }
+}
+
+.l-col-med-push-5 {
+  margin-left: 41.9847328244%;
+}
+
+@media (min-width: 1025px) {
+  .l-col-med-6 {
+    width: 49.6183206107%;
+    float: left;
+    margin-right: 0.7633587786%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .l-col-med-6-last {
+    width: 49.6183206107%;
+    float: right;
+    margin-right: 0;
+  }
+}
+
+.l-col-med-push-6 {
+  margin-left: 50.3816793893%;
+}
+
+@media (min-width: 1025px) {
+  .l-col-med-7 {
+    width: 58.0152671756%;
+    float: left;
+    margin-right: 0.7633587786%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .l-col-med-7-last {
+    width: 58.0152671756%;
+    float: right;
+    margin-right: 0;
+  }
+}
+
+.l-col-med-push-7 {
+  margin-left: 58.7786259542%;
+}
+
+@media (min-width: 1025px) {
+  .l-col-med-8 {
+    width: 66.4122137405%;
+    float: left;
+    margin-right: 0.7633587786%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .l-col-med-8-last {
+    width: 66.4122137405%;
+    float: right;
+    margin-right: 0;
+  }
+}
+
+.l-col-med-push-8 {
+  margin-left: 67.1755725191%;
+}
+
+@media (min-width: 1025px) {
+  .l-col-med-9 {
+    width: 74.8091603053%;
+    float: left;
+    margin-right: 0.7633587786%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .l-col-med-9-last {
+    width: 74.8091603053%;
+    float: right;
+    margin-right: 0;
+  }
+}
+
+.l-col-med-push-9 {
+  margin-left: 75.572519084%;
+}
+
+@media (min-width: 1025px) {
+  .l-col-med-10 {
+    width: 83.2061068702%;
+    float: left;
+    margin-right: 0.7633587786%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .l-col-med-10-last {
+    width: 83.2061068702%;
+    float: right;
+    margin-right: 0;
+  }
+}
+
+.l-col-med-push-10 {
+  margin-left: 83.9694656489%;
+}
+
+@media (min-width: 1025px) {
+  .l-col-med-11 {
+    width: 91.6030534351%;
+    float: left;
+    margin-right: 0.7633587786%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .l-col-med-11-last {
+    width: 91.6030534351%;
+    float: right;
+    margin-right: 0;
+  }
+}
+
+.l-col-med-push-11 {
+  margin-left: 92.3664122137%;
+}
+
+@media (min-width: 1025px) {
+  .l-col-med-12 {
+    width: 100%;
+    float: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 1025px) {
+  .l-col-med-12-last {
+    width: 100%;
+    float: right;
+    margin-right: 0;
+  }
+}
+
+.l-col-med-push-12 {
+  margin-left: 100.763358779%;
+}
+
+/* Generic
+   ========================================================================== */
+/*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Change the default font family in all browsers (opinionated).
+ * 2. Correct the line height in all browsers.
+ * 3. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  line-height: 1.15;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 3 */
+  -webkit-text-size-adjust: 100%;
+  /* 3 */
+}
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+body {
+  margin: 0;
+}
+
+/**
+ * Add the correct display in IE 9-.
+ */
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in IE.
+ */
+figcaption,
+figure,
+main {
+  /* 1 */
+  display: block;
+}
+
+/**
+ * Add the correct margin in IE 8.
+ */
+figure {
+  margin: 1em 40px;
+}
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+a {
+  background-color: transparent;
+  /* 1 */
+  -webkit-text-decoration-skip: objects;
+  /* 2 */
+}
+
+/**
+ * Remove the outline on focused links when they are also active or hovered
+ * in all browsers (opinionated).
+ */
+a:active,
+a:hover {
+  outline-width: 0;
+}
+
+/**
+ * 1. Remove the bottom border in Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */
+}
+
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+b,
+strong {
+  font-weight: inherit;
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/**
+ * Add the correct font style in Android 4.3-.
+ */
+dfn {
+  font-style: italic;
+}
+
+/**
+ * Add the correct background and color in IE 9-.
+ */
+mark {
+  background-color: #ff0;
+  color: #000;
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+audio,
+video {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+img {
+  border-style: none;
+}
+
+/**
+ * Hide the overflow in IE.
+ */
+svg:not(:root) {
+  overflow: hidden;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: sans-serif;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+/**
+ * Change the border, margin, and padding in all browsers (opinionated).
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
+}
+
+/**
+ * 1. Add the correct display in IE 9-.
+ * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */
+}
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+[type="checkbox"],
+[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+ */
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ */
+details,
+menu {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+
+/* Scripting
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ */
+canvas {
+  display: inline-block;
+}
+
+/**
+ * Add the correct display in IE.
+ */
+template {
+  display: none;
+}
+
+/* Hidden
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10-.
+ */
+[hidden] {
+  display: none;
+}
+
+/* Base
+   ========================================================================== */
+/* ==========================================================================
+    BASE
+
+    Base styles, no classes or IDs.
+   ========================================================================== */
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+html {
+  font-size: 16px;
+  font-family: "MyriadPro", Helvetica, Arial, sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  /**
+	 * Remove margin-top from everything b/c
+	 * they collapse and it's annoying
+	 */
+  margin-top: 0;
+}
+
+a {
+  color: #235164;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Vendor
+   ========================================================================== */
+/* Components
+   ========================================================================== */
+/* ==========================================================================
+    SITE HEADER
+
+    Header is a global component which is used across a lot of SS&C Advent
+    sites, and so for that reason I've resisted using Sass variables here. This 
+    should make the styles below easier to port if necessary.
+
+    To keep it even more portable we're also controlling layout in this file, as
+    opposed to with grid classes (.l-col-y-x etc.). I know this is not in 
+    keeping with the rest of the site, however I feel this is acceptable in this
+    instance.
+   ========================================================================== */
+.c-site-header {
+  padding: 18px 0;
+  border-top: 6px solid #0a85c7;
+  line-height: 0;
+  white-space: nowrap;
+}
+
+.c-site-header:before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+}
+
+@media (min-width: 1025px) {
+  .c-site-header {
+    padding: 32px 0 20px;
+  }
+}
+
+.c-site-header__title,
+.c-site-header__logo {
+  width: 50%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c-site-header__title {
+  margin: 0;
+  position: relative;
+  top: 5px;
+  font-family: 'Gotham', 'Helvetica', 'Arial', sans-serif;
+  font-weight: normal;
+  font-size: 22px;
+}
+
+.c-site-header__title > a {
+  text-decoration: none;
+  color: #4d4d4d;
+}
+
+.c-site-header__title > a:hover {
+  text-decoration: underline;
+}
+
+.touch .c-site-header__title > a:hover:hover {
+  text-decoration: none;
+}
+
+.c-site-header__logo {
+  height: 37px;
+  overflow: hidden;
+  background-image: url(../media/img/SSC-Advent.svg);
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+@media (min-width: 1025px) {
+  .c-site-header__logo {
+    height: 51px;
+  }
+}
+
+/* ==========================================================================
+    CONTENT BLOCK
+   
+		These are the content blocks on the homepage, and also used in related content
+		at the foot of a single post.
+   ========================================================================== */
+.c-content-block {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  background-color: #FFFFFF;
+}
+
+.c-content-block:not(:last-of-type) {
+  margin-bottom: 25px;
+}
+
+.touch .c-content-block {
+  /**
+		 * Calculate width and height
+		 * using vw so we can keep it
+		 * a square layout. Only on
+		 * touch devices
+		 *
+		 */
+  width: calc(100vw - 40px);
+  height: calc(100vw - 40px);
+}
+
+@media (min-width: 767px) {
+  .touch .c-content-block {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (min-width: 767px) {
+  .c-content-block {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.c-content-block__main {
+  height: 100%;
+  padding: 30px;
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+.c-content-block__side {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.c-content-block__img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  opacity: 0.1;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: -webkit-transform 0.5s;
+          transition: transform 0.5s;
+}
+
+.c-content-block:hover .c-content-block__img {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.touch .c-content-block:hover .c-content-block__img {
+  -webkit-transform: none;
+      -ms-transform: none;
+          transform: none;
+}
+
+@media (min-width: 767px) {
+  .c-content-block__img {
+    opacity: 1;
+  }
+}
+
+.c-content-block__cover-link {
+  z-index: 2;
+}
+
+.c-content-block__title {
+  margin-bottom: 15px;
+  font-family: "MyriadPro", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-size: 26px;
+}
+
+.c-content-block__meta {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 80px;
+}
+
+.c-content-block__more-link {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.c-content-block__more-link:after {
+  content: '\00bb';
+  margin-left: 5px;
+  display: inline-block;
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: -webkit-transform 0.25s;
+          transition: transform 0.25s;
+}
+
+.c-content-block:hover .c-content-block__more-link:after {
+  -webkit-transform: translateX(5px);
+      -ms-transform: translateX(5px);
+          transform: translateX(5px);
+}
+
+.touch .c-content-block:hover .c-content-block__more-link:after {
+  -webkit-transform: none;
+      -ms-transform: none;
+          transform: none;
+}
+
+/**
+ * Alternative colours on titles 
+ * and meta dependent on category
+ */
+.c-content-block--insights .c-content-block__title,
+.c-content-block--insights .c-content-block__meta {
+  color: #70a8ae;
+}
+
+.c-content-block--infographic .c-content-block__title,
+.c-content-block--infographic .c-content-block__meta {
+  color: #1c7293;
+}
+
+.c-content-block--whitepaper .c-content-block__title,
+.c-content-block--whitepaper .c-content-block__meta {
+  color: #cc6932;
+}
+
+.c-content-block--campaign .c-content-block__title,
+.c-content-block--campaign .c-content-block__meta {
+  color: #592d5f;
+}
+
+/* Trumps
+   ========================================================================== */
+/* ==========================================================================
+    UTILS
+
+    Utility classes (screen-reader, OO spacing etc.)
+   ========================================================================== */
+.u-sr-only {
+  width: 1px;
+  height: 1px;
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  overflow: hidden;
+}
+
+.u-cover-link {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.u-clearfix:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+/*# sourceMappingURL=style.css.map */

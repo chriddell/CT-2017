@@ -1,0 +1,149 @@
+/* ==========================================================================
+    CONTENT BLOCK
+   
+		These are the content blocks on the homepage, and also used in related content
+		at the foot of a single post.
+   ========================================================================== */
+
+.c-content-block {
+	width: 100%;
+	position: relative;
+
+	overflow: hidden;
+	box-sizing: border-box;
+
+	background-color: #FFFFFF;
+
+	&:not(:last-of-type) {
+		margin-bottom: 25px;
+	}
+
+	.touch & {
+		/**
+		 * Calculate width and height
+		 * using vw so we can keep it
+		 * a square layout. Only on
+		 * touch devices
+		 *
+		 */
+		width: calc(100vw - 40px); // 40px = .site-wrapper's padding
+		height: calc(100vw - 40px);
+
+		@include respond-to( 'tablet' ) {
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	@include respond-to( 'tablet' ) {
+		width: 100%;
+		height: auto;
+	}
+}
+
+.c-content-block__main {
+	height: 100%;
+
+	padding: 30px;
+
+	// Keep above img on mobile
+	position: relative;
+	z-index: 1;
+
+	box-sizing: border-box;
+}
+
+.c-content-block__side {
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+
+	overflow: hidden;
+}
+
+.c-content-block__img {
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+
+	opacity: 0.1;
+
+	transform: scale(1);
+	transition: transform 0.5s;
+
+	.c-content-block:hover & {
+		transform: scale(1.1);
+
+		.touch & {
+			transform: none;
+		}
+	}
+
+	@include respond-to( 'tablet' ) {
+		opacity: 1;
+	}
+}
+
+.c-content-block__cover-link {
+	z-index: 2;
+}
+
+.c-content-block__title {
+	margin-bottom: 15px;
+
+	font-family: $fontMain;
+	font-weight: normal;
+	font-size: 26px;
+}
+
+.c-content-block__meta {
+	font-weight: bold;
+	font-size: 20px;
+
+	margin-bottom: 80px;
+}
+
+.c-content-block__more-link {
+	position: absolute;
+	bottom: 30px;
+	left: 30px;
+
+	font-weight: bold;
+	font-size: 20px;
+
+	&:after {
+		content: '\00bb';
+
+		margin-left: 5px;
+
+		display: inline-block;
+
+		transform: translateX(0);
+		transition: transform 0.25s;
+
+		// Transform when parent is hovered
+		.c-content-block:hover & {
+			transform: translateX(5px);
+
+			.touch & {
+				transform: none;
+			}
+		}
+	}
+}
+
+/**
+ * Alternative colours on titles 
+ * and meta dependent on category
+ */
+@each $cat, $color in $categoriesMap {
+	.c-content-block--#{$cat} {
+
+		.c-content-block__title,
+		.c-content-block__meta {
+			color: $color;
+		}
+	}
+}
