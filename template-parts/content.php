@@ -11,31 +11,47 @@
  */
 ?>
 
-<article>
-	<?php 
+<?php
 
-		// Featured Image (ACF)
-		$img = get_field('featured_image');
-		echo '<img src="' . $img['url'] . '" width="250"/>';
+	/**
+	 * Get the category of the post.
+	 * This will return only ONE category,
+	 * because we're using radio-buttons-for-taxonomies
+	 * plugin (https://en-gb.wordpress.org/plugins/radio-buttons-for-taxonomies/)
+	 *
+	 */
+	$categories = get_the_category();
+	$category_slug = '';
+	if ( !empty( $categories ) ) : 
+		$category_name = esc_html( $categories[0]->name );
+		$category_slug = $categories[0]->slug;
+	endif;
+?>
 
-		// Title
-		the_title( '<h3>', '</h3>' ); 
+<?php $img = get_field('featured_image'); ?>
 
-		// Category
-		$categories = get_the_category();
-		if ( !empty( $categories ) ) : 
-			/**
-			 * Return first category in array of all
-			 * categories. There should be only one
-			 * returned anyway b/c we're using radio
-			 * buttons for category selection in admin
-			 */
-			echo esc_html( $categories[0]->name );
-		endif;
+<article class="c-content-block c-content-block--<?php echo $category_slug; ?> l-col-12 u-clearfix">
+	<a href="<?php echo get_permalink(); ?>" class="u-cover-link c-content-block__cover-link"></a>
 
-		// Read more
-		echo '<p><a href="' . get_permalink() . '">' . __( 'Read more', 'otm' ) . '</a></p>';
-	?>
+	<span class="l-col-12 l-col-sml-6 c-content-block__side">
+		<span class="c-content-block__img" style="background-image: url(<?php echo $img['url'] ?>);"></span>
+	</span>
 
-	<p><a class="share" data-url="<?php the_permalink(); ?>">Share</a></p>
+	<span class="l-col-12 l-col-sml-6-last c-content-block__main">
+		<?php 
+
+			// Title
+			the_title( '<h3 class="c-content-block__title">', '</h3>' ); 
+
+			// Category
+			if ( !empty( $categories ) ) : 
+				echo '<p class="c-content-block__meta">' . $category_name . '</p>';
+			endif;
+
+			// Read more
+			echo '<a href="' . get_permalink() . '" ' . ' class="c-content-block__more-link">' . __( 'Read more', 'otm' ) . '</a>';
+		?>
+	</span>
+
+	<!-- <p><a class="share" data-url="<?php the_permalink(); ?>">Share</a></p> -->
 </article>
