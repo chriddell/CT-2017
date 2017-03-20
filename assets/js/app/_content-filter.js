@@ -34,16 +34,19 @@
 	});
 
 	function getTag( target ) {
+		
 		var tag = $( target ).data('tag');
 		return tag;
 	}
 
 	function getText( target ) {
+
 		var text = $( target ).text();
 		return text;
 	}
 
 	function setText( $target, text ) {
+
 		$target.text( text );
 	}
 

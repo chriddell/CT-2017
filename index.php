@@ -27,9 +27,8 @@ get_header(); ?>
 
 <div class="l-page-content c-page-content has-box-shadow u-match-body-bg u-pos-rel" id="main-content">
 	<span class="l-site-wrapper u-pos-rel u-clearfix">
-		<h4>Currently showing latest content from</h4>
+		<h4>Currently showing latest content from <span class="c-content-filter__showing">All topics</span></h4>
 		<ul class="c-content-filter__control u-border-bottom l-page-header">
-			<li class="c-content-filter__showing">All topics</li>
 			<li class="c-content-filter__item"><a href="<?php echo site_url(); ?>" class="c-content-filter__input" data-tag="all">All topics</a></li>
 			<?php 
 				$tags = get_tags( array( 'hide_empty' => false ) );
