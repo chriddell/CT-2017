@@ -26,11 +26,21 @@
 		$category_name = esc_html( $categories[0]->name );
 		$category_slug = $categories[0]->slug;
 	endif;
+
+	/**
+	 * Get the tags of this post.
+	 *
+	 */
+	$tagObjects = wp_get_post_tags($post->ID);
+	$tags = 'all ';
+	foreach ( $tagObjects as $tag ) {
+		$tags = $tags . $tag->slug . ' ';
+	}
 ?>
 
 <?php $img = get_field('featured_image'); ?>
 
-<article class="c-content-block c-content-block--<?php echo $category_slug; ?> l-col-12 u-clearfix">
+<article class="c-content-block c-content-block--<?php echo $category_slug; ?> l-col-12 u-clearfix filterable" data-tag="<?php echo $tags; ?>">
 	<a href="<?php echo get_permalink(); ?>" class="u-cover-link c-content-block__cover-link"></a>
 
 	<span class="l-col-12 l-col-sml-6 c-content-block__side">

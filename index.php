@@ -27,12 +27,20 @@ get_header(); ?>
 
 <div class="l-page-content c-page-content has-box-shadow u-match-body-bg u-pos-rel" id="main-content">
 	<span class="l-site-wrapper u-pos-rel u-clearfix">
-		<header class="c-content-filter u-border-bottom l-page-header">
-			<p>Currently showing latest content from <span class="u-bold">All topics <!-- List all categories here --></span></p>
-		</header>
+		<h4>Currently showing latest content from</h4>
+		<ul class="c-content-filter__control u-border-bottom l-page-header">
+			<li class="c-content-filter__showing">All topics</li>
+			<li class="c-content-filter__item"><a href="<?php echo site_url(); ?>" class="c-content-filter__input" data-tag="all">All topics</a></li>
+			<?php 
+				$tags = get_tags( array( 'hide_empty' => false ) );
+				foreach ( $tags as $tag ) { 
+			?>
+				<li class="c-content-filter__item"><a href="<?php echo get_tag_link( $tag->term_id ); ?>" class="c-content-filter__input" data-tag="<?php echo $tag->slug; ?>"><?php echo $tag->name; ?></a></li>
+			<?php } ?>
+		</ul>
 
 		<span class="l-main-container u-clearfix u-block">
-			<main role="main" class="l-main l-col-12 l-col-sml-7 l-col-med-8 u-clearfix">
+			<main role="main" class="l-main l-col-12 l-col-sml-7 l-col-med-8 u-clearfix c-content-filter__canvas">
 
 				<?php
 					if ( have_posts() ) :

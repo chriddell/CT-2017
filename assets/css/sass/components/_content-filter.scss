@@ -1,0 +1,15 @@
+/* ==========================================================================
+    CONTENT FILTER
+
+    Javascript-powered filter on homepage which shows/hides content
+    based on user selection.
+   ========================================================================== */
+
+.no-js .c-content-filter__control {
+	display: none;
+}
+
+.c-content-filter__control {
+	margin: 0;
+	padding: 0;
+}
