@@ -1,0 +1,23 @@
+/* ==========================================================================
+    SIDEBAR
+
+    Site sidebar(s)
+   ========================================================================== */
+
+.c-sidebar-border {
+  height: 100%;
+
+  position: absolute;
+  top: 0; left: 0;
+
+  &:after {
+    content: '';
+
+    height: 100%;
+    width: 50%;
+
+    display: block;
+
+    border-right: 1px solid $clrBorders;
+  }
+}

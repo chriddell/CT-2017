@@ -25,3 +25,39 @@
   display: table;
   clear: both;
 }
+
+.u-border-bottom {
+	border-bottom: 1px solid $clrBorders;
+}
+
+.u-heading {
+	font-family: $fontHeading;
+}
+
+.u-bold {
+	font-weight: bold;
+}
+
+.u-hidden-mobile {
+	display: none;
+
+	@include respond-to( 'tablet' ) {
+		display: block;
+	}
+}
+
+.u-pos-rel {
+	position: relative;
+}
+
+.u-block {
+	display: block;
+}
+
+.u-float-right {
+	float: right;
+}
+
+.u-float-left {
+	float: left;
+}
