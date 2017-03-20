@@ -72,7 +72,7 @@ function otm_render_global_tags() {
 	if ( $tags ) :
 
 		// Render title
-		echo '<h3>Tags</h3>';
+		printf( '<h3 class="c-section-title">%s</h3>', __('Tags', 'otm' ) );
 
 		// Start a list
 		echo '<ul>';
@@ -244,7 +244,7 @@ remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
 /**
  * Show featured posts (based on boolean ACF)
  */
-function otm_featured_posts() {
+function otm_show_featured_posts() {
 
 	$my_query = new WP_Query( array( 
 		'meta_key' 				=> 'is_featured',
@@ -268,4 +268,26 @@ function otm_featured_posts() {
 	endif;
 
 	wp_reset_query();
+}
+
+/**
+ * Find if there are featured posts
+ */
+function otm_get_featured_posts() {
+
+	$my_query = new WP_Query( array( 
+		'meta_key' 				=> 'is_featured',
+		'post_type'				=> 'post',
+		'meta_value'			=> true,
+		'numberposts' 		=> 3
+	) );
+
+	// If our query has posts
+	if ( $my_query->have_posts() ) :
+		return true;
+		wp_reset_query();
+	else :
+		wp_reset_query();
+		return;
+	endif;
 }
