@@ -1,0 +1,15 @@
+/* ==========================================================================
+    BRANDING
+   ========================================================================== */
+
+.c-site-logo {
+	overflow: hidden;
+	
+	background-image: url(../media/img/SSC-Advent.svg);
+	background-repeat: no-repeat;
+	background-position: right;
+
+	&--white {
+		background-image: url(../media/img/SSC-Advent-white.svg);
+	}
+}
