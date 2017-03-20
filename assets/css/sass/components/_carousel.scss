@@ -1,0 +1,90 @@
+/* ==========================================================================
+    CAROUSEL
+   
+		Overwrite carousel plugin styles (or write new ones where they don't
+		already exist).
+   ========================================================================== */
+
+.c-carousel {
+	cursor: grab;
+
+	&:active {
+		cursor: grabbing;
+	}
+}
+
+.c-carousel__nav {
+	width: 100%;
+
+	position: absolute;
+	bottom: 270px; // .c-carousel__control height + .c-featured-item__main height
+
+	@include respond-to( 'tablet' ) {
+		top: 50%;
+
+		transform: translateY(-50%);
+	}
+}
+
+.c-carousel__control {
+	height: 50px;
+	width: 50px;
+
+	display: table;
+
+	position: absolute;
+
+	background-color: rgba( #e8e8e8, 0.3 );
+	color: #f5f4f3;
+
+	cursor: pointer;
+
+	@include respond-to( 'tablet' ) {
+		background-color: #e8e8e8;
+		color: #a1a1a1;
+	}
+
+	&:after {
+		height: 100%;
+		width: 100%;
+
+		display: table-cell;
+		vertical-align: middle;
+
+		text-align: center;
+		font-size: 28px;
+		font-weight: bold;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+
+		transition: transform 0.25s;
+
+		.touch & {
+			transform: none !important; // remove hover effects on .touch
+		}
+	}
+
+	&.prev {
+		left: 0;
+
+		&:after {
+			content: '\00ab';
+		}
+
+		&:hover:after {
+			transform: translateX(-3px);
+		}
+	}
+
+	&.next {
+		right: 0;
+
+		&:after {
+			content: '\00bb';
+		}
+
+		&:hover:after {
+			transform: translateX(3px);
+		}
+	}
+}

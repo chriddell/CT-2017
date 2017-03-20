@@ -18,6 +18,11 @@
 .u-cover-link {
 	position: absolute;
 	top: 0; right: 0; bottom: 0; left: 0;
+
+	&:focus {
+		outline: none;
+		border: 2px solid $clrDarkTeal;
+	}
 }
 
 .u-clearfix:after {
@@ -60,4 +65,12 @@
 
 .u-float-left {
 	float: left;
+}
+
+.u-100-height {
+	height: 100%;
+}
+
+.u-match-body-bg {
+	background-color: $clrBody;
 }

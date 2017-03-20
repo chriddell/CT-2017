@@ -22,6 +22,7 @@
 
 /* Vendor
    ========================================================================== */
+@import 'vendor/owl';
 
 /* Components
    ========================================================================== */
@@ -30,8 +31,12 @@
 @import 'components/branding';
 @import 'components/sidebar';
 @import 'components/titles';
+@import 'components/read-more';
+@import 'components/carousel';
 @import 'components/content-block';
+@import 'components/featured-item';
 
 /* Trumps
    ========================================================================== */
 @import 'trumps/utils';
+@import 'trumps/trumps';

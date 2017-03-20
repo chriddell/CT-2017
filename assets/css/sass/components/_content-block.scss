@@ -105,31 +105,17 @@
 	margin-bottom: 80px;
 }
 
-.c-content-block__more-link {
+.c-content-block__read-more {
 	position: absolute;
 	bottom: 30px;
 	left: 30px;
 
-	font-weight: bold;
-	font-size: 20px;
+	// Transform when parent is hovered
+	.c-content-block:hover &:after {
+		transform: translateX(5px);
 
-	&:after {
-		content: '\00bb';
-
-		margin-left: 5px;
-
-		display: inline-block;
-
-		transform: translateX(0);
-		transition: transform 0.25s;
-
-		// Transform when parent is hovered
-		.c-content-block:hover & {
-			transform: translateX(5px);
-
-			.touch & {
-				transform: none;
-			}
+		.touch & {
+			transform: none;
 		}
 	}
 }

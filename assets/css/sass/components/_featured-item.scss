@@ -1,0 +1,73 @@
+/* ==========================================================================
+    FEATURED ITEM
+   
+		Currently is a carousel component on the homepage.
+   ========================================================================== */
+
+.c-featured-item {
+	height: 390px; // 100%
+
+	padding-bottom: 0;
+
+	box-sizing: border-box;
+
+	@include respond-to( 'tablet' ) {
+		padding-bottom: 45px;
+	}
+
+	&:after {
+		content: '';
+
+		height: 600px;
+		width: 250px;
+
+		position: absolute;
+		top: 80px; left: -55px;
+
+		background: #FFFFFF;
+		opacity: 0.95;
+
+		transform: rotate(-45deg);
+
+		@include respond-to( 'tablet' ) {
+			height: 1200px;
+    	width: 1200px;
+
+    	top: 0; left: -500px;
+		}
+	}
+}
+
+.c-featured-item__main {
+	height: 220px;
+
+	padding: 20px;
+
+	display: block;
+
+	position: absolute;
+	bottom: 0; left: 0;
+
+	background-color: rgba( 255, 255, 255, 0.9 );
+
+	box-sizing: border-box;
+	z-index: 1;
+
+	@include respond-to( 'tablet' ) {
+		height: auto;
+
+		padding: 30px;
+
+		left: 20px; // 'left' value = parent wrapper padding
+	}
+}
+
+.c-featured-item__title {
+	margin-bottom: 25px;
+
+	font-size: 30px;
+
+	@include respond-to( 'tablet' ) {
+		font-size: 44px;
+	}
+}

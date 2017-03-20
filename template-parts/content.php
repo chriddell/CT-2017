@@ -49,7 +49,7 @@
 			endif;
 
 			// Read more
-			echo '<a href="' . get_permalink() . '" ' . ' class="c-content-block__more-link">' . __( 'Read more', 'otm' ) . '</a>';
+			echo '<a href="' . get_permalink() . '" ' . ' class="c-read-more c-content-block__read-more">' . __( 'Read more', 'otm' ) . '</a>';
 		?>
 	</span>
 

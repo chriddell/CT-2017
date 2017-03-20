@@ -15,7 +15,11 @@
 	padding: 18px 0;
 	border-top: 6px solid #0a85c7;
 
+	background-color: #FFFFFF;
+
 	line-height: 0; // this is fine because text will never wrap
+
+	z-index: 2;
 
 	white-space: nowrap; // fix inline-block/50% width bug (http://stackoverflow.com/a/10592283)
 

@@ -7,11 +7,9 @@
 .l-site-wrapper {
 	padding: 0 20px;
 
-	@include container;
-}
+  display: block;
 
-.l-pre-main {
-  margin-bottom: 50px;
+	@include container;
 }
 
 .l-main-container {
@@ -21,6 +19,14 @@
 .l-main,
 .l-sidebar {
   padding-top: 40px;
+}
+
+.l-hero {
+  height: 390px;
+}
+
+.l-page-content {
+  padding-top: 50px;
 }
 
 /**

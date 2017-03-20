@@ -1,0 +1,12 @@
+/* ==========================================================================
+    TRUMPS aka. hacks
+   ========================================================================== */
+
+/**
+ * Hide overflow on owl-carousel
+ * items to prevent .c-featured-item:after
+ * leaking into parent's siblings
+ */
+.owl-carousel .owl-item {
+  overflow: hidden;
+}

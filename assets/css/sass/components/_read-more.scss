@@ -1,0 +1,36 @@
+/* ==========================================================================
+    READ MORE
+   
+		'Read more' link.
+   ========================================================================== */
+
+.c-read-more {
+	font-weight: bold;
+	font-size: 20px;
+
+	&:after {
+		content: '\00bb';
+
+		margin-left: 5px;
+
+		display: inline-block;
+
+		text-decoration: none;
+
+		transform: translateX(0);
+		transition: transform 0.25s;
+	}
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	&:hover:after {
+		transform: translateX(5px);
+
+		// Remove hover on .touch
+		.touch & {
+			transform: none;
+		}
+	}
+}

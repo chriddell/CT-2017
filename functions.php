@@ -255,14 +255,10 @@ function otm_show_featured_posts() {
 
 	// If our query has posts
 	if ( $my_query->have_posts() ) :
-
-		// Section Title
-		printf( '<h2>%s</h2>', __( 'Featured posts', 'otm' ) );
-
 		while ( $my_query->have_posts() ) : $my_query->the_post();
 
-			// Post title
-			the_title('<h3>', '</h3>');
+			// Get specific template-part
+			get_template_part( 'template-parts/content-featured' );
 
 		endwhile;
 	endif;
