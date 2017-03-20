@@ -10,33 +10,43 @@
  * @version 1.0
  */
 
+$img = get_field('featured_image');
+
 ?>
 
-<?php
+<div class="l-hero l-hero--single c-hero c-hero--single" id="hero" style="background-image: url(<?php echo $img['url']; ?>);"></div>
 
-	// Title
-	the_title( '<h1>', '</h1>' );
+<div class="l-page-content c-page-content u-bg-white u-pos-rel" id="main-content">
+	<span class="l-site-wrapper u-pos-rel u-clearfix">
+		<main role="main" class="l-main l-col-12 l-col-sml-7 l-col-med-8 u-clearfix c-content-filter__canvas">
+			<?php
 
-	// Author
-	printf( __( '<p>Written by %s</p>', 'otm' ), get_the_author() );
+				// Title
+				the_title( '<h1>', '</h1>' );
 
-	// Date
-	the_date('jS F Y');
+				// Author
+				printf( __( '<p>Written by %s</p>', 'otm' ), get_the_author() );
 
-	/* translators: %s: Name of current post */
-	the_content( sprintf(
-		__( 'Continue reading<span class="sr-only"> "%s"</span>', 'otm' ),
-		get_the_title()
-	) );
+				// Date
+				the_date('jS F Y');
 
-	// Show related solutions (custom taxonomy / ACF)
-	otm_render_related_solutions();
-?>
-
-<?php 
+				/* translators: %s: Name of current post */
+				the_content( sprintf(
+					__( 'Continue reading<span class="sr-only"> "%s"</span>', 'otm' ),
+					get_the_title()
+				) );
+			?>
+		</main>
+		<aside class="l-sidebar c-sidebar l-col-sml-4-last l-col-med-3-last">
+			<?php otm_render_related_solutions(); ?>
+		</aside>
+	</span>
+</div>
 	
-	// Related Posts
-	otm_related_posts();
-?>
+<div class="l-post-page-content">
+	<span class="l-site-wrapper u-clearfix">	
+		<?php otm_related_posts(); ?>
+	</span>
+</div>
 
 <?php get_footer();

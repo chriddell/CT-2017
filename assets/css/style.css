@@ -92,6 +92,12 @@
 
 .l-page-content {
   padding-top: 50px;
+  padding-bottom: 40px;
+}
+
+.l-post-page-content {
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 /**
@@ -1783,6 +1789,14 @@ a:hover {
   }
 }
 
+.c-carousel--related .c-carousel__nav {
+  bottom: auto;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
 .c-carousel__control {
   height: 50px;
   width: 50px;
@@ -1820,8 +1834,16 @@ a:hover {
           transform: none !important;
 }
 
+.c-carousel__control--dark {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 .c-carousel__control.prev {
   left: 0;
+  /**
+	 * Hide prev control
+	 * on related-items carousel
+	 */
 }
 
 .c-carousel__control.prev:after {
@@ -1834,8 +1856,16 @@ a:hover {
           transform: translateX(-3px);
 }
 
+.c-carousel--related .c-carousel__control.prev {
+  visibility: hidden;
+}
+
 .c-carousel__control.next {
   right: 0;
+  /**
+	 * Move position of next control
+	 * on related-items carousel
+	 */
 }
 
 .c-carousel__control.next:after {
@@ -1848,11 +1878,30 @@ a:hover {
           transform: translateX(3px);
 }
 
+@media (min-width: 767px) {
+  .c-carousel--related .c-carousel__control.next {
+    right: calc( 33.3% - 50px - 6px);
+  }
+}
+
+/**
+ * Tweak styles on active/non-active elements on
+ * related-items carousel
+ */
+.c-carousel--related .owl-item:not(.active),
+.c-carousel--related .owl-item.active + .owl-item.active {
+  opacity: 0.5;
+}
+
 /* ==========================================================================
     HERO
    
 		Hero area.
    ========================================================================== */
+.c-hero {
+  background-position: center center;
+}
+
 /* ==========================================================================
     PAGE CONTENT
    
@@ -1875,6 +1924,13 @@ a:hover {
   overflow: hidden;
   box-sizing: border-box;
   background-color: #FFFFFF;
+}
+
+@media (min-width: 767px) {
+  .c-content-block {
+    width: 100%;
+    height: auto;
+  }
 }
 
 .c-content-block:not(:last-of-type) {
@@ -1900,11 +1956,8 @@ a:hover {
   }
 }
 
-@media (min-width: 767px) {
-  .c-content-block {
-    width: 100%;
-    height: auto;
-  }
+.c-content-block--related {
+  height: 260px !important;
 }
 
 .c-content-block__main {
@@ -2088,6 +2141,12 @@ a:hover {
   }
 }
 
+.c-featured-item__main:hover .c-featured-item__read-more:after {
+  -webkit-transform: translateX(5px);
+      -ms-transform: translateX(5px);
+          transform: translateX(5px);
+}
+
 /* ==========================================================================
     CONTENT FILTER
 
@@ -2100,6 +2159,7 @@ a:hover {
 
 .c-content-filter__control {
   margin: 0;
+  padding: 0;
 }
 
 /* Trumps
@@ -2181,6 +2241,10 @@ a:hover {
 
 .u-match-body-bg {
   background-color: #F4F4F4;
+}
+
+.u-bg-white {
+  background-color: #FFFFFF;
 }
 
 /* ==========================================================================

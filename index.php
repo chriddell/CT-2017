@@ -19,7 +19,7 @@ get_header(); ?>
 
 <?php if ( !empty( otm_get_featured_posts() ) ) : ?>
 	<!-- #featured -->
- 	<div class="l-hero c-carousel c-hero-carousel owl-carousel" id="hero">
+ 	<div class="l-hero c-carousel c-carousel--hero owl-carousel" id="hero">
  		<?php otm_show_featured_posts(); ?>
 	</div>
 	<!-- / #featured -->

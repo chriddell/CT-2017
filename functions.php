@@ -120,12 +120,15 @@ function otm_related_posts() {
 			// Print a title
 			printf( '<h2>%s</h2>', __( 'Related content', 'otm' ) );
 
-			// Loop
-			while ( $my_query->have_posts() ) : $my_query->the_post();
+			// Markup
+			echo '<aside id="related" role="complementary" class="c-carousel--related owl-carousel">';
+				// Loop
+				while ( $my_query->have_posts() ) : $my_query->the_post();
 
-				// Get the template for the post content
-				get_template_part( 'template-parts/content' );
-			endwhile;
+					// Get the template for the post content
+					get_template_part( 'template-parts/content-related' );
+				endwhile;
+			echo '</aside>';
 
 		endif;
 	}

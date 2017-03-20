@@ -24,6 +24,12 @@
 
 		transform: translateY(-50%);
 	}
+
+	.c-carousel--related & {
+		bottom: auto;
+		top: 50%;
+		transform: translateY(-50%);
+	}
 }
 
 .c-carousel__control {
@@ -64,27 +70,58 @@
 		}
 	}
 
-	&.prev {
-		left: 0;
+	&--dark {
+		background-color: rgba( 0, 0, 0, 0.5 );
+	}
+}
 
-		&:after {
-			content: '\00ab';
-		}
+.c-carousel__control.prev {
+	left: 0;
 
-		&:hover:after {
-			transform: translateX(-3px);
-		}
+	&:after {
+		content: '\00ab';
 	}
 
-	&.next {
-		right: 0;
+	&:hover:after {
+		transform: translateX(-3px);
+	}
 
-		&:after {
-			content: '\00bb';
-		}
+	/**
+	 * Hide prev control
+	 * on related-items carousel
+	 */
+	.c-carousel--related & {
+		visibility: hidden;
+	}
+}
 
-		&:hover:after {
-			transform: translateX(3px);
+.c-carousel__control.next {
+	right: 0;
+
+	&:after {
+		content: '\00bb';
+	}
+
+	&:hover:after {
+		transform: translateX(3px);
+	}
+
+	/**
+	 * Move position of next control
+	 * on related-items carousel
+	 */
+	.c-carousel--related & {
+		@include respond-to( 'tablet' ) {
+			right: calc( 33.3% - 50px - 6px ); // (100% - width of carousel item) - control width - margin-right
 		}
 	}
+}
+
+/**
+ * Tweak styles on active/non-active elements on
+ * related-items carousel
+ */
+.c-carousel--related .owl-item:not(.active),
+.c-carousel--related .owl-item.active + .owl-item.active {
+	opacity: 0.5;
 }
