@@ -40,4 +40,5 @@
 		</div>
 	</header>
 
+	<!-- #main-content -->
 	<div id="main-content">

@@ -1,13 +1,26 @@
 /* ==========================================================================
     LAYOUT
 
-    Generate OO grid classes and main site container.
+    Page layout classes. Generate object-oriented grid classes.
    ========================================================================== */
 
 .l-site-wrapper {
 	padding: 0 20px;
 
 	@include container;
+}
+
+.l-pre-main {
+  margin-bottom: 50px;
+}
+
+.l-main-container {
+  position: relative;
+}
+
+.l-main,
+.l-sidebar {
+  padding-top: 40px;
 }
 
 /**
@@ -44,7 +57,9 @@
   }
 
   .l-col-sml-push-#{$i} {
-    @include push( $i );
+    @include respond-to( 'tablet' ) {
+      @include push( $i );
+    }
   }
 }
 
@@ -62,6 +77,8 @@
   }
 
   .l-col-med-push-#{$i} {
-    @include push( $i );
+    @include respond-to( 'desktop' ) {
+      @include push( $i );
+    }
   }
 }
