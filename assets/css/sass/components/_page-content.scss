@@ -1,0 +1,10 @@
+/* ==========================================================================
+    PAGE CONTENT
+   
+		Only used to apply box-shadow where needed
+   ========================================================================== */
+
+.c-page-content.has-box-shadow {
+	box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.15);
+	z-index: 1;
+}

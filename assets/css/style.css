@@ -1582,6 +1582,12 @@ a:hover {
   white-space: nowrap;
 }
 
+@media (min-width: 1025px) {
+  .c-site-header {
+    padding: 32px 0 20px;
+  }
+}
+
 .c-site-header:before {
   content: '';
   display: inline-block;
@@ -1589,10 +1595,8 @@ a:hover {
   height: 100%;
 }
 
-@media (min-width: 1025px) {
-  .c-site-header {
-    padding: 32px 0 20px;
-  }
+.c-site-header.has-box-shadow {
+  box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.15);
 }
 
 .c-site-header__title,
@@ -1844,6 +1848,21 @@ a:hover {
 }
 
 /* ==========================================================================
+    HERO
+   
+		Hero area.
+   ========================================================================== */
+/* ==========================================================================
+    PAGE CONTENT
+   
+		Only used to apply box-shadow where needed
+   ========================================================================== */
+.c-page-content.has-box-shadow {
+  box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.15);
+  z-index: 1;
+}
+
+/* ==========================================================================
     CONTENT BLOCK
    
 		These are the content blocks on the homepage, and also used in related content
@@ -2023,7 +2042,6 @@ a:hover {
   top: 80px;
   left: -55px;
   background: #FFFFFF;
-  opacity: 0.95;
   -webkit-transform: rotate(-45deg);
       -ms-transform: rotate(-45deg);
           transform: rotate(-45deg);

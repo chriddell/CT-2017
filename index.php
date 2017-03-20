@@ -19,13 +19,13 @@ get_header(); ?>
 
 <?php if ( !empty( otm_get_featured_posts() ) ) : ?>
 	<!-- #featured -->
- 	<div class="l-hero c-carousel owl-carousel" id="hero">
+ 	<div class="l-hero c-carousel c-hero-carousel owl-carousel" id="hero">
  		<?php otm_show_featured_posts(); ?>
 	</div>
 	<!-- / #featured -->
 <?php endif; ?>
 
-<div class="l-page-content u-match-body-bg u-pos-rel" id="main-content">
+<div class="l-page-content c-page-content has-box-shadow u-match-body-bg u-pos-rel" id="main-content">
 	<span class="l-site-wrapper u-pos-rel u-clearfix">
 		<header class="c-content-filter u-border-bottom l-page-header">
 			<p>Currently showing latest content from <span class="u-bold">All topics <!-- List all categories here --></span></p>

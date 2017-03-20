@@ -11,7 +11,7 @@
 
 	$(document).ready(function(){
 
-		$('.owl-carousel').owlCarousel({
+		$('.c-hero-carousel').owlCarousel({
 			loop: true,
 			items: 1,
 			autoplay: true,

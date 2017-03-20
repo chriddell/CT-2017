@@ -23,6 +23,10 @@
 
 	white-space: nowrap; // fix inline-block/50% width bug (http://stackoverflow.com/a/10592283)
 
+	@include respond-to( 'desktop' ) {
+		padding: 32px 0 20px;
+	}
+
 	&:before {
 		content: '';
 		display: inline-block;
@@ -30,8 +34,8 @@
 		height: 100%;
 	}
 
-	@include respond-to( 'desktop' ) {
-		padding: 32px 0 20px;
+	&.has-box-shadow {
+		box-shadow: 0 0 60px 0 rgba( 0, 0, 0, 0.15 );
 	}
 }
 
