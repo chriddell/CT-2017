@@ -19,11 +19,10 @@
 		 * Get 'Most Popular' posts based on
 		 * meta_value
 		 */
-
 		// Set up our query
 		$my_query = new WP_Query( array( 
 			'meta_key' 				=> 'post_views_count',
-			'orderby'					=> 'meta_value',
+			'orderby'					=> 'meta_value_num',
 			'posts_per_page' 	=> 5
 		) );
 
@@ -31,7 +30,7 @@
 		if ( $my_query->have_posts() ) :
 
 			// Section Title
-			printf( '<h2>%s</h2>', __('Most popular', 'otm' ) );
+			printf( '<h2 class="c-section-title">%s</h2>', __('Most popular', 'otm' ) );
 
 			while ( $my_query->have_posts() ) : $my_query->the_post(); 
 
