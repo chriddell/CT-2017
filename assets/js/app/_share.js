@@ -3,7 +3,12 @@
 /* ==========================================================================
     SHARE
    
-		Share URLs to Facebook, Twitter and LinkedIn.
+		1. Set-up SDKs where necessary.
+
+		2. Share UI.
+   ========================================================================== */
+
+/* 1. SDKs
    ========================================================================== */
 
 /* Facebook
@@ -83,6 +88,20 @@ window.fbAsyncInit = function() {
 			window.open( $(this).attr('href'), 'Share to LinkedIn', 'width=570,height=520' );
 
 		});
+	});
+
+})(jQuery);
+
+/* 2. Share UI
+   ========================================================================== */
+
+(function($){
+
+	var $showShareIcons = $('.c-share__trigger');
+
+	$showShareIcons.click(function(){
+
+		$(this).parent().addClass('is-active');
 	});
 
 })(jQuery);

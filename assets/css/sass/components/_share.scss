@@ -4,3 +4,94 @@
     Share icon and it's components, also animations.
    ========================================================================== */
 
+.c-share__trigger {
+	height: 25px;
+	width: 22px;
+
+	margin: 0;
+	padding: 8px;
+
+	background-image: url( ../media/img/share-icon.svg );
+	background-repeat: no-repeat;
+	background-size: 25px 22px; // exclude padding
+	background-clip: content-box; // exclude padding
+	background-position: center center;
+
+	cursor: pointer;
+}
+
+.c-share__elem {
+	height: 28px;
+	width: 28px;
+
+	padding: 4px;
+
+	display: block;
+
+	position: absolute;
+
+	border-radius: 100%;
+	background-color: $clrDarkTeal;
+	background-repeat: no-repeat;
+	background-size: 18px 18px;
+	background-clip: content-box; // exclude padding
+	background-position: center center;
+
+	opacity: 0; // overwritten by ani
+	pointer-events: none; // overwritten by ani
+
+	transition: transform 0.25s ease, opacity 0.15s ease;
+
+	&:nth-of-type(1) {
+		left: 5px;
+		top: -45px;
+
+		transform: translate3d(-2px, 48px, 0) scale(0);
+		transition-delay: 0.2s;
+	}
+
+	&:nth-of-type(2) {
+		left: -32px;
+		top: -15px;
+
+		transform: translate3d(35px, 18px, 0) scale(0);
+		transition-delay: 0.1s;
+	}
+
+	&:nth-of-type(3) {
+		left: -25px;
+		top: 30px;
+
+		transform: translate3d(28px, -27px, 0) scale(0);
+	}
+
+	.is-active & {
+		opacity: 1;
+		pointer-events: all;
+
+		transform: translate3d(0, 0, 0) scale(1);
+	}
+}
+
+$brandColorsMap: (
+	'fb': '#3b5998',
+	'tw': '#4099FF',
+	'li': '#007bb6'
+);
+
+@each $brand, $color in $brandColorsMap {
+	.c-share__#{$brand} {
+		background-color: #{$color};
+		background-image: url(../media/img/social/#{$brand}-icon.svg);
+	}
+}
+
+// Tweak sizes of icon inside elem (background-image)
+// dependent on brand
+.c-share__li {
+	background-size: 16px 16px;
+}
+
+.c-share__tw {
+	background-size: 16px 16px;
+}
