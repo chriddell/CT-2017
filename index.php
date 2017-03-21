@@ -27,25 +27,36 @@ get_header(); ?>
 
 <div class="l-page-content c-page-content has-box-shadow u-match-body-bg u-pos-rel" id="main-content">
 	<span class="l-site-wrapper u-pos-rel u-clearfix">
-		<h4>Currently showing latest content from <span class="c-content-filter__showing">All topics</span></h4>
-		<ul class="c-content-filter__control u-border-bottom l-page-header">
-			<li class="c-content-filter__item"><a href="<?php echo site_url(); ?>" class="c-content-filter__input" data-tag="all">All topics</a></li>
-			<?php 
-				$tags = get_tags( array( 'hide_empty' => false ) );
-				foreach ( $tags as $tag ) { 
-			?>
-				<li class="c-content-filter__item"><a href="<?php echo get_tag_link( $tag->term_id ); ?>" class="c-content-filter__input" data-tag="<?php echo $tag->slug; ?>"><?php echo $tag->name; ?></a></li>
-			<?php } ?>
-		</ul>
 
-		<span class="l-main-container u-clearfix u-block">
+		<!-- #filter -->
+		<div class="c-content-filter u-border-bottom" id="filter">
+			<h4 class="c-content-filter__heading">Currently showing latest content from <span class="c-content-filter__active-category-text" id="filter-active-category">All topics</span></h4>
+			<ul class="c-content-filter__menu" id="filter-control-menu">
+				<li class="c-content-filter__menu-item"><a href="<?php echo site_url(); ?>" class="c-content-filter__input" data-tag="all">All topics</a></li>
+
+				<?php 
+					/** Loop through available WP tags to output list items for filter **/
+					$tags = get_tags( array( 'hide_empty' => false ) );
+					foreach ( $tags as $tag ) { 
+				?>
+					<li class="c-content-filter__menu-item"><a href="<?php echo get_tag_link( $tag->term_id ); ?>" class="c-content-filter__input" data-tag="<?php echo $tag->slug; ?>"><?php echo $tag->name; ?></a></li>
+				<?php 
+					} 
+				?>
+
+			</ul>
+		</div>
+		<!-- / #filter -->
+
+		<!-- .l-main-container -->
+		<div class="l-main-container u-clearfix u-block">
 			<main role="main" class="l-main l-col-12 l-col-sml-7 l-col-med-8 u-clearfix c-content-filter__canvas">
 
 				<?php
 					if ( have_posts() ) :
 
 						// Render title
-						echo '<h2 class="c-section-title">' . __('Latest') . '</h2>';
+						printf( '<h2 class="c-section-title">%s</h2>', __( 'Latest', 'otm' ) );
 
 						// Modify the query
 						query_posts( 'posts_per_page=5' );
@@ -76,7 +87,9 @@ get_header(); ?>
 			<aside class="l-sidebar c-sidebar l-col-sml-4-last l-col-med-3-last">
 				<?php get_template_part( 'template-parts/sidebar' ); ?>
 			</aside>
-		</span>
+		</div>
+		<!-- / .l-main-container -->
+
 	</span>
 </div>
 

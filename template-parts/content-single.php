@@ -18,11 +18,11 @@ $img = get_field('featured_image');
 
 <div class="l-page-content c-page-content u-bg-white u-pos-rel" id="main-content">
 	<span class="l-site-wrapper u-pos-rel u-clearfix">
-		<main role="main" class="l-main l-col-12 l-col-sml-7 l-col-med-8 u-clearfix c-content-filter__canvas">
+		<article class="l-main l-col-12 l-col-sml-7 l-col-med-8 u-clearfix c-article">
 			<?php
 
 				// Title
-				the_title( '<h1>', '</h1>' );
+				the_title( '<h1 class="c-article-title c-section-title">', '</h1>' );
 
 				// Author
 				printf( __( '<p>Written by %s</p>', 'otm' ), get_the_author() );
@@ -36,7 +36,7 @@ $img = get_field('featured_image');
 					get_the_title()
 				) );
 			?>
-		</main>
+		</article>
 		<aside class="l-sidebar c-sidebar l-col-sml-4-last l-col-med-3-last">
 			<?php otm_render_related_solutions(); ?>
 		</aside>

@@ -5,11 +5,142 @@
     based on user selection.
    ========================================================================== */
 
-.no-js .c-content-filter__control {
-	display: none;
+// Set color of background whenu menu is active
+$clrActiveBg: rgba( $clrDarkTeal, 0.9 );
+
+.c-content-filter {
+	position: relative;
+
+	&:after {
+		content: '';
+
+		height: 93px; // meets start of .c-content-filter__menu
+
+		@include respond-to( 'tablet' ) {
+			height: 98px;
+		}
+	}
+
+	&.is-active {
+		z-index: 4;
+
+		// Style pseudo for bg 'panel'
+		// effect when active
+		&:after {
+			position: absolute;
+			top: -50px; left: -20px; right: -20px; // top = height of padding
+
+			background-color: $clrActiveBg;
+
+			@include respond-to( 'tablet' ) {
+				// imitate full-width aka. break out
+				// of wrapper
+				left: -2000px; right: -2000px;
+			}
+		}
+	}
 }
 
-.c-content-filter__control {
+.c-content-filter__menu {
+	width: 100%;
+
 	margin: 0;
-	padding: 0;
+	padding: 0 20px;
+
+	position: absolute;
+	left: -20px; // less site-wrapper padding
+	z-index: 2;
+
+	list-style: none; // is a <ul> (obvs)
+
+	visibility: hidden; // overwritten by .is-active
+	pointer-events: none; // overwritten by .is-active
+
+	.is-active & {
+		visibility: visible;
+		pointer-events: all;
+
+		// background-color: $clrActiveBg;
+
+		&:after {
+			// imitate full-width aka. break out
+			// of wrapper
+			content: '';
+
+			height: 100%;
+
+			position: absolute;
+			top: 3px; // because line-height on .c-content-filter__heading because browsers ¯\_(ツ)_/¯
+			left: -2000px; right: -2000px;
+			z-index: -1; // below elem
+
+			background-color: $clrActiveBg;
+		}
+	}
+}
+
+.c-content-filter__menu-item {
+	margin-bottom: 25px;
+
+	display: block;
+
+	font-size: 18px;
+	font-weight: bold;
+
+	@include respond-to( 'tablet' ) {
+		font-size: 19px;
+	}
+
+	&:last-of-type {
+		margin-bottom: 50px;
+	}
+}
+
+.c-content-filter__heading {
+	margin-bottom: 25px;
+
+	font-weight: normal;
+	line-height: 1; // force line-height because browsers ¯\_(ツ)_/¯
+	color: $clrDarkTeal;
+
+	@include respond-to( 'tablet' ) {
+		font-size: 20px;
+	}
+
+	.is-active & {
+		position: relative;
+		z-index: 3;
+
+		color: #FFFFFF;
+	}
+}
+
+.c-content-filter__input {
+	color: #FFFFFF;
+}
+
+.c-content-filter__active-category-text {
+	font-weight: bold;
+	text-decoration: underline;
+
+	cursor: pointer;
+
+	&:after {
+		content: '\00bb'; // right-chevron
+
+		margin-left: 5px;
+
+		display: inline-block;
+
+		transform: rotate(90deg);
+
+		.is-active & {
+			transform: rotate(-90deg);
+		}
+	}
+}
+
+// Hide filter if no-js
+.no-js .c-content-filter {
+	display: none;
 }

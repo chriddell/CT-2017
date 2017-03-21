@@ -10,13 +10,17 @@
 (function($){
 
 	// Vars
-	var $filterInput 			= $( '.c-content-filter__input' ),
-			$filterArea				= $( '.c-content-filter__canvas' ),
-			$filterElems			= $( '.c-content-filter__canvas .filterable' ),
-			$filterShowing		= $( '.c-content-filter__showing');
+	var $filterInput 				= $( '.c-content-filter__input' ),
+			$filterArea					= $( '.c-content-filter__canvas' ),
+			$filterElems				= $( '.c-content-filter__canvas .filterable' ),
+			$filterShowing			= $( '#filter-active-category'),
+			$filterMenu 				= $( '#filter-control-menu'),
+			$filterContainer		= $( '#filter' ),
+			$filterMenuTrigger	= $filterShowing;
 
 	$( document ).ready( function(){
 
+		// Change filter
 		$filterInput.click( function( e ){
 
 			// Prevent link follow
@@ -28,8 +32,20 @@
 			// Run the filter
 			runFilter( tagToMatch );
 
+			// Swap text on active
 			setText( $filterShowing, getText( this ) );
+
+			// Hide menu
+			toggleFilterMenu();
+
+			// Scroll to top of section
+			$('html, body').animate({
+				scrollTop: $('#main-content').offset().top
+			}, 1000 );
 		});
+
+		// Show/hide menu
+		$filterMenuTrigger.click(function(){ toggleFilterMenu(); });
 
 	});
 
@@ -73,6 +89,11 @@
 				$(this).css({ 'display': 'none '});
 			}
 		});
+	}
+
+	function toggleFilterMenu() {
+
+		$filterContainer.toggleClass('is-active');
 	}
 
 })(jQuery);
