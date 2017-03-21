@@ -103,16 +103,15 @@
 }
 
 .c-content-block__meta {
+	margin-bottom: 80px;
+
 	font-weight: bold;
 	font-size: 20px;
-
-	margin-bottom: 80px;
 }
 
 .c-content-block__read-more {
 	position: absolute;
-	bottom: 30px;
-	left: 30px;
+	bottom: 30px; left: 30px;
 
 	// Transform when parent is hovered
 	.c-content-block:hover &:after {
@@ -122,6 +121,13 @@
 			transform: none;
 		}
 	}
+}
+
+.c-content-block__share {
+	position: absolute;
+	right: 30px; bottom: 30px;
+
+	z-index: 3;
 }
 
 /**

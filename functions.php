@@ -52,6 +52,9 @@ function otm_scripts() {
 	 // Enqueue built versions of app and vendor scripts
 	 wp_enqueue_script( 'main-js', get_template_directory_uri() . '/assets/js/app/built/app.min.js', array( 'jquery' ), '1.0.0', true );
 	 wp_enqueue_script( 'lib', get_template_directory_uri() . '/assets/js/lib/built/lib.min.js', '', '1.0.0', true );
+
+	 // Enqueue social SDKs
+	 wp_enqueue_script( 'social-twitter', 'https://platform.twitter.com/widgets.js', '', '1.0.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'otm_scripts' );
 
