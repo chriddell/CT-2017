@@ -87,3 +87,7 @@
 .u-base-font-size {
 	font-size: $baseFontSize;
 }
+
+.u-no-hover:hover {
+	text-decoration: none;
+}

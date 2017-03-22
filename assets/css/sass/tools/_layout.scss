@@ -4,7 +4,7 @@
     Page layout classes. Generate object-oriented grid classes.
    ========================================================================== */
 
-.l-site-wrapper {
+.l-wrapper {
 	padding: 0 20px;
 
   display: block;
@@ -47,6 +47,11 @@
 }
 
 .l-post-page-content {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.l-pre-footer {
   padding-top: 40px;
   padding-bottom: 40px;
 }

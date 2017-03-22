@@ -71,7 +71,7 @@
 
     Page layout classes. Generate object-oriented grid classes.
    ========================================================================== */
-.l-site-wrapper {
+.l-wrapper {
   padding: 0 20px;
   display: block;
   max-width: 930px;
@@ -79,7 +79,7 @@
   margin-right: auto;
 }
 
-.l-site-wrapper:after {
+.l-wrapper:after {
   content: " ";
   display: block;
   clear: both;
@@ -119,6 +119,11 @@
 }
 
 .l-post-page-content {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.l-pre-footer {
   padding-top: 40px;
   padding-bottom: 40px;
 }
@@ -1332,7 +1337,8 @@ h2,
 h3,
 h4,
 h5,
-p {
+p,
+li {
   /**
 	 * Remove margin-top from everything b/c
 	 * they collapse and it's annoying
@@ -1594,6 +1600,50 @@ a:hover {
 /* Components
    ========================================================================== */
 /* ==========================================================================
+    READ MORE
+   
+		'Read more' link.
+   ========================================================================== */
+.c-read-more {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.c-read-more:after {
+  content: '\00bb';
+  margin-left: 5px;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: -webkit-transform 0.25s;
+          transition: transform 0.25s;
+}
+
+.c-read-more:hover {
+  text-decoration: none;
+}
+
+.c-read-more:hover:after,
+.c-read-more__parent:hover .c-read-more:after {
+  -webkit-transform: translateX(5px);
+      -ms-transform: translateX(5px);
+          transform: translateX(5px);
+}
+
+.touch .c-read-more:hover:after, .touch
+.c-read-more__parent:hover .c-read-more:after {
+  -webkit-transform: none;
+      -ms-transform: none;
+          transform: none;
+}
+
+.c-read-more--smaller {
+  font-size: 17px;
+}
+
+/* ==========================================================================
     SITE HEADER
 
     Header is a global component which is used across a lot of SS&C Advent
@@ -1681,15 +1731,22 @@ a:hover {
 }
 
 /* ==========================================================================
-    SITE FOOTER
+    FOOTER
 
-    Site footer
+    Footers:
+    	- #site-footer
+    	- #legal-footer
+    	- #dual-footer
+   ========================================================================== */
+/* Site Footer
    ========================================================================== */
 .c-site-footer {
-  padding: 20px 0;
   clear: both;
-  background: #000000;
   color: #FFFFFF;
+}
+
+.c-site-footer__section {
+  padding: 20px 0;
 }
 
 .c-site-footer__logo {
@@ -1698,14 +1755,62 @@ a:hover {
   display: block;
 }
 
-.c-site-footer__legal {
+/* Legal Footer
+   ========================================================================== */
+.c-legal-footer {
+  background: #000000;
+}
+
+.c-legal-footer__copy {
   margin: 0;
-  /**
-	 * Align with brand logo
-	 */
-  position: relative;
-  top: 13px;
   font-size: 13px;
+  line-height: 1.5;
+}
+
+/* Dual Footer
+   ========================================================================== */
+.c-dual-footer {
+  padding: 35px 0 30px;
+  background: #4d4d4d;
+}
+
+.c-dual-footer__link {
+  margin-bottom: 20px;
+  color: #FFFFFF;
+}
+
+@media (min-width: 767px) {
+  .c-dual-footer__link {
+    margin-bottom: 0;
+  }
+}
+
+.c-dual-footer__link-title {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.c-dual-footer__link-copy {
+  font-size: 16px;
+}
+
+.c-dual-footer__link-copy:last-of-type {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+    PRE-FOOTER
+
+    "Contact Us"
+   ========================================================================== */
+.c-pre-footer {
+  background-color: #333132;
+  color: #FFFFFF;
+  text-align: center;
+}
+
+.c-pre-footer__title {
+  font-size: 24px;
 }
 
 /* ==========================================================================
@@ -1825,6 +1930,21 @@ a:hover {
   text-decoration: none;
 }
 
+.c-btn--white {
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+  background-color: transparent;
+}
+
+.no-touch .c-btn--white:hover {
+  background-color: #FFFFFF;
+  color: #333132;
+}
+
+.c-btn--centered {
+  margin: 0 auto;
+}
+
 /* ==========================================================================
     MENU
    
@@ -1848,48 +1968,6 @@ a:hover {
     margin-bottom: 5px;
     float: none;
   }
-}
-
-/* ==========================================================================
-    READ MORE
-   
-		'Read more' link.
-   ========================================================================== */
-.c-read-more {
-  font-weight: bold;
-  font-size: 20px;
-}
-
-.c-read-more:after {
-  content: '\00bb';
-  margin-left: 5px;
-  display: inline-block;
-  text-decoration: none;
-  -webkit-transform: translateX(0);
-      -ms-transform: translateX(0);
-          transform: translateX(0);
-  -webkit-transition: -webkit-transform 0.25s;
-          transition: transform 0.25s;
-}
-
-.c-read-more:hover {
-  text-decoration: none;
-}
-
-.c-read-more:hover:after {
-  -webkit-transform: translateX(5px);
-      -ms-transform: translateX(5px);
-          transform: translateX(5px);
-}
-
-.touch .c-read-more:hover:after {
-  -webkit-transform: none;
-      -ms-transform: none;
-          transform: none;
-}
-
-.c-read-more--smaller {
-  font-size: 17px;
 }
 
 /* ==========================================================================
@@ -2182,18 +2260,6 @@ a:hover {
   left: 30px;
 }
 
-.c-content-block:hover .c-content-block__read-more:after {
-  -webkit-transform: translateX(5px);
-      -ms-transform: translateX(5px);
-          transform: translateX(5px);
-}
-
-.touch .c-content-block:hover .c-content-block__read-more:after {
-  -webkit-transform: none;
-      -ms-transform: none;
-          transform: none;
-}
-
 .c-content-block__share {
   position: absolute;
   right: 30px;
@@ -2293,18 +2359,6 @@ a:hover {
   .c-featured-item__title {
     font-size: 44px;
   }
-}
-
-.c-featured-item__main:hover .c-featured-item__read-more:after {
-  -webkit-transform: translateX(5px);
-      -ms-transform: translateX(5px);
-          transform: translateX(5px);
-}
-
-.touch .c-featured-item__main:hover .c-featured-item__read-more:after {
-  -webkit-transform: none;
-      -ms-transform: none;
-          transform: none;
 }
 
 /* ==========================================================================
@@ -2614,7 +2668,7 @@ a:hover {
 .c-article__main blockquote:after {
   content: close-quote;
   bottom: -20px;
-  right: 0;
+  right: -5px;
 }
 
 .c-article__main blockquote > p:last-of-type {
@@ -2836,6 +2890,10 @@ a:hover {
 
 .u-base-font-size {
   font-size: 20px;
+}
+
+.u-no-hover:hover {
+  text-decoration: none;
 }
 
 /* ==========================================================================

@@ -40,7 +40,7 @@
 
 <?php $img = get_field('featured_image'); ?>
 
-<article class="c-content-block c-content-block--<?php echo $category_slug; ?> l-col-12 u-clearfix filterable" data-tag="<?php echo $tags; ?>">
+<article class="c-content-block c-content-block--<?php echo $category_slug; ?> c-read-more__parent l-col-12 u-clearfix filterable" data-tag="<?php echo $tags; ?>">
 	<a href="<?php echo get_permalink(); ?>" class="u-cover-link c-content-block__cover-link"></a>
 
 	<span class="l-col-12 l-col-sml-6 c-content-block__side">

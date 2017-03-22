@@ -112,15 +112,6 @@
 .c-content-block__read-more {
 	position: absolute;
 	bottom: 30px; left: 30px;
-
-	// Transform when parent is hovered
-	.c-content-block:hover &:after {
-		transform: translateX(5px);
-
-		.touch & {
-			transform: none;
-		}
-	}
 }
 
 .c-content-block__share {

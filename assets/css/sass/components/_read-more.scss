@@ -25,7 +25,12 @@
 		text-decoration: none;
 	}
 
-	&:hover:after {
+	// Also activate hover state when parent
+	// is hovered. Add this class to the 
+	// parent which should activate the
+	// hover on the .c-read-more element
+	&:hover:after,
+	.c-read-more__parent:hover &:after {
 		transform: translateX(5px);
 
 		// Remove hover on .touch

@@ -26,7 +26,7 @@ get_header(); ?>
 <?php endif; ?>
 
 <div class="l-page-content c-page-content has-box-shadow u-match-body-bg u-pos-rel" id="main-content">
-	<span class="l-site-wrapper u-pos-rel u-clearfix">
+	<span class="l-wrapper u-pos-rel u-clearfix">
 
 		<!-- #filter -->
 		<div class="c-content-filter u-border-bottom" id="filter">

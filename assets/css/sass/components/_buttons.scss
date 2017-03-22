@@ -29,4 +29,19 @@
 
 		text-decoration: none;
 	}
+
+	&--white {
+		border-color: #FFFFFF;
+		color: #FFFFFF;
+		background-color: transparent;
+
+		.no-touch &:hover {
+			background-color: #FFFFFF;
+			color: $clrDarkestGrey;
+		}
+	}
+
+	&--centered {
+		margin: 0 auto;
+	}
 }

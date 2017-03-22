@@ -1,0 +1,75 @@
+/* ==========================================================================
+    FOOTER
+
+    Footers:
+    	- #site-footer
+    	- #legal-footer
+    	- #dual-footer
+   ========================================================================== */
+
+/* Site Footer
+   ========================================================================== */
+
+.c-site-footer {
+	clear: both;
+
+	color: #FFFFFF;
+}
+
+.c-site-footer__section {
+	padding: 20px 0;
+}
+
+.c-site-footer__logo {
+	height: 32px;
+	width: 138px;
+
+	display: block;
+}
+
+/* Legal Footer
+   ========================================================================== */
+
+.c-legal-footer {
+	background: #000000;
+}
+
+.c-legal-footer__copy {
+	margin: 0;
+
+	font-size: 13px;
+	line-height: 1.5;
+}
+
+/* Dual Footer
+   ========================================================================== */
+
+.c-dual-footer {
+	padding: 35px 0 30px;
+
+	background: $clrDarkGrey;
+}
+
+.c-dual-footer__link {
+	margin-bottom: 20px;
+
+	color: #FFFFFF;
+
+	@include respond-to( 'tablet' ) {
+		margin-bottom: 0;
+	}
+}
+
+.c-dual-footer__link-title {
+	margin-bottom: 10px;
+
+	font-size: 18px;
+}
+
+.c-dual-footer__link-copy {
+	font-size: 16px;
+
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+}

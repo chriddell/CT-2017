@@ -29,7 +29,7 @@
 	<a class="skip-link u-sr-only" href="#main-content"><?php _e( 'Skip to content', 'otm' ); ?></a>
 
 	<header role="banner" class="c-site-header has-box-shadow u-pos-rel">
-		<div class="l-site-wrapper">
+		<div class="l-wrapper">
 			<h1 class="c-site-title c-site-header__title">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?>	</a>
 			</h1>

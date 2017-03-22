@@ -70,14 +70,3 @@
 		font-size: 44px;
 	}
 }
-
-.c-featured-item__read-more {
-	.c-featured-item__main:hover &:after {
-		transform: translateX(5px);
-
-		// Remove hover style on .touch
-		.touch & {
-			transform: none;
-		}
-	}
-}

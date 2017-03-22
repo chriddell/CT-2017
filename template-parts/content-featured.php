@@ -32,8 +32,8 @@
 <?php $img = get_field('featured_image'); ?>
 
 <article class="c-featured-item" style="background-image: url(<?php echo $img['url'] ?>);">
-	<span class="l-site-wrapper u-pos-rel u-100-height">
-		<span class="c-featured-item__main l-col-12 l-col-sml-8">
+	<span class="l-wrapper u-pos-rel u-100-height">
+		<span class="c-featured-item__main c-read-more__parent l-col-12 l-col-sml-8">
 			<?php 
 
 				printf( '<a href="%s" class="u-cover-link"></a>', get_permalink() );

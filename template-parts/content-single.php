@@ -31,7 +31,7 @@ endif;
 <div class="l-hero l-hero--single c-hero c-hero--single" id="hero" style="background-image: url(<?php echo $img['url']; ?>);"></div>
 
 <div class="l-page-content c-page-content u-bg-white u-pos-rel" id="main-content">
-	<span class="l-site-wrapper u-pos-rel u-clearfix">
+	<span class="l-wrapper u-pos-rel u-clearfix">
 		<article class="l-main l-col-12 l-col-sml-8 l-col-med-9 u-clearfix c-article c-article--<?php echo $category_slug; ?>">
 			<header class="c-article__header">
 				<?php
@@ -87,9 +87,11 @@ endif;
 </div>
 	
 <div class="l-post-page-content">
-	<span class="l-site-wrapper u-clearfix">	
+	<span class="l-wrapper u-clearfix">	
 		<?php otm_show_related_posts(); ?>
 	</span>
 </div>
+
+<?php get_template_part( 'template-parts/pre-footer' ); ?>
 
 <?php get_footer();

@@ -14,9 +14,6 @@
 	}
 }
 
-.c-article__header {
-
-}
 
 /**
  * Alternative colours on titles 
@@ -177,7 +174,7 @@
 		&:after {
 			content: close-quote;
 
-			bottom: -20px; right: 0;
+			bottom: -20px; right: -5px;
 		}
 
 		> p:last-of-type {
