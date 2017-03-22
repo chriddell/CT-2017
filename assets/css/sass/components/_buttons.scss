@@ -1,0 +1,32 @@
+/* ==========================================================================
+    BUTTONS
+
+    Not necessarily <button>, but stylistic buttons.
+   ========================================================================== */
+
+.c-btn {
+	padding: 10px;
+	border: 2px solid $clrDarkTeal;
+	border-radius: 6px;
+
+	display: block;
+
+	font-size: 17px;
+	font-weight: bold;
+	text-align: center;
+	color: $clrDarkTeal;
+
+	transition: color 0.25s, background-color 0.25s;
+
+	@include respond-to( 'tablet' ) {
+		max-width: 200px;
+	}
+
+	// Only add hover effects if no touch
+	.no-touch &:hover {
+		background-color: $clrDarkTeal;
+		color: #FFFFFF;
+
+		text-decoration: none;
+	}
+}

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* ==========================================================================
    style.css
    ========================================================================== */
@@ -19,6 +20,13 @@
   font-family: 'Gotham';
   font-weight: lighter;
   src: url(../fonts/Gotham-Light.eot?) format("eot"), url(../fonts/Gotham-Light.woff) format("woff"), url(../fonts/Gotham-Light.otf) format("opentype");
+}
+
+@font-face {
+  font-family: 'Gotham';
+  font-weight: lighter;
+  font-style: italic;
+  src: url(../fonts/Gotham-LightItalic.eot?) format("eot"), url(../fonts/Gotham-LightItalic.woff) format("woff"), url(../fonts/Gotham-LightItalic.otf) format("opentype");
 }
 
 @font-face {
@@ -91,6 +99,13 @@
   .l-main,
   .l-sidebar {
     clear: none;
+  }
+}
+
+@media (min-width: 767px) {
+  .l-sidebar--article {
+    padding-left: 30px;
+    box-sizing: border-box;
   }
 }
 
@@ -1781,6 +1796,36 @@ a:hover {
 }
 
 /* ==========================================================================
+    BUTTONS
+
+    Not necessarily <button>, but stylistic buttons.
+   ========================================================================== */
+.c-btn {
+  padding: 10px;
+  border: 2px solid #235164;
+  border-radius: 6px;
+  display: block;
+  font-size: 17px;
+  font-weight: bold;
+  text-align: center;
+  color: #235164;
+  -webkit-transition: color 0.25s, background-color 0.25s;
+          transition: color 0.25s, background-color 0.25s;
+}
+
+@media (min-width: 767px) {
+  .c-btn {
+    max-width: 200px;
+  }
+}
+
+.no-touch .c-btn:hover {
+  background-color: #235164;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+/* ==========================================================================
     MENU
    
 		Menu styles.
@@ -1841,6 +1886,10 @@ a:hover {
   -webkit-transform: none;
       -ms-transform: none;
           transform: none;
+}
+
+.c-read-more--smaller {
+  font-size: 17px;
 }
 
 /* ==========================================================================
@@ -2252,6 +2301,12 @@ a:hover {
           transform: translateX(5px);
 }
 
+.touch .c-featured-item__main:hover .c-featured-item__read-more:after {
+  -webkit-transform: none;
+      -ms-transform: none;
+          transform: none;
+}
+
 /* ==========================================================================
     CONTENT FILTER
 
@@ -2422,7 +2477,7 @@ a:hover {
 
 .c-article__meta {
   padding: 25px 0;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   border-top: 1px solid #cccccc;
   border-bottom: 1px solid #cccccc;
   font-size: 20px;
@@ -2451,8 +2506,119 @@ a:hover {
 
 @media (min-width: 767px) {
   .c-article__share {
-    margin-bottom: 46px;
+    margin-bottom: 48px;
   }
+}
+
+.c-article__cta {
+  margin-top: 40px;
+}
+
+@media (min-width: 767px) {
+  .c-article__cta {
+    margin-bottom: 25px;
+  }
+}
+
+/* WYSIWYG Content
+   ========================================================================== */
+.c-article__main {
+  border-bottom: 1px solid #cccccc;
+}
+
+.c-article__main > *:last-child {
+  margin-bottom: 40px;
+}
+
+.c-article__main p {
+  margin-bottom: 15px;
+}
+
+.c-article__main ol,
+.c-article__main ul {
+  margin: 0 0 1.5em;
+  padding: 0;
+  counter-reset: item;
+}
+
+.c-article__main ol > li,
+.c-article__main ul > li {
+  margin: 0;
+  padding: 0 0 0 2em;
+  text-indent: -2em;
+  list-style-type: none;
+  counter-increment: item;
+}
+
+.c-article__main ol > li:before,
+.c-article__main ul > li:before {
+  width: 1em;
+  padding-right: 0.5em;
+  display: inline-block;
+  font-weight: bold;
+  text-align: right;
+}
+
+.c-article__main ol > li:before {
+  content: counter(item) ".";
+}
+
+.c-article__main ul > li {
+  text-indent: -2.5em;
+}
+
+.c-article__main ul > li:before {
+  content: '\2022';
+}
+
+.c-article__main blockquote {
+  width: 100%;
+  padding: 0;
+  margin: 15px 0 30px;
+  float: left;
+  position: relative;
+  color: #0a85c7;
+  font-style: italic;
+  font-size: 28px;
+  box-sizing: border-box;
+  quotes: "“" "”" "‘" "’";
+}
+
+@media (min-width: 767px) {
+  .c-article__main blockquote {
+    width: 55%;
+    margin: 40px;
+  }
+}
+
+.c-article__main blockquote:before, .c-article__main blockquote:after {
+  display: none;
+  position: absolute;
+  font-size: 84px;
+  line-height: 0;
+}
+
+@media (min-width: 767px) {
+  .c-article__main blockquote:before, .c-article__main blockquote:after {
+    display: block;
+  }
+}
+
+.c-article__main blockquote:before {
+  content: open-quote;
+  top: 20px;
+  left: -40px;
+  font-style: normal;
+}
+
+.c-article__main blockquote:after {
+  content: close-quote;
+  bottom: -20px;
+  right: 0;
+}
+
+.c-article__main blockquote > p:last-of-type {
+  margin-bottom: 0;
 }
 
 /* ==========================================================================

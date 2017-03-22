@@ -27,6 +27,16 @@
   }
 }
 
+.l-sidebar--article {
+
+  // Pseudo smaller-width on sidebar for
+  // single posts, because design ¯\_(ツ)_/¯
+  @include respond-to( 'tablet' ) {
+    padding-left: 30px;
+    box-sizing: border-box;
+  }
+}
+
 .l-hero {
   height: 390px;
 }

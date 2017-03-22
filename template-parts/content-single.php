@@ -32,7 +32,7 @@ endif;
 
 <div class="l-page-content c-page-content u-bg-white u-pos-rel" id="main-content">
 	<span class="l-site-wrapper u-pos-rel u-clearfix">
-		<article class="l-main l-col-12 l-col-sml-7 l-col-med-8 u-clearfix c-article c-article--<?php echo $category_slug; ?>">
+		<article class="l-main l-col-12 l-col-sml-8 l-col-med-9 u-clearfix c-article c-article--<?php echo $category_slug; ?>">
 			<header class="c-article__header">
 				<?php
 					// Title
@@ -56,8 +56,13 @@ endif;
 					) );
 				?>
 			</div>
+			<?php
+				if ( get_field( 'whitepaper_url' ) ) : ?>
+					<a href="<?php the_field('whitepaper_url'); ?>" class="c-article__cta c-btn c-read-more c-read-more--smaller" target="_blank">Read the whitepaper</a>
+			<?php 
+				endif; ?>
 		</article>
-		<aside class="l-sidebar c-sidebar c-article__sidebar l-col-sml-4-last l-col-med-3-last">
+		<aside class="l-sidebar l-sidebar--article c-sidebar c-article__sidebar l-col-sml-4-last l-col-med-3-last">
 
 			<!-- #social-share -->
 			<div class="c-share c-article__share" id="social-share">
