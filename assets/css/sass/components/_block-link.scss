@@ -1,0 +1,32 @@
+/* ==========================================================================
+    BLOCK LINK
+
+    Generally consists of:
+	
+		- Container (an <a> tag)
+    	- Title
+    	- Copy
+   ========================================================================== */
+
+.c-block-link {
+	display: block;
+
+	&--in-sidebar {
+		margin-bottom: 30px;
+	}
+}
+
+.c-block-link__title {
+	margin-bottom: 10px;
+
+	font-size: 21px;
+	font-weight: normal;
+}
+
+.c-block-link__copy {
+	font-size: 16px;
+
+	.c-block-link--in-sidebar & {
+		font-size: 19px;
+	}
+}

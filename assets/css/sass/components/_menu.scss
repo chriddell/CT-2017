@@ -17,13 +17,11 @@
 
 .c-menu__item {
 	margin-right: 5px;
+	margin-bottom: 5px;
 
 	float: left;
 
 	@include respond-to( 'tablet' ) {
-		margin-right: 0;
-		margin-bottom: 5px;
-
 		float: none;
 	}
 }

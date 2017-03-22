@@ -10,13 +10,14 @@
 (function($){
 
 	// Vars
-	var $filterInput 				= $( '.c-content-filter__input' ),
-			$filterArea					= $( '.c-content-filter__canvas' ),
-			$filterElems				= $( '.c-content-filter__canvas .filterable' ),
-			$filterShowing			= $( '#filter-active-category'),
-			$filterMenu 				= $( '#filter-control-menu'),
-			$filterContainer		= $( '#filter' ),
-			$filterMenuTrigger	= $filterShowing;
+	var $filterInput 							= $( '.c-content-filter__input' ),
+			$filterFromSidebarInput 	= $( '.c-content-filter__sidebar-input'),
+			$filterArea								= $( '.c-content-filter__canvas' ),
+			$filterElems							= $( '.c-content-filter__canvas .filterable' ),
+			$filterShowing						= $( '#filter-active-category'),
+			$filterMenu 							= $( '#filter-control-menu'),
+			$filterContainer					= $( '#filter' ),
+			$filterMenuTrigger				= $filterShowing;
 
 	$( document ).ready( function(){
 
@@ -35,8 +36,11 @@
 			// Swap text on active
 			setText( $filterShowing, getText( this ) );
 
-			// Hide menu
-			toggleFilterMenu();
+			// Hide menu if input came from within
+			// it (didn't come from outside it)
+			if ( !$(this).hasClass('js-no-menu-toggle') ) {
+				toggleFilterMenu();
+			}
 
 			// Scroll to top of section
 			$('html, body').animate({

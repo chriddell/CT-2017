@@ -30,12 +30,15 @@
 		if ( $my_query->have_posts() ) :
 
 			// Section Title
-			printf( '<h2 class="c-section-title">%s</h2>', __('Most popular', 'otm' ) );
+			printf( '<h2 class="c-section-title">%s</h2>', __( 'Most popular', 'otm' ) );
 
 			while ( $my_query->have_posts() ) : $my_query->the_post(); 
 
+				// Containers etc.
+				echo '<a href="' . get_permalink() . '" class="c-block-link c-block-link--in-sidebar c-read-more__parent u-no-hover">';
+
 				// Title
-				the_title('<h3>', '</h3>');
+				the_title('<h3 class="c-block-link__title">', '</h3>');
 
 				// Category
 				$categories = get_the_category();
@@ -46,12 +49,10 @@
 					 * returned anyway b/c we're using radio
 					 * buttons for category selection in admin
 					 */
-					echo esc_html( $categories[0]->name );
+					echo '<p class="c-block-link__copy c-read-more">' . esc_html( $categories[0]->name ) . '</p>';
 				endif;
 
-				// Views (for dev purposes)
-				echo '<p>' . otm_get_post_views( get_the_ID() ) . '</p>';
-
+				echo '</a>';
 			endwhile;
 		endif;
 

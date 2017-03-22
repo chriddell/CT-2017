@@ -75,14 +75,14 @@ function otm_render_global_tags() {
 	if ( $tags ) :
 
 		// Render title
-		printf( '<h3 class="c-section-title">%s</h3>', __('Tags', 'otm' ) );
+		printf( '<h3 class="c-section-title">%s</h3>', __( 'Tags', 'otm' ) );
 
 		// Start a list
-		echo '<ul>';
+		echo '<ul class="c-menu c-tag-list">';
 
 		// Render each tag
 		foreach ( $tags as $tag ) {
-			echo '<li>' . $tag->name . '</li>';
+			echo '<li class="c-menu__item c-tag-list__item c-read-more c-content-filter__input js-no-menu-toggle" data-tag="' . $tag->slug . '">' . $tag->name . '</li>';
 		}
 	endif;
 }

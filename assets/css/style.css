@@ -1644,6 +1644,37 @@ a:hover {
 }
 
 /* ==========================================================================
+    BLOCK LINK
+
+    Generally consists of:
+	
+		- Container (an <a> tag)
+    	- Title
+    	- Copy
+   ========================================================================== */
+.c-block-link {
+  display: block;
+}
+
+.c-block-link--in-sidebar {
+  margin-bottom: 30px;
+}
+
+.c-block-link__title {
+  margin-bottom: 10px;
+  font-size: 21px;
+  font-weight: normal;
+}
+
+.c-block-link__copy {
+  font-size: 16px;
+}
+
+.c-block-link--in-sidebar .c-block-link__copy {
+  font-size: 19px;
+}
+
+/* ==========================================================================
     SITE HEADER
 
     Header is a global component which is used across a lot of SS&C Advent
@@ -1788,10 +1819,7 @@ a:hover {
 .c-dual-footer__link-title {
   margin-bottom: 10px;
   font-size: 18px;
-}
-
-.c-dual-footer__link-copy {
-  font-size: 16px;
+  font-weight: bold;
 }
 
 .c-dual-footer__link-copy:last-of-type {
@@ -1959,13 +1987,12 @@ a:hover {
 
 .c-menu__item {
   margin-right: 5px;
+  margin-bottom: 5px;
   float: left;
 }
 
 @media (min-width: 767px) {
   .c-menu__item {
-    margin-right: 0;
-    margin-bottom: 5px;
     float: none;
   }
 }
@@ -2465,7 +2492,7 @@ a:hover {
   color: #FFFFFF;
 }
 
-.c-content-filter__input {
+a.c-content-filter__input {
   color: #FFFFFF;
 }
 
@@ -2492,6 +2519,19 @@ a:hover {
 
 .no-js .c-content-filter {
   display: none;
+}
+
+/* ==========================================================================
+    TAG LIST
+   ========================================================================== */
+.c-tag-list__item {
+  cursor: pointer;
+}
+
+@media (min-width: 767px) {
+  .c-tag-list__item {
+    float: left;
+  }
 }
 
 /* ==========================================================================
