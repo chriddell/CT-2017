@@ -1,0 +1,29 @@
+/* ==========================================================================
+    MENU
+   
+		Menu styles.
+   ========================================================================== */
+
+.c-menu {
+	margin: 0;
+	padding: 0;
+
+	list-style: none;
+
+	font-size: 20px;
+
+	@extend .u-clearfix;
+}
+
+.c-menu__item {
+	margin-right: 5px;
+
+	float: left;
+
+	@include respond-to( 'tablet' ) {
+		margin-right: 0;
+		margin-bottom: 5px;
+
+		float: none;
+	}
+}

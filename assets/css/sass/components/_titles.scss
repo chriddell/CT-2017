@@ -7,9 +7,44 @@
 .c-section-title {
 	margin-bottom: 30px;
 
+	font-size: 24px;
 	font-family: $fontHeading;
+	font-weight: lighter;
+	color: $clrPurple;
 }
 
 .c-article-title {
-	font-size: 40px;
+	font-size: 30px;
+	font-family: $fontHeading;
+	font-weight: lighter;
+
+	@include respond-to( 'tablet' ) {
+		font-size: 40px;
+	}
+}
+
+.c-menu-title {
+	margin-bottom: 5px;
+
+	font-family: $fontMain;
+	font-weight: normal;
+	font-size: 20px;
+	color: $clrDarkTeal;
+
+	@include respond-to( 'tablet' ) {
+		margin-bottom: 10px;
+	}
+}
+
+.c-aside-title {
+	margin-bottom: 5px;
+
+	font-family: $fontMain;
+	font-weight: normal;
+	font-size: 20px;
+	color: $clrBorders;
+
+	@include respond-to( 'tablet' ) {
+		margin-bottom: 10px;
+	}
 }

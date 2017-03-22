@@ -24,7 +24,7 @@
 	white-space: nowrap; // fix inline-block/50% width bug (http://stackoverflow.com/a/10592283)
 
 	@include respond-to( 'desktop' ) {
-		padding: 32px 0 20px;
+		padding: 26px 0 26px;
 	}
 
 	&:before {
@@ -57,6 +57,10 @@
 	font-family: 'Gotham', 'Helvetica', 'Arial', sans-serif;
 	font-weight: normal;
 	font-size: 22px;
+
+	@include respond-to( 'desktop' ) {
+		font-size: 30px;
+	}
 
 	// WP
 	> a {

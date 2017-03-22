@@ -37,7 +37,7 @@ window.fbAsyncInit = function() {
 (function($){
 
 	// Vars
-	var $shareToFacebook		= $('.c-share__fb');
+	var $shareToFacebook		= $('.c-share--fb');
 
 	$(document).ready(function(){
 
@@ -74,7 +74,7 @@ window.fbAsyncInit = function() {
 (function($){
 
 	// Vars
-	var $shareToLinkedIn 	= $('.c-share__li');
+	var $shareToLinkedIn 	= $('.c-share--li');
 
 	$(document).ready(function(){
 

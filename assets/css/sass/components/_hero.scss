@@ -6,8 +6,15 @@
 
 .c-hero {
 	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 .c-hero--single {
-	height: 410px;
+	height: 260px;
+	max-height: 90vh;
+
+	@include respond-to( 'tablet' ) {
+		height: 410px;
+	}
 }

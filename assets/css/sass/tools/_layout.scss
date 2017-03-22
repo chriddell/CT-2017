@@ -19,6 +19,12 @@
 .l-main,
 .l-sidebar {
   padding-top: 40px;
+
+  clear: both;
+
+  @include respond-to( 'tablet' ) {
+    clear: none;
+  }
 }
 
 .l-hero {

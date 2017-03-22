@@ -17,7 +17,7 @@
 
 @font-face {
   font-family: 'Gotham';
-  font-weight: bold;
+  font-weight: lighter;
   src: url(../fonts/Gotham-Light.eot?) format("eot"), url(../fonts/Gotham-Light.woff) format("woff"), url(../fonts/Gotham-Light.otf) format("opentype");
 }
 
@@ -84,6 +84,14 @@
 .l-main,
 .l-sidebar {
   padding-top: 40px;
+  clear: both;
+}
+
+@media (min-width: 767px) {
+  .l-main,
+  .l-sidebar {
+    clear: none;
+  }
 }
 
 .l-hero {
@@ -1294,11 +1302,14 @@ body {
 }
 
 html {
-  font-size: 16px;
+  font-size: 20px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: antialiased;
 }
 
 body {
   background-color: #f4f4f4;
+  color: #6d6e71;
 }
 
 h1,
@@ -1590,7 +1601,7 @@ a:hover {
 
 @media (min-width: 1025px) {
   .c-site-header {
-    padding: 32px 0 20px;
+    padding: 26px 0 26px;
   }
 }
 
@@ -1619,6 +1630,12 @@ a:hover {
   font-family: 'Gotham', 'Helvetica', 'Arial', sans-serif;
   font-weight: normal;
   font-size: 22px;
+}
+
+@media (min-width: 1025px) {
+  .c-site-header__title {
+    font-size: 30px;
+  }
 }
 
 .c-site-header__title > a {
@@ -1717,11 +1734,75 @@ a:hover {
    ========================================================================== */
 .c-section-title {
   margin-bottom: 30px;
+  font-size: 24px;
   font-family: "Gotham", Helvetica, Arial, sans-serif;
+  font-weight: lighter;
+  color: #592d5f;
 }
 
 .c-article-title {
-  font-size: 40px;
+  font-size: 30px;
+  font-family: "Gotham", Helvetica, Arial, sans-serif;
+  font-weight: lighter;
+}
+
+@media (min-width: 767px) {
+  .c-article-title {
+    font-size: 40px;
+  }
+}
+
+.c-menu-title {
+  margin-bottom: 5px;
+  font-family: "MyriadPro", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-size: 20px;
+  color: #235164;
+}
+
+@media (min-width: 767px) {
+  .c-menu-title {
+    margin-bottom: 10px;
+  }
+}
+
+.c-aside-title {
+  margin-bottom: 5px;
+  font-family: "MyriadPro", Helvetica, Arial, sans-serif;
+  font-weight: normal;
+  font-size: 20px;
+  color: #cccccc;
+}
+
+@media (min-width: 767px) {
+  .c-aside-title {
+    margin-bottom: 10px;
+  }
+}
+
+/* ==========================================================================
+    MENU
+   
+		Menu styles.
+   ========================================================================== */
+.c-menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 20px;
+}
+
+.c-menu__item {
+  margin-right: 5px;
+  float: left;
+}
+
+@media (min-width: 767px) {
+  .c-menu__item {
+    margin-right: 0;
+    margin-bottom: 5px;
+    float: none;
+  }
 }
 
 /* ==========================================================================
@@ -1884,7 +1965,7 @@ a:hover {
 
 @media (min-width: 767px) {
   .c-carousel--related .c-carousel__control.next {
-    right: calc( 33.3% - 50px - 6px);
+    right: calc( 33.3% - 50px - 7px);
   }
 }
 
@@ -1904,10 +1985,19 @@ a:hover {
    ========================================================================== */
 .c-hero {
   background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .c-hero--single {
-  height: 410px;
+  height: 260px;
+  max-height: 90vh;
+}
+
+@media (min-width: 767px) {
+  .c-hero--single {
+    height: 410px;
+  }
 }
 
 /* ==========================================================================
@@ -2296,6 +2386,76 @@ a:hover {
 }
 
 /* ==========================================================================
+    ARTICLE
+   
+		Single post.
+   ========================================================================== */
+.c-article {
+  padding-top: 0;
+}
+
+@media (min-width: 767px) {
+  .c-article__sidebar {
+    padding-top: 0;
+  }
+}
+
+/**
+ * Alternative colours on titles 
+ * and meta dependent on category
+ */
+.c-article--insights .c-article__title {
+  color: #70a8ae;
+}
+
+.c-article--infographic .c-article__title {
+  color: #1c7293;
+}
+
+.c-article--whitepaper .c-article__title {
+  color: #cc6932;
+}
+
+.c-article--campaign .c-article__title {
+  color: #592d5f;
+}
+
+.c-article__meta {
+  padding: 25px 0;
+  margin-bottom: 30px;
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+  font-size: 20px;
+  color: #235164;
+}
+
+@media (min-width: 767px) {
+  .c-article__meta {
+    padding-bottom: 20px;
+  }
+}
+
+.c-article__meta-item {
+  margin: 0;
+}
+
+@media (min-width: 767px) {
+  .c-article__date {
+    text-align: right;
+  }
+}
+
+.c-article__share {
+  margin-bottom: 25px;
+}
+
+@media (min-width: 767px) {
+  .c-article__share {
+    margin-bottom: 46px;
+  }
+}
+
+/* ==========================================================================
     SHARE
 
     Share icon and it's components, also animations.
@@ -2314,24 +2474,28 @@ a:hover {
 }
 
 .c-share__elem {
-  height: 28px;
-  width: 28px;
-  padding: 4px;
-  display: block;
-  position: absolute;
-  border-radius: 100%;
-  background-color: #235164;
   background-repeat: no-repeat;
   background-size: 18px 18px;
   background-clip: content-box;
   background-position: center center;
+}
+
+/* Circles
+   ========================================================================== */
+.c-share__circle {
+  height: 28px;
+  width: 28px;
+  padding: 4px;
+  border-radius: 100%;
+  display: block;
+  position: absolute;
   opacity: 0;
   pointer-events: none;
   -webkit-transition: -webkit-transform 0.25s ease, opacity 0.15s ease;
           transition: transform 0.25s ease, opacity 0.15s ease;
 }
 
-.c-share__elem:nth-of-type(1) {
+.c-share__circle:nth-of-type(1) {
   left: 5px;
   top: -45px;
   -webkit-transform: translate3d(-2px, 48px, 0) scale(0);
@@ -2340,7 +2504,7 @@ a:hover {
           transition-delay: 0.2s;
 }
 
-.c-share__elem:nth-of-type(2) {
+.c-share__circle:nth-of-type(2) {
   left: -32px;
   top: -15px;
   -webkit-transform: translate3d(35px, 18px, 0) scale(0);
@@ -2349,41 +2513,66 @@ a:hover {
           transition-delay: 0.1s;
 }
 
-.c-share__elem:nth-of-type(3) {
+.c-share__circle:nth-of-type(3) {
   left: -25px;
   top: 30px;
   -webkit-transform: translate3d(28px, -27px, 0) scale(0);
           transform: translate3d(28px, -27px, 0) scale(0);
 }
 
-.is-active .c-share__elem {
+.is-active .c-share__circle {
   opacity: 1;
   pointer-events: all;
   -webkit-transform: translate3d(0, 0, 0) scale(1);
           transform: translate3d(0, 0, 0) scale(1);
 }
 
-.c-share__fb {
+.c-share__circle--fb {
   background-color: #3b5998;
   background-image: url(../media/img/social/fb-icon.svg);
 }
 
-.c-share__tw {
+.c-share__circle--tw {
   background-color: #4099FF;
   background-image: url(../media/img/social/tw-icon.svg);
 }
 
-.c-share__li {
+.c-share__circle--li {
   background-color: #007bb6;
   background-image: url(../media/img/social/li-icon.svg);
 }
 
-.c-share__li {
+.c-share__circle--li {
   background-size: 16px 16px;
 }
 
-.c-share__tw {
+.c-share__circle--tw {
   background-size: 16px 16px;
+}
+
+/* Squares
+   ========================================================================== */
+.c-share__square {
+  height: 32px;
+  width: 32px;
+  border: 1px solid #cccccc;
+  display: inline-block;
+}
+
+.c-share__square:not(:last-of-type) {
+  margin-right: 15px;
+}
+
+.c-share__square--fb {
+  background-image: url(../media/img/social/fb-icon-grey.svg);
+}
+
+.c-share__square--tw {
+  background-image: url(../media/img/social/tw-icon-grey.svg);
+}
+
+.c-share__square--li {
+  background-image: url(../media/img/social/li-icon-grey.svg);
 }
 
 /* Trumps
@@ -2415,7 +2604,7 @@ a:hover {
   border: 2px solid #235164;
 }
 
-.u-clearfix:after {
+.u-clearfix:after, .c-menu:after {
   content: '';
   display: table;
   clear: both;
@@ -2423,14 +2612,6 @@ a:hover {
 
 .u-border-bottom {
   border-bottom: 1px solid #cccccc;
-}
-
-.u-heading {
-  font-family: "Gotham", Helvetica, Arial, sans-serif;
-}
-
-.u-bold {
-  font-weight: bold;
 }
 
 .u-hidden-mobile {
@@ -2459,6 +2640,10 @@ a:hover {
   float: left;
 }
 
+.u-clear-both {
+  clear: both;
+}
+
 .u-100-height {
   height: 100%;
 }
@@ -2469,6 +2654,22 @@ a:hover {
 
 .u-bg-white {
   background-color: #FFFFFF;
+}
+
+.u-dark-teal {
+  color: #235164;
+}
+
+.u-heading {
+  font-family: "Gotham", Helvetica, Arial, sans-serif;
+}
+
+.u-bold {
+  font-weight: bold;
+}
+
+.u-base-font-size {
+  font-size: 20px;
 }
 
 /* ==========================================================================

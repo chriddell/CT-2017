@@ -112,7 +112,7 @@
 	 */
 	.c-carousel--related & {
 		@include respond-to( 'tablet' ) {
-			right: calc( 33.3% - 50px - 6px ); // (100% - width of carousel item) - control width - margin-right
+			right: calc( 33.3% - 50px - 7px ); // (100% - width of carousel item) - control width - margin-right
 		}
 	}
 }

@@ -92,7 +92,7 @@ function otm_render_global_tags() {
  * based on post_tags
  *
  */
-function otm_related_posts() {
+function otm_show_related_posts() {
 
 	$orig_post = $post;
 	global $post;
@@ -121,7 +121,7 @@ function otm_related_posts() {
 		if ( $my_query->have_posts() ) :
 
 			// Print a title
-			printf( '<h2>%s</h2>', __( 'Related content', 'otm' ) );
+			printf( '<h2 class="c-section-title">%s</h2>', __( 'Related content', 'otm' ) );
 
 			// Markup
 			echo '<aside id="related" role="complementary" class="c-carousel--related owl-carousel">';
@@ -189,7 +189,7 @@ add_action( 'init', 'otm_solutions_tax_init' );
  * Show the related solutions (custom taxonomy)
  * of a post
  */
-function otm_render_related_solutions() {
+function otm_show_related_solutions() {
 
 	// Get taxonomy terms
 	$related_solutions = get_the_terms( $post->ID, 'solutions' );
@@ -197,14 +197,19 @@ function otm_render_related_solutions() {
 	if ( $related_solutions ) :
 
 		// Title
-		echo '<h3>' . __( 'Related Solutions: ', 'otm' ) . '</h3>';
+		echo '<div class="c-article__meta">';
+		echo '<h3 class="c-menu-title">' . __( 'Related Solutions: ', 'otm' ) . '</h3>';
+		echo '<ul class="c-menu">';
 
 		// Loop taxonomy terms
 		foreach ( $related_solutions as $solution ) {
 
 			// Render
-			echo '<li>' . '<a href="//' . get_field( 'external_url', $solution ) . '" target="_blank">' . $solution->name . '</a>' . '</li>';
+			echo '<li class="c-menu__item">' . '<a href="//' . get_field( 'external_url', $solution ) . '" target="_blank" class="c-read-more">' . $solution->name . '</a>' . '</li>';
 		}
+
+		echo '</ul>';
+		echo '</div>';
 	endif;
 }
 

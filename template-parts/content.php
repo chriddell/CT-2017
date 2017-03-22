@@ -67,13 +67,13 @@
 	<aside class="c-share c-content-block__share" id="social-share">
 		<h4 class="c-share__trigger"><span class="u-sr-only">Share</span></h4>
 		<!-- FB is share using the Javascript SDK https://developers.facebook.com/docs/sharing/reference/share-dialog#jssdk -->
-		<a href="#0" class="c-share__fb c-share__elem" data-url="<?php the_permalink(); ?>"><span class="u-sr-only">Share to Facebook</span></a>
+		<a href="#0" class="c-share__elem c-share__circle c-share__circle--fb c-share--fb" data-url="<?php the_permalink(); ?>"><span class="u-sr-only">Share to Facebook</span></a>
 
 		<!-- Twitter is share using Web Intents https://dev.twitter.com/web/intents  -->
-		<a href="https://twitter.com/intent/tweet?text=<?php the_title(); ?>&url=<?php echo urlencode( get_permalink() ); ?>" class="c-share__tw c-share__elem"><span class="u-sr-only">Share to Twitter</span></a>
+		<a href="https://twitter.com/intent/tweet?text=<?php the_title(); ?>&url=<?php echo urlencode( get_permalink() ); ?>" class="c-share__elem c-share__circle c-share__circle--tw c-share--tw"><span class="u-sr-only">Share to Twitter</span></a>
 
 		<!-- LinkedIn is shared using Web Intents but we have custom JS to open as pop-up -->
-		<a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo urlencode( get_permalink() ); ?>&title=<?php the_title(); ?>&source=SS%26C%20Advent" class="c-share__li c-share__elem"><span class="u-sr-only">Share to LinkedIn</span></a>
+		<a href="https://www.linkedin.com/shareArticle?mini=true&url=<?php echo urlencode( get_permalink() ); ?>&title=<?php the_title(); ?>&source=SS%26C%20Advent" class="c-share__elem c-share__circle c-share__circle--li c-share--li"><span class="u-sr-only">Share to LinkedIn</span></a>
 	</aside>
 	<!-- / #social-share -->
 </article>

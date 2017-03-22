@@ -1,0 +1,65 @@
+/* ==========================================================================
+    ARTICLE
+   
+		Single post.
+   ========================================================================== */
+
+.c-article {
+	padding-top: 0;
+}
+
+.c-article__sidebar {
+	@include respond-to( 'tablet' ) {
+		padding-top: 0;
+	}
+}
+
+.c-article__header {
+
+}
+
+/**
+ * Alternative colours on titles 
+ * and meta dependent on category
+ */
+@each $cat, $color in $categoriesMap {
+	.c-article--#{$cat} {
+
+		.c-article__title {
+			color: $color;
+		}
+	}
+}
+
+.c-article__meta {
+	padding: 25px 0;
+	margin-bottom: 30px;
+
+	border-top: 1px solid $clrBorders;
+	border-bottom: 1px solid $clrBorders;
+
+	font-size: 20px;
+	color: $clrDarkTeal;
+
+	@include respond-to( 'tablet' ) {
+		padding-bottom: 20px;
+	}
+
+	&-item {
+		margin: 0;
+	}
+}
+
+.c-article__date {
+	@include respond-to( 'tablet' ) {
+		text-align: right;
+	}
+}
+
+.c-article__share {
+	margin-bottom: 25px;
+
+	@include respond-to( 'tablet' ) {
+		margin-bottom: 46px;
+	}
+}

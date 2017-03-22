@@ -14,11 +14,14 @@ body {
 }
 
 html {
-	font-size: 16px;
+	font-size: $baseFontSize;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: antialiased;
 }
 
 body {
 	background-color: #f4f4f4;
+	color: #6d6e71;
 }
 
 h1,
