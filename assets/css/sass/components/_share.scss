@@ -111,13 +111,25 @@ $brandColorsMap: (
 
 	display: inline-block;
 
+	transition: background-color 0.25s;
+
 	&:not(:last-of-type) {
 		margin-right: 15px;
+	}
+
+	&:hover {
+		background-color: rgba( $clrBorders, 0.25 );
 	}
 }
 
 @each $brand, $color in $brandColorsMap {
 	.c-share__square--#{$brand} {
 		background-image: url(../media/img/social/#{$brand}-icon-grey.svg);
+
+		&:hover,
+		&:active,
+		&:focus {
+			background-color: #{$color};
+		}
 	}
 }

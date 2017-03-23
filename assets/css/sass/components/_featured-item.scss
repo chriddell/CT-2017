@@ -70,3 +70,18 @@
 		font-size: 44px;
 	}
 }
+
+
+/**
+ * Alternative colours on titles 
+ * dependent on category
+ */
+@each $cat, $color in $categoriesMap {
+	.c-featured-item--#{$cat} {
+		background-color: $color;
+		
+		.c-featured-item__title {
+			color: $color;
+		}
+	}
+}

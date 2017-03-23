@@ -14,7 +14,7 @@ $clrActiveBg: rgba( $clrDarkTeal, 0.9 );
 	&:after {
 		content: '';
 
-		height: 93px; // meets start of .c-content-filter__menu
+		height: 121px; // meets start of .c-content-filter__menu
 
 		@include respond-to( 'tablet' ) {
 			height: 98px;
@@ -70,8 +70,7 @@ $clrActiveBg: rgba( $clrDarkTeal, 0.9 );
 			height: 100%;
 
 			position: absolute;
-			top: 3px; // because line-height on .c-content-filter__heading because browsers ¯\_(ツ)_/¯
-			left: -2000px; right: -2000px;
+			top: 0; left: -2000px; right: -2000px; // stretch wide
 			z-index: -1; // below elem
 
 			background-color: $clrActiveBg;
@@ -100,7 +99,7 @@ $clrActiveBg: rgba( $clrDarkTeal, 0.9 );
 	margin-bottom: 25px;
 
 	font-weight: normal;
-	line-height: 1; // force line-height because browsers ¯\_(ツ)_/¯
+	line-height: 1.15; // force line-height because browsers ¯\_(ツ)_/¯
 	color: $clrDarkTeal;
 
 	@include respond-to( 'tablet' ) {
@@ -131,6 +130,8 @@ a.c-content-filter__input {
 		margin-left: 5px;
 
 		display: inline-block;
+
+		font-weight: normal;
 
 		transform: rotate(90deg);
 

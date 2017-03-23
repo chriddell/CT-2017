@@ -94,8 +94,8 @@ function otm_render_global_tags() {
  */
 function otm_show_related_posts() {
 
-	$orig_post = $post;
 	global $post;
+	$orig_post = $post;
 	$tags = wp_get_post_tags($post->ID);
 
 	// If there are tags on the post
@@ -110,8 +110,7 @@ function otm_show_related_posts() {
 		$args = array(
 			'tag__in'						=> $tag_ids,
 			'post__not_in'			=> array( $post->ID ),
-			'posts_per_page'		=> 5, // no. of posts to display
-			'caller_get_posts'	=> 1
+			'posts_per_page'		=> 5 // no. of posts to display
 		);
 
 		// Query posts with our tags
@@ -191,6 +190,8 @@ add_action( 'init', 'otm_solutions_tax_init' );
  */
 function otm_show_related_solutions() {
 
+	global $post;
+
 	// Get taxonomy terms
 	$related_solutions = get_the_terms( $post->ID, 'solutions' );
 
@@ -211,6 +212,9 @@ function otm_show_related_solutions() {
 		echo '</ul>';
 		echo '</div>';
 	endif;
+
+	// Reset post
+	wp_reset_query();
 }
 
 /**

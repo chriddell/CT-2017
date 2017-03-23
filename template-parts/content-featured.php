@@ -31,7 +31,7 @@
 
 <?php $img = get_field('featured_image'); ?>
 
-<article class="c-featured-item" style="background-image: url(<?php echo $img['url'] ?>);">
+<article class="c-featured-item c-featured-item--<?php echo $category_slug; ?>" style="background-image: url(<?php echo $img['url'] ?>);">
 	<span class="l-wrapper u-pos-rel u-100-height">
 		<span class="c-featured-item__main c-read-more__parent l-col-12 l-col-sml-8">
 			<?php 

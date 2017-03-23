@@ -68,6 +68,7 @@
 	position: absolute;
 	top: 0; right: 0; bottom: 0; left: 0;
 
+	background-color: $clrDarkTeal;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
@@ -131,6 +132,10 @@
 		.c-content-block__title,
 		.c-content-block__meta {
 			color: $color;
+		}
+
+		.c-content-block__img {
+			background-color: $color;
 		}
 	}
 }

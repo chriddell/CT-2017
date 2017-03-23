@@ -46,3 +46,8 @@ a {
 		text-decoration: underline;
 	}
 }
+
+::selection {
+	background-color: $clrLightGrey;
+	color: #FFFFFF;
+}
