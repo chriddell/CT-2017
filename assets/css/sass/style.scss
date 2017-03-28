@@ -22,12 +22,15 @@
 
 /* Vendor
    ========================================================================== */
-@import 'vendor/owl'; // Owl Carousel
+@import 'vendor/owl'; // OwlCarousel
 @import 'vendor/alm'; // Ajax Load More
+@import 'vendor/lightcase'; // Lightcase (Lightbox)
 
 /* Components
    ========================================================================== */
 @import 'components/read-more';
+@import 'components/forms';
+@import 'components/lightbox';
 @import 'components/block-link';
 @import 'components/site-header';
 @import 'components/footer';
