@@ -110,7 +110,8 @@ function otm_show_related_posts() {
 		$args = array(
 			'tag__in'						=> $tag_ids,
 			'post__not_in'			=> array( $post->ID ),
-			'posts_per_page'		=> 5 // no. of posts to display
+			'posts_per_page'		=> 5, // no. of posts to display
+			'orderby'						=> 'rand'
 		);
 
 		// Query posts with our tags

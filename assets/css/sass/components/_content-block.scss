@@ -7,6 +7,9 @@
 
 .c-content-block {
 	width: 100%;
+
+	margin-bottom: 25px;
+	
 	position: relative;
 
 	overflow: hidden;
@@ -20,7 +23,7 @@
 	}
 
 	&:not(:last-of-type) {
-		margin-bottom: 25px;
+		// margin-bottom: 25px;
 	}
 
 	.touch & {
@@ -40,8 +43,10 @@
 		}
 	}
 
+	// Inside owl carousel
 	&--related {
-		height: 260px !important;
+		height: 100%;
+		margin-bottom: 0;
 	}
 }
 

@@ -47,7 +47,7 @@
 
 			<!-- #social-share -->
 			<aside class="c-share c-content-block__share" id="social-share">
-				<h4 class="c-share__elem c-share__trigger"><span class="u-sr-only">Share</span></h4>
+				<h4 class="c-share__trigger"><span class="u-sr-only">Share</span></h4>
 				<!-- FB is share using the Javascript SDK https://developers.facebook.com/docs/sharing/reference/share-dialog#jssdk -->
 				<a href="#0" class="c-share__elem c-share__circle--fb c-share__circle c-share--fb" data-url="<?php the_permalink(); ?>"><span class="u-sr-only">Share to Facebook</span></a>
 

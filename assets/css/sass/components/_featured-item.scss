@@ -9,6 +9,9 @@
 
 	padding-bottom: 0;
 
+	background-size: cover;
+	background-position: center center;
+
 	box-sizing: border-box;
 
 	@include respond-to( 'tablet' ) {

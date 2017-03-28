@@ -1,4 +1,5 @@
 'use strict';
+var $ = jQuery;
 
 /* ==========================================================================
     SHARE
@@ -34,74 +35,62 @@ window.fbAsyncInit = function() {
    fjs.parentNode.insertBefore(js, fjs);
  }(document, 'script', 'facebook-jssdk'));
 
-(function($){
 
-	// Vars
-	var $shareToFacebook		= $('.c-share--fb');
+// Vars
+var $shareToFacebook		= $('.c-share--fb');
 
-	$(document).ready(function(){
+$(document).ready(function(){
 
-		// Event listener
-		$shareToFacebook.click(function(e){
+	// Event listener
+	$shareToFacebook.click(function(e){
 
-			// Prevent default
-			e.preventDefault();
+		// Prevent default
+		e.preventDefault();
 
-			// Get URL from data-attr
-			var url = $(this).data('url');
+		// Get URL from data-attr
+		var url = $(this).data('url');
 
-			// Invoke FB.ui
-			FB.ui({	
+		// Invoke FB.ui
+		FB.ui({	
 
-			  method: 'share',
-			  href: url,
+		  method: 'share',
+		  href: url,
 
-			}, function(response){
+		}, function(response){
 
-			  // Debug response
-			  console.log(response);
-			});
+		  // Debug response
+		  console.log(response);
 		});
 	});
-
-
-})(jQuery);
+});
 
 
 /* LinkedIn
    ========================================================================== */
 
-(function($){
+// Vars
+var $shareToLinkedIn 	= $('.c-share--li');
 
-	// Vars
-	var $shareToLinkedIn 	= $('.c-share--li');
+$(document).ready(function(){
 
-	$(document).ready(function(){
+	// Event listener
+	$shareToLinkedIn.click(function(e){
 
-		// Event listener
-		$shareToLinkedIn.click(function(e){
+		// Prevent link follow
+		e.preventDefault();
 
-			// Prevent link follow
-			e.preventDefault();
+		// Open pop-up
+		window.open( $(this).attr('href'), 'Share to LinkedIn', 'width=570,height=520' );
 
-			// Open pop-up
-			window.open( $(this).attr('href'), 'Share to LinkedIn', 'width=570,height=520' );
-
-		});
 	});
-
-})(jQuery);
+});
 
 /* 2. Share UI
    ========================================================================== */
 
-(function($){
+var $showShareIcons = $('.c-share__trigger');
 
-	var $showShareIcons = $('.c-share__trigger');
+$showShareIcons.click(function(){
 
-	$showShareIcons.click(function(){
-
-		$(this).parent().addClass('is-active');
-	});
-
-})(jQuery);
+	$(this).parent().addClass('is-active');
+});

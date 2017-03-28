@@ -43,18 +43,19 @@ $categoriesMap: (
 
 @font-face {
   font-family: 'Gotham';
+  font-weight: bold;
   src: url(../fonts/Gotham-Book.eot?) format('eot'), url(../fonts/Gotham-Book.woff) format('woff'), url(../fonts/Gotham-Book.otf) format('opentype');
 }
 
 @font-face {
   font-family: 'Gotham';
-  font-weight: lighter;
+  font-weight: normal;
   src: url(../fonts/Gotham-Light.eot?) format('eot'), url(../fonts/Gotham-Light.woff) format('woff'), url(../fonts/Gotham-Light.otf) format('opentype');
 }
 
 @font-face {
   font-family: 'Gotham';
-  font-weight: lighter;
+  font-weight: normal;
   font-style: italic;
   src: url(../fonts/Gotham-LightItalic.eot?) format('eot'), url(../fonts/Gotham-LightItalic.woff) format('woff'), url(../fonts/Gotham-LightItalic.otf) format('opentype');
 }

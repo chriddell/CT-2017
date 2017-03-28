@@ -11,8 +11,7 @@
  */
 ?>
 
-<aside role="complementary">
-	<div id="related">
+	<div id="related" class="c-sidebar__section">
 		<?php
 
 		/**
@@ -58,7 +57,6 @@
 
 		?>
 	</div>
-
-	<?php otm_render_global_tags(); ?>
-	
-</aside>
+	<div id="tags" class="c-sidebar__section">
+		<?php otm_render_global_tags(); ?>
+	</div>

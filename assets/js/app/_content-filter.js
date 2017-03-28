@@ -1,4 +1,5 @@
 'use strict';
+var $ = jQuery;
 
 /* ==========================================================================
     CONTENT FILTER
@@ -7,97 +8,93 @@
 		selection.
    ========================================================================== */
 
-(function($){
+// Vars
+var $filterInput 							= $( '.c-content-filter__input' ),
+		$filterFromSidebarInput 	= $( '.c-content-filter__sidebar-input'),
+		$filterArea								= $( '.c-content-filter__canvas' ),
+		$filterElems							= $( '.c-content-filter__canvas .filterable' ),
+		$filterShowing						= $( '#filter-active-category'),
+		$filterMenu 							= $( '#filter-control-menu'),
+		$filterContainer					= $( '#filter' ),
+		$filterMenuTrigger				= $filterShowing;
 
-	// Vars
-	var $filterInput 							= $( '.c-content-filter__input' ),
-			$filterFromSidebarInput 	= $( '.c-content-filter__sidebar-input'),
-			$filterArea								= $( '.c-content-filter__canvas' ),
-			$filterElems							= $( '.c-content-filter__canvas .filterable' ),
-			$filterShowing						= $( '#filter-active-category'),
-			$filterMenu 							= $( '#filter-control-menu'),
-			$filterContainer					= $( '#filter' ),
-			$filterMenuTrigger				= $filterShowing;
+$( document ).ready( function(){
 
-	$( document ).ready( function(){
+	// Change filter
+	$filterInput.click( function( e ){
 
-		// Change filter
-		$filterInput.click( function( e ){
+		// Prevent link follow
+		e.preventDefault();
 
-			// Prevent link follow
-			e.preventDefault();
+		// Get tag from data-attr
+		var tagToMatch = getTag( this );
 
-			// Get tag from data-attr
-			var tagToMatch = getTag( this );
+		// Run the filter
+		runFilter( tagToMatch );
 
-			// Run the filter
-			runFilter( tagToMatch );
+		// Swap text on active
+		setText( $filterShowing, getText( this ) );
 
-			// Swap text on active
-			setText( $filterShowing, getText( this ) );
+		// Hide menu if input came from within
+		// it (didn't come from outside it)
+		if ( !$(this).hasClass('js-no-menu-toggle') ) {
+			toggleFilterMenu();
+		}
 
-			// Hide menu if input came from within
-			// it (didn't come from outside it)
-			if ( !$(this).hasClass('js-no-menu-toggle') ) {
-				toggleFilterMenu();
-			}
-
-			// Scroll to top of section
-			$('html, body').animate({
-				scrollTop: $('#main-content').offset().top
-			}, 1000 );
-		});
-
-		// Show/hide menu
-		$filterMenuTrigger.click(function(){ toggleFilterMenu(); });
-
+		// Scroll to top of section
+		$('html, body').animate({
+			scrollTop: $('#main-content').offset().top
+		}, 1000 );
 	});
 
-	function getTag( target ) {
-		
-		var tag = $( target ).data('tag');
-		return tag;
-	}
+	// Show/hide menu
+	$filterMenuTrigger.click(function(){ toggleFilterMenu(); });
 
-	function getText( target ) {
+});
 
-		var text = $( target ).text();
-		return text;
-	}
+function getTag( target ) {
+	
+	var tag = $( target ).data('tag');
+	return tag;
+}
 
-	function setText( $target, text ) {
+function getText( target ) {
 
-		$target.text( text );
-	}
+	var text = $( target ).text();
+	return text;
+}
 
-	function runFilter( tag ) {
+function setText( $target, text ) {
 
-		// Loop the filterable elements
-		$filterElems.each( function( i ){
+	$target.text( text );
+}
 
-			// Get the tags from the element
-			var tagsToCheck = getTag( this );
+function runFilter( tag ) {
 
-			// If tags (string) on this contain
-			// requested tag (string)
-			if ( tagsToCheck.indexOf( tag ) !== -1 ) {
+	// Loop the filterable elements
+	$filterElems.each( function( i ){
 
-				// Show this element
-				$(this).css({ 'display': 'block' });
-			}
+		// Get the tags from the element
+		var tagsToCheck = getTag( this );
 
-			// Else it doesn't have the requested tag
-			else {
+		// If tags (string) on this contain
+		// requested tag (string)
+		if ( tagsToCheck.indexOf( tag ) !== -1 ) {
 
-				// So hide this element
-				$(this).css({ 'display': 'none '});
-			}
-		});
-	}
+			// Show this element
+			$(this).css({ 'display': 'block' });
+		}
 
-	function toggleFilterMenu() {
+		// Else it doesn't have the requested tag
+		else {
 
-		$filterContainer.toggleClass('is-active');
-	}
+			// So hide this element
+			$(this).css({ 'display': 'none '});
+		}
+	});
+}
 
-})(jQuery);
+function toggleFilterMenu() {
+
+	$filterContainer.toggleClass('is-active');
+}

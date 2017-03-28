@@ -39,6 +39,8 @@
 	display: table;
 
 	position: absolute;
+	top: 50%; // adjust for height of element itself
+	transform: translateY(-50%);
 
 	background-color: rgba( #e8e8e8, 0.3 );
 	color: #f5f4f3;
