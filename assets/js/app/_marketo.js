@@ -9,19 +9,14 @@ var $ = jQuery;
 
 $(document).ready(function(){
 
-	// If form with ID exists
-	if ( $('#mktoForm_1854').length ) {
+	// Add an onFormRender handler.
+	// This is called whenever a form is rendered
+	// on the page.
+	MktoForms2.onFormRender( function( form ){
 
-		// Load the form
-		MktoForms2.loadForm("//app-ab17.marketo.com", "694-KCV-926", 1854, function(form){ });
-
-		// When form has finished rendering
-		MktoForms2.whenRendered(function(form){
-
-			// Removeit'sstupidstyles
-			swapMarketoStyles();
-		});
-	}
+		// Removeit'sstupidstyles
+		swapMarketoStyles();
+	});
 });
 
 /**
@@ -57,7 +52,7 @@ function swapMarketoStyles() {
   $('.c-form--marketo input, .c-form--marketo button, .c-form--marketo select, .c-form--marketo textarea').addClass('c-form__input');
   $('.c-form--marketo input[type="text"], .c-form--marketo input[type="email"], .c-form--marketo textarea').addClass('c-form__input--text');
   $('.c-form--marketo textarea').addClass('c-form__input--textarea');
-  $('.c-form--marketo button[type="submit"]').addClass('c-form__input c-form__input--submit c-btn c-btn--submit like-link');
+  $('.c-form--marketo button[type="submit"]').addClass('c-form__input c-form__input--submit c-btn c-btn--submit');
   $('.c-form--marketo select').addClass('c-form__input--select');
   $('.c-form--marketo label').addClass('c-form__label').removeClass('mktoLabel');
 }

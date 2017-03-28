@@ -28,3 +28,13 @@
 @import 'lightcase-components/modules/loading';
 @import 'lightcase-components/modules/navigation';
 @import 'lightcase-components/modules/overlay';
+
+// Trumps
+
+#lightcase-content {
+	height: 800px;
+}
+
+.lightcase-inlineWrap {
+	max-height: none !important;
+}
