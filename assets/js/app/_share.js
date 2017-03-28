@@ -92,5 +92,5 @@ var $showShareIcons = $('.c-share__trigger');
 
 $showShareIcons.click(function(){
 
-	$(this).parent().addClass('is-active');
+	$(this).parent().toggleClass('is-active');
 });

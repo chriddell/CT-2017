@@ -18,6 +18,11 @@
 	background-position: center center;
 
 	cursor: pointer;
+
+	.is-active & {
+		background-image: none;
+		background-color: black;
+	}
 }
 
 .c-share__elem {

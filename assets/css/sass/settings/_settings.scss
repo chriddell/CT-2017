@@ -41,6 +41,11 @@ $categoriesMap: (
 /* Fonts
    ========================================================================== */
 
+$fontMain       : 'MyriadPro', Helvetica, Arial, sans-serif;
+$fontHeading    : 'Gotham', Helvetica, Arial, sans-serif;
+
+$baseFontSize   : 20px;
+
 @font-face {
   font-family: 'Gotham';
   font-weight: bold;
@@ -83,8 +88,3 @@ $categoriesMap: (
   font-weight: bold;
   src: url(../fonts/MyriadPro-BoldIt.eot?) format('eot'), url(../fonts/MyriadPro-BoldIt.woff) format('woff'), url(../fonts/MyriadPro-BoldIt.otf) format('opentype');
 }
-
-$fontMain				: 'MyriadPro', Helvetica, Arial, sans-serif;
-$fontHeading	 	: 'Gotham', Helvetica, Arial, sans-serif;
-
-$baseFontSize   : 20px;

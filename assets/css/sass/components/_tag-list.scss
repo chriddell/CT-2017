@@ -4,9 +4,4 @@
 
 .c-tag-list__item {
 	cursor: pointer;
-
-	@include respond-to( 'tablet' ) {
-		// Keep afloat
-		float: left;
-	}
 }

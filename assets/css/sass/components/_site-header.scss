@@ -61,20 +61,21 @@
 	@include respond-to( 'desktop' ) {
 		font-size: 30px;
 	}
+}
 
-	// WP
-	> a {
+.c-site-header__title-link {
+	display: block;
+
+	color: #4D4D4D;
+
+	transform: translateY(0);
+
+	transition: transform 0.25s;
+
+	&:hover {
 		text-decoration: none;
-		color: #4d4d4d;
 
-		&:hover {
-			text-decoration: underline;
-
-			.touch &:hover {
-				// Prevent double-tap on touch
-				text-decoration: none;
-			}
-		}
+		transform: translateY(-2px);
 	}
 }
 

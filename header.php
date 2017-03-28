@@ -31,7 +31,7 @@
 	<header role="banner" class="c-site-header has-box-shadow u-pos-rel">
 		<div class="l-wrapper">
 			<h1 class="c-site-title c-site-header__title">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?>	</a>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="c-site-header__title-link"><?php bloginfo( 'name' ); ?></a>
 			</h1>
 
 			<span class="c-site-logo c-site-header__logo">
