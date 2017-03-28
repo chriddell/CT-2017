@@ -37,11 +37,13 @@ $(document).ready(function(){
 		responsive: {
 			0: {
 				items: 1,
-				margin: 0
+				margin: 0,
+				loop: false
 			},
 			768: {
 				items: 1.5,
-				margin: 10
+				margin: 10,
+				loop: true
 			}
 		}
 	});
