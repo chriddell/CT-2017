@@ -1,0 +1,13 @@
+/* ==========================================================================
+    HERO
+   
+		Lightbox elements.
+
+		We're using lightcase.js for our Lightbox "needs", so it has it's own
+		styles in vendor/, however this partial is for custom styles on top
+		of this (e.g. hiding the container).
+   ========================================================================== */
+
+.c-lightbox-element {
+	display: none;
+}
