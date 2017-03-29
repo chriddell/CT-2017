@@ -2518,6 +2518,10 @@ a:hover {
   margin: 0 auto;
 }
 
+.c-btn.c-read-more:after {
+  position: static;
+}
+
 /* ==========================================================================
     MENU
    

@@ -44,4 +44,12 @@
 	&--centered {
 		margin: 0 auto;
 	}
+
+	// If .btn has .c-read-more class
+	// we want to make sure the :after
+	// stays as part of the flow to keep
+	// alignment of text inside .btn
+	&.c-read-more:after {
+		position: static;
+	}
 }
