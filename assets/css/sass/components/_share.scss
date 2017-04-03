@@ -20,8 +20,7 @@
 	cursor: pointer;
 
 	.is-active & {
-		background-image: none;
-		background-color: black;
+		background-image: url( ../media/img/close-icon.svg );
 	}
 }
 

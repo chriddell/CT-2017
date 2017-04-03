@@ -3337,8 +3337,7 @@ a.c-content-filter__input {
 }
 
 .is-active .c-share__trigger {
-  background-image: none;
-  background-color: black;
+  background-image: url(../media/img/close-icon.svg);
 }
 
 .c-share__elem {
