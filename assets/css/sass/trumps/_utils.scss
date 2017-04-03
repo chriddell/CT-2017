@@ -91,3 +91,9 @@
 .u-no-hover:hover {
 	text-decoration: none;
 }
+
+.u-med-text-right {
+	@include respond-to( 'tablet' ) {
+		text-align: right;
+	}
+}

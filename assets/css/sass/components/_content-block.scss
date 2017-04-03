@@ -20,6 +20,7 @@
 	@include respond-to( 'tablet' ) {
 		width: 100%;
 		height: auto;
+		min-height: 294px;
 	}
 
 	&:not(:last-of-type) {

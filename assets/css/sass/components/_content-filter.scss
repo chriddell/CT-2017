@@ -114,6 +114,9 @@ $clrActiveBg: rgba( $clrDarkTeal, 0.9 );
 	}
 }
 
+.c-content-filter__input {
+	text-transform: capitalize;
+}
 a.c-content-filter__input {
 	color: #FFFFFF;
 }
@@ -121,6 +124,7 @@ a.c-content-filter__input {
 .c-content-filter__active-category-text {
 	font-weight: bold;
 	text-decoration: underline;
+	text-transform: capitalize;
 
 	cursor: pointer;
 

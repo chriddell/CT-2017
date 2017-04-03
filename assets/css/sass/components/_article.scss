@@ -47,12 +47,6 @@
 	}
 }
 
-.c-article__date {
-	@include respond-to( 'tablet' ) {
-		text-align: right;
-	}
-}
-
 .c-article__share {
 	margin-bottom: 25px;
 
@@ -180,5 +174,11 @@
 		> p:last-of-type {
 			margin-bottom: 0;
 		}
+	}
+
+	img {
+		// constrain images inside WYSIWYG
+		max-width: 100%;
+		height: auto;
 	}
 }
