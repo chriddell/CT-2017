@@ -20,7 +20,7 @@
 	<div class="c-lightbox-element" id="contact-form">
 		<h1 class="u-heading">Get in touch</h1>
 		<!-- Form has been exported from Marketo -->
-  	<form id="mktoForm_1854" class="c-form c-form--marketo c-form--contact"></form>
+  	<form id="mktoForm_1854" class="c-form c-form--marketo c-form--contact u-marketo"></form>
   </div>
 
   <!-- External Marketo form script -->
