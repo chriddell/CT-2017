@@ -12,11 +12,13 @@ $(document).ready(function(){
 	// Add an onFormRender handler.
 	// This is called whenever a form is rendered
 	// on the page.
-	MktoForms2.onFormRender( function( form ){
+	if ( $('.u-marketo').length ) {
+		MktoForms2.onFormRender( function( form ){
 
-		// Removeit'sstupidstyles
-		swapMarketoStyles();
-	});
+			// Removeit'sstupidstyles
+			swapMarketoStyles();
+		});
+	}
 });
 
 /**
