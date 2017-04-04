@@ -88,6 +88,10 @@ $clrActiveBg: rgba( $clrDarkTeal, 0.9 );
 
 	@include respond-to( 'tablet' ) {
 		font-size: 19px;
+
+		&:nth-of-type(3n) {
+			@include span(4 last); // force 3rd item in row to right
+		}
 	}
 
 	&:last-of-type {

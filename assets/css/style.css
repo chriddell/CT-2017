@@ -3076,6 +3076,11 @@ a:hover {
   .c-content-filter__menu-item {
     font-size: 19px;
   }
+  .c-content-filter__menu-item:nth-of-type(3n) {
+    width: 32.8244274809%;
+    float: right;
+    margin-right: 0;
+  }
 }
 
 .c-content-filter__menu-item:last-of-type {

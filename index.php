@@ -32,14 +32,14 @@ get_header(); ?>
 		<div class="c-content-filter u-border-bottom" id="filter">
 			<h4 class="c-content-filter__heading">Currently showing latest content from <span class="c-content-filter__active-category-text" id="filter-active-category">All topics</span></h4>
 			<ul class="c-content-filter__menu" id="filter-control-menu">
-				<li class="c-content-filter__menu-item"><a href="<?php echo site_url(); ?>" class="c-content-filter__input" data-tag="all">All topics</a></li>
+				<li class="c-content-filter__menu-item l-col-12 l-col-sml-4"><a href="<?php echo site_url(); ?>" class="c-content-filter__input" data-tag="all">All topics</a></li>
 
 				<?php 
 					/** Loop through available WP tags to output list items for filter **/
 					$tags = get_tags( array( 'hide_empty' => false ) );
 					foreach ( $tags as $tag ) { 
 				?>
-					<li class="c-content-filter__menu-item"><a href="<?php echo get_tag_link( $tag->term_id ); ?>" class="c-content-filter__input" data-tag="<?php echo $tag->slug; ?>"><?php echo $tag->name; ?></a></li>
+					<li class="c-content-filter__menu-item l-col-12 l-col-sml-4"><a href="<?php echo get_tag_link( $tag->term_id ); ?>" class="c-content-filter__input" data-tag="<?php echo $tag->slug; ?>"><?php echo $tag->name; ?></a></li>
 				<?php 
 					} 
 				?>
