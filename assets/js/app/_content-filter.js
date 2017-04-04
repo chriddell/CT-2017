@@ -12,9 +12,8 @@ var $ = jQuery;
 var $filterInput 							= $( '.c-content-filter__input' ),
 		$filterFromSidebarInput 	= $( '.c-content-filter__sidebar-input'),
 		$filterArea								= $( '.c-content-filter__canvas' ),
-		$filterElems							= $( '.c-content-filter__canvas .filterable' ),
-		$filterShowing						= $( '#filter-active-category'),
-		$filterMenu 							= $( '#filter-control-menu'),
+		$filterShowing						= $( '#filter-active-category' ),
+		$filterMenu 							= $( '#filter-control-menu' ),
 		$filterContainer					= $( '#filter' ),
 		$filterMenuTrigger				= $filterShowing;
 
@@ -32,17 +31,20 @@ $( document ).ready( function(){
 		// Run the filter
 		runFilter( tagToMatch );
 
-		// Swap text on active
+		// Swap text & tag on active
 		setText( $filterShowing, getText( this ) );
+		setTag( $filterShowing, tagToMatch );
 
-		// Hide menu if input came from within
-		// it (didn't come from outside it)
-		if ( !$(this).hasClass('js-no-menu-toggle') ) {
+		// Hide menu if input came from within it
+		// (aka. didn't come from tags menu in sidebar)
+		if ( !$( this ).hasClass( 'js-no-menu-toggle' ) ) {
+
 			toggleFilterMenu();
 		}
 
 		// Scroll to top of section
 		$('html, body').animate({
+
 			scrollTop: $('#main-content').offset().top
 		}, 1000 );
 	});
@@ -69,7 +71,17 @@ function setText( $target, text ) {
 	$target.text( text );
 }
 
+function setTag ( $target, string ) {
+
+	$target.data( 'tag', string );
+	$target.attr( 'data-tag', string );
+}
+
 function runFilter( tag ) {
+
+	// We're dealing with dynamically created elements,
+	// so declare var here instead of top of doc.
+	var $filterElems = $( '.c-content-filter__canvas .filterable' );
 
 	// Loop the filterable elements
 	$filterElems.each( function( i ){
@@ -97,4 +109,22 @@ function runFilter( tag ) {
 function toggleFilterMenu() {
 
 	$filterContainer.toggleClass('is-active');
+}
+
+/**
+ * AJAX LOAD MORE
+ * Because we're using ALM on the page which has the filter,
+ * we're gonna need to do some things each time that's fired.
+ *
+ */
+
+$.fn.almComplete = function(alm){
+
+	// If filter is not showing 'all'
+	if ( getTag( '#filter-active-category' ) !== 'all' ) {
+
+		// Run the filter to hide
+		// dynamically created elements
+		runFilter( getTag( '#filter-active-category' ) );
+	}
 }

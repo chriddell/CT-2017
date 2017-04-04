@@ -30,7 +30,7 @@ get_header(); ?>
 
 		<!-- #filter -->
 		<div class="c-content-filter u-border-bottom" id="filter">
-			<h4 class="c-content-filter__heading">Currently showing latest content from <span class="c-content-filter__active-category-text" id="filter-active-category">All topics</span></h4>
+			<h4 class="c-content-filter__heading">Currently showing latest content from <span class="c-content-filter__active-category-text" id="filter-active-category" data-tag="all">All topics</span></h4>
 			<ul class="c-content-filter__menu" id="filter-control-menu">
 				<li class="c-content-filter__menu-item l-col-12 l-col-sml-4"><a href="<?php echo site_url(); ?>" class="c-content-filter__input" data-tag="all">All topics</a></li>
 
