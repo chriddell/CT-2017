@@ -2420,6 +2420,10 @@ a:hover {
   border-right: 1px solid #cccccc;
 }
 
+.c-sidebar__section:not(:last-of-type) {
+  margin-bottom: 45px;
+}
+
 /* ==========================================================================
    TITLES
 

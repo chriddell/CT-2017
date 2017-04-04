@@ -21,3 +21,7 @@
     border-right: 1px solid $clrBorders;
   }
 }
+
+.c-sidebar__section:not(:last-of-type) {
+  margin-bottom: 45px;
+}
