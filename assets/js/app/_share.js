@@ -37,12 +37,14 @@ window.fbAsyncInit = function() {
 
 
 // Vars
-var $shareToFacebook		= $('.c-share--fb');
+var shareToFacebookClass = '.c-share--fb',
+		$shareToFacebook 	= $( shareToFacebookClass );
 
 $(document).ready(function(){
 
-	// Event listener
-	$shareToFacebook.click(function(e){
+	// Some elements which contain handler will be loaded
+	// dynamically
+	$('body').on( 'click', shareToFacebookClass, function(e){
 
 		// Prevent default
 		e.preventDefault();
@@ -69,12 +71,13 @@ $(document).ready(function(){
    ========================================================================== */
 
 // Vars
-var $shareToLinkedIn 	= $('.c-share--li');
+var shareToLinkedInClass = '.c-share--li',
+		$shareToLinkedIn 	= $( shareToLinkedInClass );
 
 $(document).ready(function(){
 
 	// Event listener
-	$shareToLinkedIn.click(function(e){
+	$('body').on( 'click', shareToLinkedInClass, function(e){
 
 		// Prevent link follow
 		e.preventDefault();
@@ -88,9 +91,12 @@ $(document).ready(function(){
 /* 2. Share UI
    ========================================================================== */
 
-var $showShareIcons = $('.c-share__trigger');
+var shareDialogTriggerClass		= '.c-share__trigger',
+		$shareDialogTrigger 			= $(shareDialogTriggerClass);
 
-$showShareIcons.click(function(){
+// Some elements which contain handler will be loaded
+// dynamically
+$('body').on( 'click', shareDialogTriggerClass, function(){
 
 	$(this).parent().toggleClass('is-active');
 });
