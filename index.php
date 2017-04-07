@@ -59,7 +59,7 @@ get_header(); ?>
 						printf( '<h2 class="c-section-title">%s</h2>', __( 'Latest', 'otm' ) );
 
 						// Container for AJAX to appendTo
-						echo '<div id="ajax-container">';
+						echo '<div id="ajax-container" class="u-clearfix">';
 
 						// Modify the query
 						query_posts( 'posts_per_page=5' );
@@ -82,7 +82,7 @@ get_header(); ?>
 					endif;
 				?>
 
-				<button id="load-more" data-tag="all" data-page="2">Load More</button>
+				<button id="load-more" class="c-load-more" data-tag="all" data-page="2">Load More</button>
 
 				<?php
 					/* Ajax Load More 
