@@ -76,9 +76,12 @@ get_header(); ?>
 					endif;
 				?>
 
+				<button id="load-more" data-tag="all">Load More</button>
+
 				<?php
-					/* Ajax Load More */
+					/* Ajax Load More 
 					echo do_shortcode( '[ajax_load_more id="1" container_type="div" post_type="post" offset="5" pause="true" scroll="false" transition="fade" images_loaded="true" button_label="Load 5 more" button_loading_label="Loading..."]' );
+					*/
 				?>
 			</main>
 
