@@ -34,9 +34,15 @@
 <article class="c-featured-item c-featured-item--<?php echo $category_slug; ?>" style="background-image: url(<?php echo $img['url'] ?>);">
 	<span class="l-wrapper u-pos-rel u-100-height">
 		<span class="c-featured-item__main c-read-more__parent l-col-12 l-col-sml-8">
-			<?php 
+			<?php
+				// Use custom URL if post_category is 'campaigns'
+				if ( $category_slug == 'campaigns' ) {
+					printf( '<a href="%s" class="u-cover-link c-content-block__cover-link" target="_blank"></a>', get_field( 'campaign_url' ) );
+				}
 
-				printf( '<a href="%s" class="u-cover-link"></a>', get_permalink() );
+				else {
+					printf( '<a href="%s" class="u-cover-link c-content-block__cover-link"></a>', get_permalink() );
+				}
 
 				// Title
 				the_title( '<h3 class="c-featured-item__title c-section-title">', '</h3>' );
