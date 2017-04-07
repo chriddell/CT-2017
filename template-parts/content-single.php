@@ -62,8 +62,26 @@ endif;
 				?>
 			</div>
 			<?php
-				if ( get_field( 'whitepaper_url' ) ) : ?>
-					<a href="<?php the_field('whitepaper_url'); ?>" class="c-article__cta c-btn c-read-more c-read-more--smaller" target="_blank">Read the whitepaper</a>
+				if ( get_field( 'cta_url' ) ) : ?>
+					<a href="<?php the_field('cta_url'); ?>" class="c-article__cta c-btn c-read-more c-read-more--smaller" target="_blank">
+					<?php 
+						// Alternative copy dependent on
+						// post category
+						switch ($category_slug) {
+							case 'reports':
+								_e( 'Read the report', 'otm' );
+								break;
+							case 'infographic':
+								_e( 'View the infographic', 'otm' );
+								break;
+							case 'whitepaper':
+								_e( 'Read the whitepaper', 'otm' );
+								break;
+							default:
+								_e( 'Learn more', 'otm' );
+						}
+					?>
+					</a>
 			<?php 
 				endif; ?>
 		</article>
