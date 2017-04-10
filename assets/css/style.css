@@ -2190,6 +2190,10 @@ a:hover {
   margin: 0 auto;
 }
 
+.c-btn.c-read-more:after {
+  position: static;
+}
+
 /* ==========================================================================
     FORM
    
@@ -2657,58 +2661,6 @@ a:hover {
 }
 
 /* ==========================================================================
-<<<<<<< HEAD
-    BUTTONS
-
-    Not necessarily <button>, but stylistic buttons.
-   ========================================================================== */
-.c-btn {
-  padding: 10px;
-  border: 2px solid #235164;
-  border-radius: 6px;
-  display: block;
-  font-size: 17px;
-  font-weight: bold;
-  text-align: center;
-  color: #235164;
-  -webkit-transition: color 0.25s, background-color 0.25s;
-          transition: color 0.25s, background-color 0.25s;
-}
-
-@media (min-width: 767px) {
-  .c-btn {
-    max-width: 200px;
-  }
-}
-
-.no-touch .c-btn:hover {
-  background-color: #235164;
-  color: #FFFFFF;
-  text-decoration: none;
-}
-
-.c-btn--white {
-  border-color: #FFFFFF;
-  color: #FFFFFF;
-  background-color: transparent;
-}
-
-.no-touch .c-btn--white:hover {
-  background-color: #FFFFFF;
-  color: #333132;
-}
-
-.c-btn--centered {
-  margin: 0 auto;
-}
-
-.c-btn.c-read-more:after {
-  position: static;
-}
-
-/* ==========================================================================
-=======
->>>>>>> feature/contact_form
     MENU
    
 		Menu styles.
