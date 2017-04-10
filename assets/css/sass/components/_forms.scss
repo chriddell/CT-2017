@@ -10,13 +10,20 @@
 		*some* control.
    ========================================================================== */
 
-::placeholder {
+::placeholder,
+::-webkit-input-placeholder {
 	font-family: $fontMain;
+	color: $clrDarkestGrey;
 }
 
 .c-form__input {
 	display: block;
+
+	border: 2px solid #d7d7d7;
+
 	box-sizing: border-box;
+
+	background-color: #FFFFFF;
 }
 
 .c-form__input--text {
@@ -24,12 +31,109 @@
 
   padding: 15px;
   margin-bottom: 15px;
-  border: 2px solid;
 
   border-radius: 5px;
-  background: none;
+
+  &:focus {
+  	border-color: $clrDarkTeal;
+  	outline: none;
+  }
+  	
+  // Error
+  &.mktoInvalid,
+  &.mktoInvalid::placeholder,
+  &.mktoInvalid::-webkit-input-placeholder {
+  	color: $clrError;
+  }
+
+  // Error but focus
+  &.mktoInvalid:focus,
+  &.mktoInvalid:focus::placeholder,
+  &.mktoInvalid:focus::-webkit-input-placeholder {
+  	color: $clrDarkestGrey;
+  }
 }
+
+.c-form__input--submit {
+	font-family: $fontMain;
+
+	border-color: $clrDarkTeal;
+	background-color: $clrDarkTeal;
+	color: #FFFFFF;
+
+	@include respond-to( 'tablet' ) {
+		background-color: transparent;
+		color: $clrDarkTeal;
+	}
+}
+
+/* 'Request Information' form
+   ========================================================================== */
 
 .c-form--contact {
 	font-size: 18px;
+
+	@extend %clearfix;
+
+	.c-form__input-group {
+		@include span( 12 );
+
+		position: relative;
+	}
+
+	// First two inputs side-by-side
+	.c-form__input-group:nth-of-type(1) {
+		@include respond-to( 'tablet' ) {
+			@include span( 6 );
+		}
+	}
+
+	.c-form__input-group:nth-of-type(2) {
+		@include respond-to( 'tablet' ) {
+			@include span( 6 last );
+		}
+	}
+
+	.c-form__submit-group {
+		@include respond-to( 'tablet' ) {
+			@include span( 5 last )
+		}
+	}
+
+	.c-form__input--submit {
+		width: 100%;
+
+		float: right;
+
+		cursor: pointer;
+	}
+}
+
+/* Marketo forms
+   ========================================================================== */
+
+.c-form--marketo {
+
+	// Some Marketo styles which we need
+	// specificity to overwrite
+	::placeholder,
+	::-webkit-input-placeholder {
+		font-family: $fontMain;
+		color: $clrDarkestGrey;
+	}
+}
+
+// Position error text
+.mktoError {
+	position: absolute;
+
+	// !importants because we're overriding 
+	// Marketo styles
+  top: 4px;
+  right: 15px !important;
+  bottom: auto !important;
+  left: auto !important;
+
+  font-size: 14px;
+  color: $clrError;
 }

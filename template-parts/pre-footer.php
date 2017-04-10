@@ -17,8 +17,8 @@
 		</span>
 	</span>
 
-	<div class="c-lightbox-element" id="contact-form">
-		<h1 class="u-heading">Get in touch</h1>
+	<div class="c-lightbox__inner" id="contact-form">
+		<h1 class="u-heading c-lightbox__title" id="marketo-form-title">Request product information</h1>
 		<!-- Form has been exported from Marketo -->
   	<form id="mktoForm_1854" class="c-form c-form--marketo c-form--contact u-marketo"></form>
   </div>

@@ -32,9 +32,28 @@
 // Trumps
 
 #lightcase-content {
-	height: 800px;
+	min-height: 475px;
+
+	@include respond-to( 'tablet' ) {
+		// force height because we load elements within it dynamically
+		height: 475px;
+	}
+}
+
+.lightcase-contentInner {
+	height: auto !important;
 }
 
 .lightcase-inlineWrap {
 	max-height: none !important;
+}
+
+.lightcase-icon-close:before {
+	content: '';
+
+	height: 28px;
+	width: 28px;
+
+	background-image: url( ../media/img/close-icon.png );
+	background-size: cover;
 }
