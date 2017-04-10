@@ -8,6 +8,22 @@
 		of this (e.g. hiding the container).
    ========================================================================== */
 
-.c-lightbox-element {
-	display: none;
+.c-lightbox__inner {
+	display: none; // overwritten by JS
+
+	font-size: 20px;
+}
+
+.c-lightbox__title {
+	font-size: 24px;
+
+	color: $clrDarkestGrey;
+}
+
+.c-lightbox__copy {
+	font-family: $fontMain;
+
+	@include respond-to( 'tablet' ) {
+		color: $clrLightGrey !important;
+	}
 }

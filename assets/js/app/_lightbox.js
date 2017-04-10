@@ -9,7 +9,7 @@ var $ = jQuery;
 
 $(document).ready(function(){
 	
-	$('a[data-rel^=lightcase').lightcase({
+	$('a[data-rel="lightcase"]').lightcase({
 
 		// Options: http://cornel.bopp-art.com/lightcase/documentation/#api
 		closeOnOverlayClick: false,
@@ -33,6 +33,11 @@ $(document).ready(function(){
 
         		// Get the form's jQuery element and hide it
         		form.getFormElem().hide();
+						
+						// Replace it with a message
+        		$( '<p class="c-lightbox__copy">Thank you for your interest, we will be in touch soon. In the meantime, please visit <a href="investmentmanagement.tech" target="_blank">investmentmanagement.tech</a> for more information about our solutions or contact your <a href="http://investmentmanagement.tech/contact-ssc-advent.html" target="_blank">nearest SS&C Advent office.</a>' ).insertAfter( form.getFormElem() );
+        		$( '#marketo-form-title' ).text( 'Thank you' );
+
 
         		// Return false to prevent the submission handler 
         		// from taking the lead to the follow up url

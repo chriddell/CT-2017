@@ -2068,11 +2068,29 @@ a:hover {
 }
 
 #lightcase-content {
-  height: 800px;
+  min-height: 475px;
+}
+
+@media (min-width: 767px) {
+  #lightcase-content {
+    height: 475px;
+  }
+}
+
+.lightcase-contentInner {
+  height: auto !important;
 }
 
 .lightcase-inlineWrap {
   max-height: none !important;
+}
+
+.lightcase-icon-close:before {
+  content: '';
+  height: 28px;
+  width: 28px;
+  background-image: url(../media/img/close-icon.png);
+  background-size: cover;
 }
 
 /* Components
@@ -2122,6 +2140,55 @@ a:hover {
 }
 
 /* ==========================================================================
+    BUTTONS
+
+    Not necessarily <button>, but stylistic buttons.
+   ========================================================================== */
+.c-btn {
+  padding: 10px;
+  border: 2px solid #235164;
+  border-radius: 6px;
+  display: block;
+  font-size: 17px;
+  font-weight: bold;
+  text-align: center;
+  color: #235164;
+  -webkit-transition: color 0.25s, background-color 0.25s;
+          transition: color 0.25s, background-color 0.25s;
+}
+
+@media (min-width: 767px) {
+  .c-btn {
+    max-width: 200px;
+  }
+}
+
+.no-touch .c-btn:hover {
+  background-color: #235164;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.c-btn--white {
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+  background-color: transparent;
+}
+
+.no-touch .c-btn--white:hover {
+  background-color: #FFFFFF;
+  color: #333132;
+}
+
+.c-btn--transparent {
+  background-color: transparent;
+}
+
+.c-btn--centered {
+  margin: 0 auto;
+}
+
+/* ==========================================================================
     FORM
    
 		Forms, inputs, selects etc.
@@ -2132,35 +2199,131 @@ a:hover {
 		Please see ./assets/js/app/_marketo.js to see how we're gaining back
 		*some* control.
    ========================================================================== */
+::-webkit-input-placeholder,
 ::-webkit-input-placeholder {
   font-family: "MyriadPro", Helvetica, Arial, sans-serif;
+  color: #333132;
 }
-::-moz-placeholder {
+::placeholder,
+::-webkit-input-placeholder {
   font-family: "MyriadPro", Helvetica, Arial, sans-serif;
-}
-:-ms-input-placeholder {
-  font-family: "MyriadPro", Helvetica, Arial, sans-serif;
-}
-::placeholder {
-  font-family: "MyriadPro", Helvetica, Arial, sans-serif;
+  color: #333132;
 }
 
 .c-form__input {
   display: block;
+  border: 2px solid #d7d7d7;
   box-sizing: border-box;
+  background-color: #FFFFFF;
 }
 
 .c-form__input--text {
   width: 100%;
   padding: 15px;
   margin-bottom: 15px;
-  border: 2px solid;
   border-radius: 5px;
-  background: none;
 }
 
+.c-form__input--text:focus {
+  border-color: #235164;
+  outline: none;
+}
+
+.c-form__input--text.mktoInvalid, .c-form__input--text.mktoInvalid::-webkit-input-placeholder, .c-form__input--text.mktoInvalid::-webkit-input-placeholder {
+  color: #FF0000;
+}
+
+.c-form__input--text.mktoInvalid, .c-form__input--text.mktoInvalid::placeholder, .c-form__input--text.mktoInvalid::-webkit-input-placeholder {
+  color: #FF0000;
+}
+
+.c-form__input--text.mktoInvalid:focus, .c-form__input--text.mktoInvalid:focus::-webkit-input-placeholder, .c-form__input--text.mktoInvalid:focus::-webkit-input-placeholder {
+  color: #333132;
+}
+
+.c-form__input--text.mktoInvalid:focus, .c-form__input--text.mktoInvalid:focus::placeholder, .c-form__input--text.mktoInvalid:focus::-webkit-input-placeholder {
+  color: #333132;
+}
+
+.c-form__input--submit {
+  font-family: "MyriadPro", Helvetica, Arial, sans-serif;
+  border-color: #235164;
+  background-color: #235164;
+  color: #FFFFFF;
+}
+
+@media (min-width: 767px) {
+  .c-form__input--submit {
+    background-color: transparent;
+    color: #235164;
+  }
+}
+
+/* 'Request Information' form
+   ========================================================================== */
 .c-form--contact {
   font-size: 18px;
+}
+
+.c-form--contact .c-form__input-group {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  position: relative;
+}
+
+@media (min-width: 767px) {
+  .c-form--contact .c-form__input-group:nth-of-type(1) {
+    width: 49.6183206107%;
+    float: left;
+    margin-right: 0.7633587786%;
+  }
+}
+
+@media (min-width: 767px) {
+  .c-form--contact .c-form__input-group:nth-of-type(2) {
+    width: 49.6183206107%;
+    float: right;
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 767px) {
+  .c-form--contact .c-form__submit-group {
+    width: 41.2213740458%;
+    float: right;
+    margin-right: 0;
+  }
+}
+
+.c-form--contact .c-form__input--submit {
+  width: 100%;
+  float: right;
+  cursor: pointer;
+}
+
+/* Marketo forms
+   ========================================================================== */
+.c-form--marketo ::-webkit-input-placeholder,
+.c-form--marketo ::-webkit-input-placeholder {
+  font-family: "MyriadPro", Helvetica, Arial, sans-serif;
+  color: #333132;
+}
+.c-form--marketo ::placeholder,
+.c-form--marketo ::-webkit-input-placeholder {
+  font-family: "MyriadPro", Helvetica, Arial, sans-serif;
+  color: #333132;
+}
+
+.mktoError {
+  position: absolute;
+  top: 4px;
+  right: 15px !important;
+  bottom: auto !important;
+  left: auto !important;
+  font-size: 14px;
+  color: #FF0000;
 }
 
 /* ==========================================================================
@@ -2172,8 +2335,24 @@ a:hover {
 		styles in vendor/, however this partial is for custom styles on top
 		of this (e.g. hiding the container).
    ========================================================================== */
-.c-lightbox-element {
+.c-lightbox__inner {
   display: none;
+  font-size: 20px;
+}
+
+.c-lightbox__title {
+  font-size: 24px;
+  color: #333132;
+}
+
+.c-lightbox__copy {
+  font-family: "MyriadPro", Helvetica, Arial, sans-serif;
+}
+
+@media (min-width: 767px) {
+  .c-lightbox__copy {
+    color: #6d6e71 !important;
+  }
 }
 
 /* ==========================================================================
@@ -2459,51 +2638,6 @@ a:hover {
   .c-aside-title {
     margin-bottom: 10px;
   }
-}
-
-/* ==========================================================================
-    BUTTONS
-
-    Not necessarily <button>, but stylistic buttons.
-   ========================================================================== */
-.c-btn {
-  padding: 10px;
-  border: 2px solid #235164;
-  border-radius: 6px;
-  display: block;
-  font-size: 17px;
-  font-weight: bold;
-  text-align: center;
-  color: #235164;
-  -webkit-transition: color 0.25s, background-color 0.25s;
-          transition: color 0.25s, background-color 0.25s;
-}
-
-@media (min-width: 767px) {
-  .c-btn {
-    max-width: 200px;
-  }
-}
-
-.no-touch .c-btn:hover {
-  background-color: #235164;
-  color: #FFFFFF;
-  text-decoration: none;
-}
-
-.c-btn--white {
-  border-color: #FFFFFF;
-  color: #FFFFFF;
-  background-color: transparent;
-}
-
-.no-touch .c-btn--white:hover {
-  background-color: #FFFFFF;
-  color: #333132;
-}
-
-.c-btn--centered {
-  margin: 0 auto;
 }
 
 /* ==========================================================================
@@ -3470,7 +3604,8 @@ a.c-content-filter__input {
   border: 2px solid #235164;
 }
 
-.u-clearfix:after, .c-menu:after {
+.u-clearfix:after, .c-menu:after,
+.c-form--contact:after {
   content: '';
   display: table;
   clear: both;
