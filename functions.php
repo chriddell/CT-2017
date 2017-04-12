@@ -37,26 +37,34 @@ add_action( 'after_setup_theme', 'otm_setup' );
 /**
  * Enqueue scripts and styles
  */
-function otm_scripts() {
+function otm_enqueue_scripts() {
 
 	/* Styles
 	 ========================================================================== */
 	 wp_enqueue_style( 'main', get_template_directory_uri() . '/assets/css/style.css' );
 
-	 /* Scripts
-	 ========================================================================== */
+	/* Scripts
+	========================================================================== */
 
-	 // Enqueue modernizr separately b/c faster
-	 wp_enqueue_script( 'modernizr', 'https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js', '3.3.1', true );
+	// Enqueue modernizr separately b/c faster
+	wp_enqueue_script( 'modernizr', 'https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js', '3.3.1', true );
 
-	 // Enqueue built versions of app and vendor scripts
-	 wp_enqueue_script( 'main-js', get_template_directory_uri() . '/assets/js/app/built/app.min.js', array( 'jquery' ), '1.0.0', true );
-	 wp_enqueue_script( 'lib', get_template_directory_uri() . '/assets/js/lib/built/lib.min.js', '', '1.0.0', true );
+	// Enqueue built versions of app and vendor scripts
+	wp_enqueue_script( 'main-js', get_template_directory_uri() . '/assets/js/app/built/app.min.js', array( 'jquery' ), '1.0.0', true );
+	wp_enqueue_script( 'lib', get_template_directory_uri() . '/assets/js/lib/built/lib.min.js', '', '1.0.0', true );
 
-	 // Enqueue social SDKs
-	 wp_enqueue_script( 'social-twitter', 'https://platform.twitter.com/widgets.js', '', '1.0.0', true );
+	// Enqueue Load More (ajax)
+	wp_enqueue_script( 'ajax-load-more', get_template_directory_uri() . '/assets/js/app/ajax-load-more.js', array( 'jquery' ), '1.0.0', true );
+
+	// Enqueue social SDKs
+	wp_enqueue_script( 'social-twitter', 'https://platform.twitter.com/widgets.js', '', '1.0.0', true );
+
+	// Localize AJAX
+	wp_localize_script( 'ajax-load-more', 'wp_ajax', array(
+		'url'         => admin_url( 'admin-ajax.php' )
+	));
 }
-add_action( 'wp_enqueue_scripts', 'otm_scripts' );
+add_action( 'wp_enqueue_scripts', 'otm_enqueue_scripts' );
 
 /**
  * Render all tags as a list
@@ -303,3 +311,63 @@ function otm_get_featured_posts() {
 		return;
 	endif;
 }
+
+/**
+ * Return posts to AJAX request
+ */
+function otm_ajax_return_posts() {
+
+  // Get requested tag and page
+  // from AJAX request data
+  $tag    = $_GET['tag'];
+  $page   = (int)$_GET['page'];
+
+  /**
+   * Set up arguments for WP_Query
+   * based on whether we need to return
+   * all posts, or posts with a specific
+   * tag
+   *
+   */
+  if ( $tag !== 'all' ) {
+
+    // Arguments for WP_Query
+    $args = array(
+    	'post_type'				=> 'post',
+      'tag'             => $tag,
+      'posts_per_page'  => 5,
+      'paged'						=> $page
+    );
+  }
+
+  // Else we want all posts
+  else {
+
+    // Arguments for WP_Query
+    $args = array(
+    	'post_type'				=> 'post',
+      'posts_per_page'  => 5,
+      'paged'						=> $page
+    );
+  }
+
+  $my_query = new WP_Query( $args );
+
+  if ( ! $my_query->have_posts() ) {
+
+    die();
+  }
+
+  else {
+    while ( $my_query->have_posts() ) {
+      
+      $my_query->the_post();
+      get_template_part( 'template-parts/content' );
+    }
+  }
+
+  // die
+  die();
+}
+add_action( 'wp_ajax_nopriv_otm_ajax_return_posts', 'otm_ajax_return_posts' );
+add_action( 'wp_ajax_otm_ajax_return_posts', 'otm_ajax_return_posts' );

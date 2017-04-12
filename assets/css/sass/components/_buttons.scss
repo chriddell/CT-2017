@@ -57,3 +57,39 @@
 		position: static;
 	}
 }
+
+// Load More <button>
+.c-load-more {
+	margin: 10px auto 20px;
+	border: 0;
+
+	display: block;
+
+	background: none;
+	color: $clrDarkTeal;
+
+	font-family: $fontMain;
+	font-weight: bold;
+	text-decoration: underline;
+
+	outline: 0;
+	cursor: pointer;
+	-webkit-appearance: none;
+
+	&:after {
+		content: '\00bb';
+
+		margin-left: 10px;
+
+		display: inline-block;
+
+		text-decoration: none;
+		font-weight: normal;
+
+		transform: rotate(90deg);
+	}
+
+	&.done {
+		display: none;
+	}
+}
