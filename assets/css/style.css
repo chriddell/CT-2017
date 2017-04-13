@@ -3006,12 +3006,12 @@ a:hover {
   background-color: #cc6932;
 }
 
-.c-content-block--campaign .c-content-block__title,
-.c-content-block--campaign .c-content-block__meta {
+.c-content-block--campaigns .c-content-block__title,
+.c-content-block--campaigns .c-content-block__meta {
   color: #592d5f;
 }
 
-.c-content-block--campaign .c-content-block__img {
+.c-content-block--campaigns .c-content-block__img {
   background-color: #592d5f;
 }
 
@@ -3115,11 +3115,11 @@ a:hover {
   color: #cc6932;
 }
 
-.c-featured-item--campaign {
+.c-featured-item--campaigns {
   background-color: #592d5f;
 }
 
-.c-featured-item--campaign .c-featured-item__title {
+.c-featured-item--campaigns .c-featured-item__title {
   color: #592d5f;
 }
 
@@ -3305,7 +3305,7 @@ a.c-content-filter__input {
   color: #cc6932;
 }
 
-.c-article--campaign .c-article__title {
+.c-article--campaigns .c-article__title {
   color: #592d5f;
 }
 
