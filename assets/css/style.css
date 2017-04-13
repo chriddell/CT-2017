@@ -2918,7 +2918,7 @@ a:hover {
   background-color: #235164;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: 75% center;
   opacity: 0.1;
   -webkit-transform: scale(1);
       -ms-transform: scale(1);
