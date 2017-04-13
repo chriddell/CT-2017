@@ -42,7 +42,7 @@ $categoriesMap: (
 /* Fonts
    ========================================================================== */
 
-$fontMain       : 'MyriadPro', Helvetica, Arial, sans-serif;
+$fontMain       : 'myriad-pro', Helvetica, Arial, sans-serif;
 $fontHeading    : 'Gotham', Helvetica, Arial, sans-serif;
 
 $baseFontSize   : 20px;
@@ -66,26 +66,6 @@ $baseFontSize   : 20px;
   src: url(../fonts/Gotham-LightItalic.eot?) format('eot'), url(../fonts/Gotham-LightItalic.woff) format('woff'), url(../fonts/Gotham-LightItalic.otf) format('opentype');
 }
 
-@font-face {
-  font-family: 'MyriadPro';
-  src: url(../fonts/MyriadPro-Regular.eot?) format('eot'), url(../fonts/MyriadPro-Regular.woff) format('woff'), url(../fonts/MyriadPro-Regular.otf) format('opentype');
-}
-
-@font-face {
-  font-family: 'MyriadPro';
-  font-style: italic;
-  src: url(../fonts/MyriadPro-It.eot?) format('eot'), url(../fonts/MyriadPro-It.woff) format('woff'), url(../fonts/MyriadPro-It.otf) format('opentype');
-}
-
-@font-face {
-  font-family: 'MyriadPro';
-  font-weight: bold;
-  src: url(../fonts/MyriadPro-Bold.eot?) format('eot'), url(../fonts/MyriadPro-Bold.woff) format('woff'), url(../fonts/MyriadPro-Bold.otf) format('opentype');
-}
-
-@font-face {
-  font-family: 'MyriadPro';
-  font-style: italic;
-  font-weight: bold;
-  src: url(../fonts/MyriadPro-BoldIt.eot?) format('eot'), url(../fonts/MyriadPro-BoldIt.woff) format('woff'), url(../fonts/MyriadPro-BoldIt.otf) format('opentype');
-}
+// We're also using Typekit for Wordpress
+// https://en-gb.wordpress.org/plugins/typekit-fonts-for-wordpress/
+// https://typekit.com/fonts/myriad

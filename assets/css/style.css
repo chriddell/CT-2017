@@ -30,30 +30,6 @@
   src: url(../fonts/Gotham-LightItalic.eot?) format("eot"), url(../fonts/Gotham-LightItalic.woff) format("woff"), url(../fonts/Gotham-LightItalic.otf) format("opentype");
 }
 
-@font-face {
-  font-family: 'MyriadPro';
-  src: url(../fonts/MyriadPro-Regular.eot?) format("eot"), url(../fonts/MyriadPro-Regular.woff) format("woff"), url(../fonts/MyriadPro-Regular.otf) format("opentype");
-}
-
-@font-face {
-  font-family: 'MyriadPro';
-  font-style: italic;
-  src: url(../fonts/MyriadPro-It.eot?) format("eot"), url(../fonts/MyriadPro-It.woff) format("woff"), url(../fonts/MyriadPro-It.otf) format("opentype");
-}
-
-@font-face {
-  font-family: 'MyriadPro';
-  font-weight: bold;
-  src: url(../fonts/MyriadPro-Bold.eot?) format("eot"), url(../fonts/MyriadPro-Bold.woff) format("woff"), url(../fonts/MyriadPro-Bold.otf) format("opentype");
-}
-
-@font-face {
-  font-family: 'MyriadPro';
-  font-style: italic;
-  font-weight: bold;
-  src: url(../fonts/MyriadPro-BoldIt.eot?) format("eot"), url(../fonts/MyriadPro-BoldIt.woff) format("woff"), url(../fonts/MyriadPro-BoldIt.otf) format("opentype");
-}
-
 /* ==========================================================================
     GRID
 
@@ -1318,7 +1294,7 @@ template {
 html,
 body {
   width: 100%;
-  font-family: "MyriadPro", Helvetica, Arial, sans-serif;
+  font-family: "myriad-pro", Helvetica, Arial, sans-serif;
   overflow-x: hidden;
 }
 
@@ -2159,7 +2135,7 @@ a:hover {
   display: block;
   background: none;
   color: #235164;
-  font-family: "MyriadPro", Helvetica, Arial, sans-serif;
+  font-family: "myriad-pro", Helvetica, Arial, sans-serif;
   font-weight: bold;
   text-decoration: underline;
   outline: 0;
@@ -2195,12 +2171,12 @@ a:hover {
    ========================================================================== */
 ::-webkit-input-placeholder,
 ::-webkit-input-placeholder {
-  font-family: "MyriadPro", Helvetica, Arial, sans-serif;
+  font-family: "myriad-pro", Helvetica, Arial, sans-serif;
   color: #333132;
 }
 ::placeholder,
 ::-webkit-input-placeholder {
-  font-family: "MyriadPro", Helvetica, Arial, sans-serif;
+  font-family: "myriad-pro", Helvetica, Arial, sans-serif;
   color: #333132;
 }
 
@@ -2240,7 +2216,7 @@ a:hover {
 }
 
 .c-form__input--submit {
-  font-family: "MyriadPro", Helvetica, Arial, sans-serif;
+  font-family: "myriad-pro", Helvetica, Arial, sans-serif;
   border-color: #235164;
   background-color: #235164;
   color: #FFFFFF;
@@ -2301,12 +2277,12 @@ a:hover {
    ========================================================================== */
 .c-form--marketo ::-webkit-input-placeholder,
 .c-form--marketo ::-webkit-input-placeholder {
-  font-family: "MyriadPro", Helvetica, Arial, sans-serif;
+  font-family: "myriad-pro", Helvetica, Arial, sans-serif;
   color: #333132;
 }
 .c-form--marketo ::placeholder,
 .c-form--marketo ::-webkit-input-placeholder {
-  font-family: "MyriadPro", Helvetica, Arial, sans-serif;
+  font-family: "myriad-pro", Helvetica, Arial, sans-serif;
   color: #333132;
 }
 
@@ -2340,7 +2316,7 @@ a:hover {
 }
 
 .c-lightbox__copy {
-  font-family: "MyriadPro", Helvetica, Arial, sans-serif;
+  font-family: "myriad-pro", Helvetica, Arial, sans-serif;
 }
 
 @media (min-width: 767px) {
@@ -2622,7 +2598,7 @@ a:hover {
 
 .c-menu-title {
   margin-bottom: 5px;
-  font-family: "MyriadPro", Helvetica, Arial, sans-serif;
+  font-family: "myriad-pro", Helvetica, Arial, sans-serif;
   font-weight: normal;
   font-size: 20px;
   color: #235164;
@@ -2636,7 +2612,7 @@ a:hover {
 
 .c-aside-title {
   margin-bottom: 5px;
-  font-family: "MyriadPro", Helvetica, Arial, sans-serif;
+  font-family: "myriad-pro", Helvetica, Arial, sans-serif;
   font-weight: normal;
   font-size: 20px;
   color: #cccccc;
@@ -2951,7 +2927,7 @@ a:hover {
 
 .c-content-block__title {
   margin-bottom: 15px;
-  font-family: "MyriadPro", Helvetica, Arial, sans-serif;
+  font-family: "myriad-pro", Helvetica, Arial, sans-serif;
   font-weight: normal;
   font-size: 26px;
 }
