@@ -36,11 +36,9 @@ $(document).ready(function(){
 						
 						// Replace it with a message
         		$( '<p class="c-lightbox__copy">Thank you for your interest, we will be in touch soon. In the meantime, please visit <a href="investmentmanagement.tech" target="_blank">investmentmanagement.tech</a> for more information about our solutions or contact your <a href="http://investmentmanagement.tech/contact-ssc-advent.html" target="_blank">nearest SS&C Advent office.</a>' ).insertAfter( form.getFormElem() );
+
+        		// Replace title text
         		$( '#marketo-form-title' ).text( 'Thank you' );
-
-
-        		// Replace it with a message
-        		$('<p>Thank you for your interest, we will be in touch soon. In the meantime, please visit <a href="investmentmanagement.tech" target="_blank">investmentmanagement.tech</a> for more information about our solutions or contact your <a href="http://investmentmanagement.tech/contact-ssc-advent.html" target="_blank">nearest SS&C Advent office<a/>.').insertAfter(form.getFormElem());
 
         		// Return false to prevent the submission handler 
         		// from taking the lead to the follow up url
