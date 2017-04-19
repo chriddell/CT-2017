@@ -2486,6 +2486,7 @@ a:hover {
 
 .c-legal-footer__copy {
   margin: 0;
+  color: #4d4d4d;
   font-size: 13px;
   line-height: 1.5;
 }
@@ -2494,7 +2495,7 @@ a:hover {
    ========================================================================== */
 .c-dual-footer {
   padding: 35px 0 30px;
-  background: #4d4d4d;
+  background: #000000;
 }
 
 .c-dual-footer__link {
