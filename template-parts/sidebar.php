@@ -33,14 +33,24 @@
 
 			while ( $my_query->have_posts() ) : $my_query->the_post(); 
 
-				// Containers etc.
-				echo '<a href="' . get_permalink() . '" class="c-block-link c-block-link--in-sidebar c-read-more__parent u-no-hover">';
+				// Category
+				$categories = get_the_category();
+
+				// Use ACF if category is campaign
+				if ( $categories[0]->slug == 'campaigns' ) : 
+
+					echo '<a href="' . get_field( 'campaign_url' ) . '" class="c-block-link c-block-link--in-sidebar c-read-more__parent u-no-hover" target="_blank">';
+
+				else :
+
+					// Use permalink
+					echo '<a href="' . get_permalink() . '" class="c-block-link c-block-link--in-sidebar c-read-more__parent u-no-hover">';
+
+				endif;
 
 				// Title
 				the_title('<h3 class="c-block-link__title">', '</h3>');
 
-				// Category
-				$categories = get_the_category();
 				if ( !empty( $categories ) ) : 
 					/**
 					 * Return first category in array of all
