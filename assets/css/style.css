@@ -3259,6 +3259,10 @@ a.c-content-filter__input {
   padding-top: 0;
 }
 
+.c-article__sidebar {
+  padding-top: 25px;
+}
+
 @media (min-width: 767px) {
   .c-article__sidebar {
     padding-top: 0;
@@ -3286,18 +3290,12 @@ a.c-content-filter__input {
 }
 
 .c-article__meta {
-  padding: 25px 0;
+  padding: 30px 0;
   margin-bottom: 40px;
   border-top: 1px solid #cccccc;
   border-bottom: 1px solid #cccccc;
   font-size: 20px;
   color: #235164;
-}
-
-@media (min-width: 767px) {
-  .c-article__meta {
-    padding-bottom: 20px;
-  }
 }
 
 .c-article__meta-item {
@@ -3328,19 +3326,26 @@ a.c-content-filter__input {
    ========================================================================== */
 .c-article__main {
   border-bottom: 1px solid #cccccc;
+  line-height: 1.4;
 }
 
 .c-article__main > *:last-child {
   margin-bottom: 40px;
 }
 
-.c-article__main p {
+.c-article__main p,
+.c-article__main ol,
+.c-article__main ul,
+.c-article__main h1,
+.c-article__main h2,
+.c-article__main h3,
+.c-article__main h4 {
+  margin-top: 0;
   margin-bottom: 15px;
 }
 
 .c-article__main ol,
 .c-article__main ul {
-  margin: 0 0 1.5em;
   padding: 0;
   counter-reset: item;
 }
@@ -3348,8 +3353,8 @@ a.c-content-filter__input {
 .c-article__main ol > li,
 .c-article__main ul > li {
   margin: 0;
-  padding: 0 0 0 2em;
-  text-indent: -2em;
+  padding: 0 0 0 1em;
+  text-indent: -1.5em;
   list-style-type: none;
   counter-increment: item;
 }
@@ -3367,12 +3372,17 @@ a.c-content-filter__input {
   content: counter(item) ".";
 }
 
-.c-article__main ul > li {
-  text-indent: -2.5em;
-}
-
 .c-article__main ul > li:before {
   content: '\2022';
+}
+
+.c-article__main h2 + ul,
+.c-article__main h2 + ol,
+.c-article__main h3 + ul,
+.c-article__main h3 + ol,
+.c-article__main h4 + ul,
+.c-article__main h4 + ol {
+  margin-top: -9px;
 }
 
 .c-article__main blockquote {
@@ -3428,6 +3438,19 @@ a.c-content-filter__input {
 .c-article__main img {
   max-width: 100%;
   height: auto;
+}
+
+.c-article__main h1 {
+  font-size: 24px;
+}
+
+.c-article__main h2 {
+  font-size: 22px;
+}
+
+.c-article__main h3,
+.c-article__main h4 {
+  font-size: 20px;
 }
 
 /* ==========================================================================
