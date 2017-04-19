@@ -2154,7 +2154,7 @@ a:hover {
           transform: rotate(90deg);
 }
 
-.c-load-more.done {
+.c-load-more.is-done {
   display: none;
 }
 

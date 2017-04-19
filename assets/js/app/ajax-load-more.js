@@ -37,16 +37,46 @@
 
 			data: {
 				action: 'otm_ajax_return_posts',
-				tag: getTag(loadTriggerTarget),
+				tag: getTag( loadTriggerTarget ),
 				page: getPage()
 			},
 
-			success: function( html ){
+			dataType: 'json',
 
+			success: function( response ){
+
+				// Set vars from response object
+				var postCount = response.postcount,
+						html			= response.html;
+
+
+				// Show/remove 'Load more' 
+				// button based on posts returned.
+				//
+				// 5 posts returned means there are likely more
+				// to load.
+				if ( postCount == 5 && $loadTrigger.hasClass( 'is-done' ) ) { 
+
+					$loadTrigger.removeClass( 'is-done' );
+				}
+
+				else if ( postCount !== 5 && !$loadTrigger.hasClass( 'is-done' ) ) {
+
+					$loadTrigger.addClass( 'is-done' );
+				}
+
+				// Append returned AJAX data (html) to
+				// content container
 				$( '#ajax-container' ).append( html );
 
+				// Increment offset
 				var nextPage = getPage() + 1;
 				updatePage( nextPage );
+			},
+
+			error: function( response ) {
+
+				console.error( response );
 			}
 		});
 	}
@@ -58,10 +88,10 @@
 	});
 
 	/* ==========================================================================
-    CONTENT FILTER
-   
-		Show/hide DOM elements based on data-attributes and user 
-		selection.
+    HELPER FUNCTIONS
+
+    - Get requested tag (term)
+    - Set current tag on Load More button
    ========================================================================== */
 
 	// Vars

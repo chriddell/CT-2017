@@ -72,12 +72,7 @@ add_action( 'wp_enqueue_scripts', 'otm_enqueue_scripts' );
  */
 function otm_render_global_tags() {
 
-	// Parameters
-	$args = array(
-		'hide_empty' => false
-	);
-
-	$tags = get_tags( $args );
+	$tags = get_tags();
 
 	// If we have tags
 	if ( $tags ) :
@@ -319,8 +314,8 @@ function otm_ajax_return_posts() {
 
   // Get requested tag and page
   // from AJAX request data
-  $tag    = $_GET['tag'];
-  $page   = (int)$_GET['page'];
+  $tag    = $_GET['tag']; 			// requested taxonomy term provided by AJAX
+  $page   = (int)$_GET['page']; // offset provided by AJAX
 
   /**
    * Set up arguments for WP_Query
@@ -334,9 +329,9 @@ function otm_ajax_return_posts() {
     // Arguments for WP_Query
     $args = array(
     	'post_type'				=> 'post',
-      'tag'             => $tag,
+      'tag'             => $tag, // requested taxonomy term provided by AJAX
       'posts_per_page'  => 5,
-      'paged'						=> $page
+      'paged'						=> $page // offset provided by AJAX
     );
   }
 
@@ -347,27 +342,61 @@ function otm_ajax_return_posts() {
     $args = array(
     	'post_type'				=> 'post',
       'posts_per_page'  => 5,
-      'paged'						=> $page
+      'paged'						=> $page // offset provided by AJAX
     );
   }
 
+  // Set up our query with $args
   $my_query = new WP_Query( $args );
 
+  // If no posts
   if ( ! $my_query->have_posts() ) {
 
+  	echo json_encode( array( 'postcount' => 0 ) );
+
+  	// End
     die();
   }
 
+  // If posts
   else {
+
+  	$i = 0;
+  	$posts_markup = '';
+
+  	// Start the loop
     while ( $my_query->have_posts() ) {
-      
-      $my_query->the_post();
-      get_template_part( 'template-parts/content' );
+
+    	$i++;
+
+    	// Set up postdata
+    	$my_query->the_post();
+
+    	$post_markup = load_template_part( 'template-parts/content' );
+      $posts_markup = $posts_markup . ' ' . $post_markup;
     }
+
+    echo json_encode( array( 'postcount' => $i, 'html' => $posts_markup ) );
   }
 
-  // die
   die();
 }
 add_action( 'wp_ajax_nopriv_otm_ajax_return_posts', 'otm_ajax_return_posts' );
 add_action( 'wp_ajax_otm_ajax_return_posts', 'otm_ajax_return_posts' );
+
+/**
+ * Load Template Part
+ * from: http://stackoverflow.com/questions/5817726/wordpress-save-get-template-part-to-variable
+ * 
+ * Loads a template-part (similar to
+ * get_template_part), however it doesn't
+ * automatically print the result. Means we can
+ * store returned content to variable
+ */
+function load_template_part($template_name, $part_name=null) {
+	ob_start();
+	get_template_part($template_name, $part_name);
+	$var = ob_get_contents();
+	ob_end_clean();
+	return $var;
+}
