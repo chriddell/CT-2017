@@ -19,7 +19,7 @@
 	transition: color 0.25s, background-color 0.25s;
 
 	@include respond-to( 'tablet' ) {
-		max-width: 200px;
+		max-width: 250px;
 	}
 
 	// Only add hover effects if no touch

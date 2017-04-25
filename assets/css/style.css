@@ -2096,7 +2096,7 @@ a:hover {
 
 @media (min-width: 767px) {
   .c-btn {
-    max-width: 200px;
+    max-width: 250px;
   }
 }
 
@@ -2829,7 +2829,6 @@ a:hover {
 		at the foot of a single post.
    ========================================================================== */
 .c-content-block {
-  width: 100%;
   margin-bottom: 25px;
   position: relative;
   overflow: hidden;
@@ -2839,10 +2838,16 @@ a:hover {
 
 @media (min-width: 767px) {
   .c-content-block {
-    width: 100%;
     height: auto;
     min-height: 294px;
   }
+  .c-content-block:not(.c-content-block--related) {
+    width: 100%;
+  }
+}
+
+.c-content-block:not(.c-content-block--related) {
+  width: 100%;
 }
 
 .touch .c-content-block {
@@ -2862,11 +2867,6 @@ a:hover {
     width: 100%;
     height: auto;
   }
-}
-
-.c-content-block--related {
-  height: 260px;
-  margin-bottom: 0;
 }
 
 .c-content-block__main {
@@ -2990,6 +2990,63 @@ a:hover {
 
 .c-content-block--campaigns .c-content-block__img {
   background-color: #592d5f;
+}
+
+/* Related blocks
+   ========================================================================== */
+.c-content-block--related {
+  height: 260px;
+  margin-bottom: 0;
+}
+
+.owl-item .c-content-block--related {
+  width: 100%;
+}
+
+/* ==========================================================================
+    REPEATER BLOCK
+   
+		Re-usable pieces of content: heading, body text, image and button.
+   ========================================================================== */
+.c-repeater-block {
+  padding-top: 45px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #cccccc;
+}
+
+.c-repeater-block:first-of-type {
+  padding-top: 0;
+}
+
+.c-repeater-block:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.c-repeater-block__main {
+  margin-bottom: 25px;
+}
+
+.c-repeater-block__title {
+  font-size: 20px;
+}
+
+.c-repeater-block__main > *:last-child {
+  margin-bottom: 0;
+}
+
+.c-repeater-block__button {
+  margin-top: 25px;
+}
+
+.c-repeater-block__image {
+  max-width: 100%;
+}
+
+@media (min-width: 1025px) {
+  .c-repeater-block__image {
+    float: right;
+  }
 }
 
 /* ==========================================================================
@@ -3260,6 +3317,11 @@ a.c-content-filter__input {
   padding-top: 0;
 }
 
+.c-article__header {
+  border-bottom: 1px solid #cccccc;
+  margin-bottom: 40px;
+}
+
 .c-article__sidebar {
   padding-top: 25px;
 }
@@ -3292,9 +3354,7 @@ a.c-content-filter__input {
 
 .c-article__meta {
   padding: 30px 0;
-  margin-bottom: 40px;
   border-top: 1px solid #cccccc;
-  border-bottom: 1px solid #cccccc;
   font-size: 20px;
   color: #235164;
 }
@@ -3633,6 +3693,10 @@ a.c-content-filter__input {
 
 .u-border-bottom {
   border-bottom: 1px solid #cccccc;
+}
+
+.u-no-borders {
+  border: none !important;
 }
 
 .u-hidden-mobile {

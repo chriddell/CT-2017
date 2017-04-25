@@ -6,8 +6,6 @@
    ========================================================================== */
 
 .c-content-block {
-	width: 100%;
-
 	margin-bottom: 25px;
 	
 	position: relative;
@@ -18,13 +16,16 @@
 	background-color: #FFFFFF;
 
 	@include respond-to( 'tablet' ) {
-		width: 100%;
 		height: auto;
 		min-height: 294px;
+
+		&:not(.c-content-block--related) {
+			width: 100%;
+		}
 	}
 
-	&:not(:last-of-type) {
-		// margin-bottom: 25px;
+	&:not(.c-content-block--related) {
+		width: 100%;
 	}
 
 	.touch & {
@@ -42,12 +43,6 @@
 			width: 100%;
 			height: auto;
 		}
-	}
-
-	// Inside owl carousel
-	&--related {
-		height: 260px;
-		margin-bottom: 0;
 	}
 }
 
@@ -143,5 +138,18 @@
 		.c-content-block__img {
 			background-color: $color;
 		}
+	}
+}
+
+/* Related blocks
+   ========================================================================== */
+
+.c-content-block--related {
+	height: 260px;
+	margin-bottom: 0;
+
+	// inside carousel
+	.owl-item & {
+		width: 100%;
 	}
 }

@@ -38,9 +38,10 @@
 	}
 ?>
 
-<?php $img = get_field('featured_image'); ?>
+<?php 
+$img = get_field('featured_image'); ?>
 
-<article class="c-content-block c-content-block--<?php echo $category_slug; ?> c-content-block--related c-read-more__parent l-col-12 u-clearfix filterable" data-tag="<?php echo $tags; ?>">
+<article class="c-content-block c-content-block--<?php echo $category_slug; ?> c-content-block--related c-read-more__parent l-col-12 l-col-med-8 u-clearfix filterable" data-tag="<?php echo $tags; ?>">
 
 	<?php
 		// Use custom URL if post_category is 'campaigns'

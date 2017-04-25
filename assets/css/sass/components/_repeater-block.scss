@@ -1,0 +1,44 @@
+/* ==========================================================================
+    REPEATER BLOCK
+   
+		Re-usable pieces of content: heading, body text, image and button.
+   ========================================================================== */
+
+.c-repeater-block {
+	padding-top: 45px;
+	padding-bottom: 40px;
+	border-bottom: 1px solid $clrBorders;
+
+	&:first-of-type {
+		padding-top: 0;
+	}
+
+	&:last-of-type {
+		border-bottom: none;
+		padding-bottom: 0;
+	}
+}
+
+.c-repeater-block__main {
+	margin-bottom: 25px;
+}
+
+.c-repeater-block__title {
+	font-size: $baseFontSize;
+}
+
+.c-repeater-block__main > *:last-child {
+	margin-bottom: 0;
+}
+
+.c-repeater-block__button {
+	margin-top: 25px;
+}
+
+.c-repeater-block__image {
+	max-width: 100%;
+
+	@include respond-to( 'desktop' ) {
+		float: right;
+	}
+}

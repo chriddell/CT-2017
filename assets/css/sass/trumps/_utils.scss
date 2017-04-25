@@ -36,6 +36,11 @@
 	border-bottom: 1px solid $clrBorders;
 }
 
+.u-no-borders,
+%u-no-borders {
+	border: none !important;
+}
+
 .u-hidden-mobile {
 	display: none;
 

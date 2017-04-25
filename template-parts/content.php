@@ -1,8 +1,8 @@
 <?php
 /**
- * The template for displaying all single posts
+ * The template for displaying content
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package WordPress
  * @subpackage OTM
@@ -38,7 +38,8 @@
 	}
 ?>
 
-<?php $img = get_field('featured_image'); ?>
+<?php 
+$img = get_field('featured_image'); ?>
 
 <article class="c-content-block c-content-block--<?php echo $category_slug; ?> c-read-more__parent l-col-12 u-clearfix filterable" data-tag="<?php echo $tags; ?>">
 	<?php

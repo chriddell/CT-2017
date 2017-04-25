@@ -123,18 +123,25 @@ function otm_show_related_posts() {
 		// If posts
 		if ( $my_query->have_posts() ) :
 
-			// Print a title
-			printf( '<h2 class="c-section-title">%s</h2>', __( 'Related content', 'otm' ) );
+			echo '<div class="l-post-page-content">';
+				echo '<span class="l-wrapper u-clearfix">';
 
-			// Markup
-			echo '<aside id="related" role="complementary" class="c-carousel--related owl-carousel">';
-				// Loop
-				while ( $my_query->have_posts() ) : $my_query->the_post();
+					// Print a title
+					printf( '<h2 class="c-section-title">%s</h2>', __( 'Related content', 'otm' ) );
 
-					// Get the template for the post content
-					get_template_part( 'template-parts/content-related' );
-				endwhile;
-			echo '</aside>';
+					// Markup
+					echo '<aside id="related" role="complementary" class="c-carousel--related owl-carousel">';
+						// Loop
+						while ( $my_query->have_posts() ) : $my_query->the_post();
+
+							// Get the template for the post content
+							get_template_part( 'template-parts/content-related' );
+
+						endwhile;
+					echo '</aside>';
+					
+				echo '</span>';
+			echo '</div>';
 
 		endif;
 	}
