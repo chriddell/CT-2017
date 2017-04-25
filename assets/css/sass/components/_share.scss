@@ -9,12 +9,11 @@
 	width: 22px;
 
 	margin: 0;
-	padding: 8px;
+	padding: 0;
 
 	background-image: url( ../media/img/share-icon.svg );
 	background-repeat: no-repeat;
-	background-size: 25px 22px; // exclude padding
-	background-clip: content-box; // exclude padding
+	background-size: 100% 100%;
 	background-position: center center;
 
 	cursor: pointer;
@@ -52,24 +51,24 @@
 	transition: transform 0.25s ease, opacity 0.15s ease;
 
 	&:nth-of-type(1) {
-		left: 5px;
-		top: -45px;
+		left: -4px;
+		top: -49px;
 
 		transform: translate3d(-2px, 48px, 0) scale(0);
 		transition-delay: 0.2s;
 	}
 
 	&:nth-of-type(2) {
-		left: -32px;
-		top: -15px;
+		left: -43px;
+		top: -19px;
 
 		transform: translate3d(35px, 18px, 0) scale(0);
 		transition-delay: 0.1s;
 	}
 
 	&:nth-of-type(3) {
-		left: -25px;
-		top: 30px;
+		left: -29px;
+		top: 27px;
 
 		transform: translate3d(28px, -27px, 0) scale(0);
 	}
