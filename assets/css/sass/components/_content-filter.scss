@@ -9,6 +9,9 @@
 $clrActiveBg: rgba( $clrDarkTeal, 0.9 );
 
 .c-content-filter {
+	width: 100%;
+	background-color: $clrBody;
+
 	position: relative;
 
 	&:after {
@@ -37,6 +40,27 @@ $clrActiveBg: rgba( $clrDarkTeal, 0.9 );
 				// of wrapper
 				left: -2000px; right: -2000px;
 			}
+		}
+	}
+
+	&.is-stuck {
+		padding-top: 20px;
+
+		position: fixed;
+
+		top: 0;
+		left: 0;
+
+		z-index: 5;
+
+		box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.15);
+
+		transition: padding 0.25s;
+
+		@extend %u-border-bottom;
+
+		&:after {
+			top: -30px; // shift to allow for padding
 		}
 	}
 }

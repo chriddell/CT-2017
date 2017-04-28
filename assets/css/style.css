@@ -3164,6 +3164,8 @@ a:hover {
     based on user selection.
    ========================================================================== */
 .c-content-filter {
+  width: 100%;
+  background-color: #F4F4F4;
   position: relative;
 }
 
@@ -3195,6 +3197,21 @@ a:hover {
     left: -2000px;
     right: -2000px;
   }
+}
+
+.c-content-filter.is-stuck {
+  padding-top: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.15);
+  -webkit-transition: padding 0.25s;
+          transition: padding 0.25s;
+}
+
+.c-content-filter.is-stuck:after {
+  top: -30px;
 }
 
 .c-content-filter__menu {
@@ -3691,8 +3708,13 @@ a.c-content-filter__input {
   clear: both;
 }
 
-.u-border-bottom {
+.u-border-bottom,
+.c-content-filter.is-stuck {
   border-bottom: 1px solid #cccccc;
+}
+
+.u-border-top {
+  border-top: 1px solid #cccccc;
 }
 
 .u-no-borders {

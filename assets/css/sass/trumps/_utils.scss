@@ -32,8 +32,13 @@
   clear: both;
 }
 
-.u-border-bottom {
+.u-border-bottom,
+%u-border-bottom {
 	border-bottom: 1px solid $clrBorders;
+}
+.u-border-top,
+%u-border-top {
+	border-top: 1px solid $clrBorders;
 }
 
 .u-no-borders,
