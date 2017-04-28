@@ -25,18 +25,12 @@ $clrBorders     : #cccccc;
 $clrBody        : #F4F4F4;
 $clrError       : #FF0000;
 
-// Category Colors
-$clrInfographic	: $clrTeal;
-$clrWhitepaper	: $clrOrange;
-$clrInsights		: $clrLilac;
-$clrCampaign		: $clrPurple;
-
 // Match colors to categories
 $categoriesMap: (
-	'insights'		: $clrInsights,
-	'infographic'	: $clrInfographic, 
-	'whitepaper'	: $clrWhitepaper, 
-	'campaigns'		: $clrCampaign
+	'blog'		    : $clrLilac,
+	'infographic'	: $clrTeal, 
+	'whitepaper'	: $clrOrange, 
+	'insights'		: $clrPurple
 );
 
 /* Fonts
@@ -45,7 +39,7 @@ $categoriesMap: (
 $fontMain       : 'myriad-pro', Helvetica, Arial, sans-serif; // myriad-pro is TypeKit
 $fontHeading    : 'Gotham', Helvetica, Arial, sans-serif;
 
-$baseFontSize   : 18px;
+$baseFontSize   : 20px;
 
 @font-face {
   font-family: 'Gotham';

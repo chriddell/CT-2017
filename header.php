@@ -25,7 +25,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php body_class(); ?> id="top">
 	<a class="skip-link u-sr-only" href="#main-content"><?php _e( 'Skip to content', 'otm' ); ?></a>
 
 	<header role="banner" class="c-site-header has-box-shadow u-pos-rel">

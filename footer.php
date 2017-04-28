@@ -35,6 +35,11 @@
 		</div>
 	</div>
 </footer>
+
+<a class="c-back-to-top" href="#top">
+	<span class="u-sr-only">Back to top</span>
+</a>
+
 <?php wp_footer(); ?>
 </body>
 </html>

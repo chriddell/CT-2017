@@ -1,0 +1,63 @@
+/* ==========================================================================
+   BACK TO TOP
+
+   Link to return to top. Is fixed position.
+   ========================================================================== */
+
+.c-back-to-top {
+	height: 48px;
+	width: 48px;
+
+	display: table;
+
+	position: fixed;
+
+	bottom: 24px;
+	left: 24px;
+
+	background-color: $clrBlue;
+	opacity: 0; // will be overwritten
+
+	z-index: 5;
+
+	transform: rotate( -90deg );
+
+	transition: opacity 0.25s;
+
+	&:after {
+		content: '\00bb';
+
+		height: 100%;
+		width: 100%;
+
+		display: table-cell;
+
+		position: relative;
+		top: -4px;
+
+		vertical-align: middle;
+
+		color: $clrBody;
+
+		font-size: 32px;
+		text-align: center;
+
+		transition: transform 0.25s;
+	}
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	&:hover:after {
+		transform: translateX(3px);
+	}
+
+	&.is-visible {
+		opacity: 0.75;
+	}
+
+	&.is-visible:hover {
+		opacity: 1;
+	}
+}

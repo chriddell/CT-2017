@@ -1299,7 +1299,7 @@ body {
 }
 
 html {
-  font-size: 18px;
+  font-size: 20px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -2357,6 +2357,61 @@ a:hover {
 }
 
 /* ==========================================================================
+   BACK TO TOP
+
+   Link to return to top. Is fixed position.
+   ========================================================================== */
+.c-back-to-top {
+  height: 48px;
+  width: 48px;
+  display: table;
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  background-color: #0a85c7;
+  opacity: 0;
+  z-index: 5;
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  -webkit-transition: opacity 0.25s;
+          transition: opacity 0.25s;
+}
+
+.c-back-to-top:after {
+  content: '\00bb';
+  height: 100%;
+  width: 100%;
+  display: table-cell;
+  position: relative;
+  top: -4px;
+  vertical-align: middle;
+  color: #F4F4F4;
+  font-size: 32px;
+  text-align: center;
+  -webkit-transition: -webkit-transform 0.25s;
+          transition: transform 0.25s;
+}
+
+.c-back-to-top:hover {
+  text-decoration: none;
+}
+
+.c-back-to-top:hover:after {
+  -webkit-transform: translateX(3px);
+      -ms-transform: translateX(3px);
+          transform: translateX(3px);
+}
+
+.c-back-to-top.is-visible {
+  opacity: 0.75;
+}
+
+.c-back-to-top.is-visible:hover {
+  opacity: 1;
+}
+
+/* ==========================================================================
     SITE HEADER
 
     Header is a global component which is used across a lot of SS&C Advent
@@ -2713,6 +2768,8 @@ a:hover {
 .c-carousel__control:after {
   height: 100%;
   width: 100%;
+  position: relative;
+  top: -2px;
   display: table-cell;
   vertical-align: middle;
   text-align: center;
@@ -2956,12 +3013,12 @@ a:hover {
  * Alternative colours on titles 
  * and meta dependent on category
  */
-.c-content-block--insights .c-content-block__title,
-.c-content-block--insights .c-content-block__meta {
+.c-content-block--blog .c-content-block__title,
+.c-content-block--blog .c-content-block__meta {
   color: #70a8ae;
 }
 
-.c-content-block--insights .c-content-block__img {
+.c-content-block--blog .c-content-block__img {
   background-color: #70a8ae;
 }
 
@@ -2983,12 +3040,12 @@ a:hover {
   background-color: #cc6932;
 }
 
-.c-content-block--campaigns .c-content-block__title,
-.c-content-block--campaigns .c-content-block__meta {
+.c-content-block--insights .c-content-block__title,
+.c-content-block--insights .c-content-block__meta {
   color: #592d5f;
 }
 
-.c-content-block--campaigns .c-content-block__img {
+.c-content-block--insights .c-content-block__img {
   background-color: #592d5f;
 }
 
@@ -3028,7 +3085,7 @@ a:hover {
 }
 
 .c-repeater-block__title {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .c-repeater-block__main > *:last-child {
@@ -3125,11 +3182,11 @@ a:hover {
  * Alternative colours on titles 
  * dependent on category
  */
-.c-featured-item--insights {
+.c-featured-item--blog {
   background-color: #70a8ae;
 }
 
-.c-featured-item--insights .c-featured-item__title {
+.c-featured-item--blog .c-featured-item__title {
   color: #70a8ae;
 }
 
@@ -3149,11 +3206,11 @@ a:hover {
   color: #cc6932;
 }
 
-.c-featured-item--campaigns {
+.c-featured-item--insights {
   background-color: #592d5f;
 }
 
-.c-featured-item--campaigns .c-featured-item__title {
+.c-featured-item--insights .c-featured-item__title {
   color: #592d5f;
 }
 
@@ -3353,7 +3410,7 @@ a.c-content-filter__input {
  * Alternative colours on titles 
  * and meta dependent on category
  */
-.c-article--insights .c-article__title {
+.c-article--blog .c-article__title {
   color: #70a8ae;
 }
 
@@ -3365,7 +3422,7 @@ a.c-content-filter__input {
   color: #cc6932;
 }
 
-.c-article--campaigns .c-article__title {
+.c-article--insights .c-article__title {
   color: #592d5f;
 }
 
@@ -3776,7 +3833,7 @@ a.c-content-filter__input {
 }
 
 .u-base-font-size {
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .u-no-hover:hover {
@@ -3787,6 +3844,15 @@ a.c-content-filter__input {
   .u-med-text-right {
     text-align: right;
   }
+}
+
+.u-abs-centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 /* ==========================================================================
