@@ -2593,7 +2593,7 @@ a:hover {
 
 @media (min-width: 767px) {
   .c-article-title {
-    font-size: 40px;
+    font-size: 36px;
   }
 }
 
@@ -2808,7 +2808,7 @@ a:hover {
 
 @media (min-width: 767px) {
   .c-hero--single {
-    height: 410px;
+    height: 330px;
   }
 }
 
