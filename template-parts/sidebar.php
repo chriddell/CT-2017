@@ -58,7 +58,7 @@
 					 * returned anyway b/c we're using radio
 					 * buttons for category selection in admin
 					 */
-					echo '<p class="c-block-link__copy c-read-more">' . esc_html( $categories[0]->name ) . '</p>';
+					echo '<p class="c-block-link__copy c-read-more">' . 'Read more' . '</p>';
 				endif;
 
 				echo '</a>';
