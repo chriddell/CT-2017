@@ -87,7 +87,7 @@
 }
 
 .l-hero {
-  height: 390px;
+  height: 330px;
 }
 
 .l-page-content {
@@ -1299,7 +1299,7 @@ body {
 }
 
 html {
-  font-size: 20px;
+  font-size: 18px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -3028,7 +3028,7 @@ a:hover {
 }
 
 .c-repeater-block__title {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .c-repeater-block__main > *:last-child {
@@ -3055,7 +3055,7 @@ a:hover {
 		Currently is a carousel component on the homepage.
    ========================================================================== */
 .c-featured-item {
-  height: 390px;
+  height: 330px;
   padding-bottom: 0;
   background-size: cover;
   background-position: center center;
@@ -3117,7 +3117,7 @@ a:hover {
 
 @media (min-width: 767px) {
   .c-featured-item__title {
-    font-size: 44px;
+    font-size: 36px;
   }
 }
 
@@ -3776,7 +3776,7 @@ a.c-content-filter__input {
 }
 
 .u-base-font-size {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .u-no-hover:hover {
