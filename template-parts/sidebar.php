@@ -68,6 +68,8 @@
 
 		?>
 	</div>
+	<!--
 	<div id="tags" class="c-sidebar__section">
 		<?php otm_render_global_tags(); ?>
 	</div>
+	-->
