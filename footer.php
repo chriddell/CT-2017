@@ -37,7 +37,10 @@
 </footer>
 
 <a class="c-back-to-top" href="#top">
-	<span class="u-sr-only">Back to top</span>
+	<span class="u-abs-centered">
+		<span class="c-back-to-top__icon">&laquo;</span>
+		<span class="c-back-to-top__text">Top</span>
+	</span>
 </a>
 
 <?php wp_footer(); ?>

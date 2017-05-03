@@ -2364,33 +2364,16 @@ a:hover {
 .c-back-to-top {
   height: 48px;
   width: 48px;
-  display: table;
   position: fixed;
   bottom: 24px;
   right: 24px;
+  font-weight: bold;
+  color: #FFFFFF;
   background-color: #0a85c7;
   opacity: 0;
   z-index: 5;
-  -webkit-transform: rotate(-90deg);
-      -ms-transform: rotate(-90deg);
-          transform: rotate(-90deg);
   -webkit-transition: opacity 0.25s;
           transition: opacity 0.25s;
-}
-
-.c-back-to-top:after {
-  content: '\00bb';
-  height: 100%;
-  width: 100%;
-  display: table-cell;
-  position: relative;
-  top: -4px;
-  vertical-align: middle;
-  color: #F4F4F4;
-  font-size: 32px;
-  text-align: center;
-  -webkit-transition: -webkit-transform 0.25s;
-          transition: transform 0.25s;
 }
 
 .c-back-to-top:hover {
@@ -2409,6 +2392,22 @@ a:hover {
 
 .c-back-to-top.is-visible:hover {
   opacity: 1;
+}
+
+.c-back-to-top__icon {
+  display: block;
+  position: relative;
+  top: 9px;
+  left: 1px;
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.c-back-to-top__text {
+  font-size: 16px;
+  position: relative;
+  top: -8px;
 }
 
 /* ==========================================================================
