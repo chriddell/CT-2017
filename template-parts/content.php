@@ -43,8 +43,8 @@ $img = get_field('featured_image'); ?>
 
 <article class="c-content-block c-content-block--<?php echo $category_slug; ?> c-read-more__parent l-col-12 u-clearfix filterable" data-tag="<?php echo $tags; ?>">
 	<?php
-		// Use custom URL if post_category is 'campaigns'
-		if ( $category_slug == 'campaigns' ) {
+		// Use custom URL if post_category is 'insights'
+		if ( $category_slug == 'insights' ) {
 			printf( '<a href="%s" class="u-cover-link c-content-block__cover-link" target="_blank"></a>', get_field( 'campaign_url' ) );
 		}
 

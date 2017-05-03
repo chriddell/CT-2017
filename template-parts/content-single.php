@@ -38,7 +38,7 @@ endif;
 					the_title( '<h1 class="c-article-title c-section-title c-article__title">', '</h1>' ); ?>
 
 				<?php 
-				if ( $category_slug !== 'campaigns' ) : ?>
+				if ( $category_slug !== 'insights' ) : ?>
 
 					<span class="c-article__meta u-block u-clearfix">
 						<?php
