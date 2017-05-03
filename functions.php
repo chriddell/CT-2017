@@ -336,6 +336,7 @@ function otm_ajax_return_posts() {
     // Arguments for WP_Query
     $args = array(
     	'post_type'				=> 'post',
+    	'post_status'			=> 'publish',
       'tag'             => $tag, // requested taxonomy term provided by AJAX
       'posts_per_page'  => 5,
       'paged'						=> $page // offset provided by AJAX
@@ -348,6 +349,7 @@ function otm_ajax_return_posts() {
     // Arguments for WP_Query
     $args = array(
     	'post_type'				=> 'post',
+    	'post_status'			=> 'publish',
       'posts_per_page'  => 5,
       'paged'						=> $page // offset provided by AJAX
     );
@@ -368,22 +370,29 @@ function otm_ajax_return_posts() {
   // If posts
   else {
 
+  	// index
   	$i = 0;
-  	$posts_markup = '';
+
+  	// Empty string to hold markup
+  	$all_posts_markup = '';
 
   	// Start the loop
     while ( $my_query->have_posts() ) {
 
+    	// increment index
     	$i++;
 
     	// Set up postdata
     	$my_query->the_post();
 
+    	// store markup for post in var
     	$post_markup = load_template_part( 'template-parts/content' );
-      $posts_markup = $posts_markup . ' ' . $post_markup;
+
+    	// add markup for this post to all_post_markup
+      $all_posts_markup = $all_posts_markup . ' ' . $post_markup;
     }
 
-    echo json_encode( array( 'postcount' => $i, 'html' => $posts_markup ) );
+    echo json_encode( array( 'postcount' => $i, 'html' => $all_posts_markup ) );
   }
 
   die();
@@ -400,7 +409,8 @@ add_action( 'wp_ajax_otm_ajax_return_posts', 'otm_ajax_return_posts' );
  * automatically print the result. Means we can
  * store returned content to variable
  */
-function load_template_part($template_name, $part_name=null) {
+function load_template_part( $template_name, $part_name=null ) {
+
 	ob_start();
 	get_template_part($template_name, $part_name);
 	$var = ob_get_contents();

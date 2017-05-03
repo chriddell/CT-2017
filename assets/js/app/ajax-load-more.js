@@ -12,21 +12,6 @@
 	var loadTriggerTarget 	= '#load-more',
 			$loadTrigger 				= $( loadTriggerTarget );
 
-	// Get the page no. from data-attr on
-	// button
-	function getPage() {
-
-		return parseInt( $loadTrigger.data('page') );
-	}
-
-	// Update button's data-attr to reflect
-	// new page
-	function updatePage( pageNo ) {
-
-		$loadTrigger.data( 'page', pageNo );
-		$loadTrigger.attr( 'data-page', pageNo ); // also update DOM for clarity
-	}
-
 	// AJAX to get posts
 	function filterPosts() {
 
@@ -48,7 +33,6 @@
 				// Set vars from response object
 				var postCount = response.postcount,
 						html			= response.html;
-
 
 				// Show/remove 'Load more' 
 				// button based on posts returned.
@@ -124,6 +108,21 @@
 
 		$target.data( 'tag', string );
 		$target.attr( 'data-tag', string );
+	}
+
+	// Get the page no. from data-attr on
+	// button
+	function getPage() {
+
+		return parseInt( $loadTrigger.data('page') );
+	}
+
+	// Update button's data-attr to reflect
+	// new page
+	function updatePage( pageNo ) {
+
+		$loadTrigger.data( 'page', pageNo );
+		$loadTrigger.attr( 'data-page', pageNo ); // also update DOM for clarity
 	}
 
 	function updateLoadMoreTrigger( tag ) {

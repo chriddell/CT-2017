@@ -83,12 +83,6 @@ get_header(); ?>
 				?>
 
 				<button id="load-more" class="c-load-more" data-tag="all" data-page="2">Load More</button>
-
-				<?php
-					/* Ajax Load More 
-					echo do_shortcode( '[ajax_load_more id="1" container_type="div" post_type="post" offset="5" pause="true" scroll="false" transition="fade" images_loaded="true" button_label="Load 5 more" button_loading_label="Loading..."]' );
-					*/
-				?>
 			</main>
 
 			<span class="l-col-12 l-col-sml-push-7 l-col-med-push-8 l-col-sml-1-last c-sidebar-border u-hidden-mobile"><!-- Used to hold border --></span>
