@@ -10,3 +10,19 @@
 .owl-carousel .owl-item {
   overflow: hidden;
 }
+
+/**
+ * Decrease size of 'related solutions'
+ * links in sidebar to prevent line-breaking
+ *
+ * -- This was a request from the client, which 
+ * we didn't feel was particularly important, and is likely
+ * to break if any longer 'related solutions' names are
+ * added anyway.
+ *
+ */
+.c-sidebar .c-menu__item .c-read-more {
+	@include respond-to( 'tablet' ) {
+		font-size: 19px;
+	}
+}
