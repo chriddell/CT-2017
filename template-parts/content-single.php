@@ -43,9 +43,9 @@ endif;
 					<span class="c-article__meta u-block u-clearfix">
 						<?php
 						// Show author if category is Expert Insights
-						if ( $category_slug == 'insights' ) :
+						if ( $category_slug == 'blog' ) :
 							// Author
-							printf( __( '<p class="c-article__author c-article__meta-item l-col-12 l-col-sml-8">Written by %s</p>', 'otm' ), get_the_author() );
+							printf( __( '<p class="c-article__author c-article__meta-item l-col-12 l-col-sml-8">By %s</p>', 'otm' ), get_the_author() );
 							?>
 							<p class="c-article__date c-article__meta-item l-col-12 l-col-sml-4-last u-med-text-right"><?php the_date('jS F Y'); ?></p>
 						<?php else : ?>	
