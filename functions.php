@@ -251,6 +251,8 @@ function otm_set_post_views( $postID ) {
 	$count_key = 'post_views_count';
 	$count = get_post_meta( $postID, $count_key, true );
 
+	delete_post_meta( $postID, $count_key );
+
 	if ( $count == '' ) :
 
 		$count = 0;
@@ -417,3 +419,23 @@ function load_template_part( $template_name, $part_name=null ) {
 	ob_end_clean();
 	return $var;
 }
+
+/**
+ * Use ACF field as og:image
+ * Overwrites Yoast SEO.
+ */
+function otm_custom_og_image() {
+
+	global $post;
+
+	$og_img = get_field( 'featured_image', $post );
+
+	if ( is_single() ) {
+		echo '<meta property="og:image" content="' . $og_img['url'] . '"/>';
+	}
+
+	else {
+		return;
+	}
+}
+add_action( 'wp_head', 'otm_custom_og_image', 5 );

@@ -31,41 +31,51 @@ $img = get_field('featured_image'); ?>
 
 				<div class="c-article__main c-wyswiyg-content u-clearfix u-no-borders">
 
-				<?php
-				while ( have_rows( 'acf_repeater_block' ) ) : the_row(); 
+					<?php
+					while ( have_rows( 'acf_repeater_block' ) ) : the_row(); 
 
-					// ACF
-					$repeater_image 	= get_sub_field( 'acf_repeater_block_image' ); ?>
+						// ACF
+						$repeater_image 	= get_sub_field( 'acf_repeater_block_image' ); ?>
 
-					<section class="c-repeater-block l-col-12">
+						<section class="c-repeater-block l-col-12">
 
-						<?php
-						if ( !empty( $repeater_image ) ) : ?>
-							<span class="c-repeater-block__main l-col-12 l-col-med-6">
-						<?php 
-						endif; ?>
+							<?php
+							/* If has image */
+							if ( !empty( $repeater_image ) ) : ?>
 
-								<h2 class="c-repeater-block__title"><?php the_sub_field( 'acf_repeater_block_heading' ); ?></h2>
-								<span class="c-wysiwyg-content c-repeater-block__body u-block">
-									<?php the_sub_field( 'acf_repeater_block_main' ); ?>
-								</span>
-								<a class="c-repeater-block__button c-btn c-read-more c-read-more--smaller"  href="<?php the_sub_field( 'acf_repeater_block_button_url' ); ?>" target="_blank"><?php the_sub_field( 'acf_repeater_block_button_text' ); ?></a>
+								<span class="c-repeater-block__main l-col-12 l-col-med-6">
 
-						<?php
-						if ( !empty( $repeater_image ) ) : ?>
+							<?php endif; ?>
 
-							</span><!-- / .l-col-6 -->
-							<span class="l-col-12 l-col-med-6-last">
-								<img class="c-repeater-block__image" src="<?php echo $repeater_image['url']; ?>"/>
+							<h2 class="c-repeater-block__title"><?php the_sub_field( 'acf_repeater_block_heading' ); ?></h2>
+							<span class="c-wysiwyg-content c-repeater-block__body u-block">
+								<?php the_sub_field( 'acf_repeater_block_main' ); ?>
 							</span>
 
-						<?php 
-						endif; ?>
+							<?php
+							/* If has button/link */
+							if ( !empty( get_sub_field( 'acf_repeater_block_button_url' ) ) ) : ?>
 
-					</section>
+								<a class="c-repeater-block__button c-btn c-read-more c-read-more--smaller"  href="<?php the_sub_field( 'acf_repeater_block_button_url' ); ?>" target="_blank"><?php the_sub_field( 'acf_repeater_block_button_text' ); ?></a>
 
-				<?php
-				endwhile;
+							<?php endif; ?>
+
+							<?php
+							/* If has image */
+							if ( !empty( $repeater_image ) ) : ?>
+
+								</span><!-- / .l-col-6 -->
+
+								<span class="l-col-12 l-col-med-6-last">
+									<img class="c-repeater-block__image" src="<?php echo $repeater_image['url']; ?>"/>
+								</span>
+
+							<?php endif; ?>
+
+						</section>
+
+					<?php
+					endwhile;
 			else : ?>
 
 				<div class="c-article__main c-wyswiyg-content u-clearfix">

@@ -66,7 +66,6 @@ $(document).ready(function(){
 	});
 });
 
-
 /* LinkedIn
    ========================================================================== */
 
@@ -88,7 +87,7 @@ $(document).ready(function(){
 	});
 });
 
-/* 2. Share UI
+/* Share UI
    ========================================================================== */
 
 var shareDialogTriggerClass		= '.c-share__trigger',

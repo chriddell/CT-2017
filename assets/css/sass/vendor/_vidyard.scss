@@ -1,0 +1,13 @@
+/* ==========================================================================
+    Vidyard
+
+    We are using vidyard to embed some videos on the site.
+    https://www.vidyard.com/
+   ========================================================================== */
+
+.vidyard_player > * {
+	// direct child should be the video
+	// container with inline CSS applied
+	// which we need to overwrite
+	width: 100% !important;
+}

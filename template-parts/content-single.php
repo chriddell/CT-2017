@@ -74,11 +74,18 @@ endif;
 						<?php 
 						endif; ?>
 
-								<h2 class="c-repeater-block__title"><?php the_sub_field( 'acf_repeater_block_heading' ); ?></h2>
-								<span class="c-wysiwyg-content c-repeater-block__body u-block">
-									<?php the_sub_field( 'acf_repeater_block_main' ); ?>
-								</span>
-								<a class="c-repeater-block__button c-btn c-read-more c-read-more--smaller"  href="<?php the_sub_field( 'acf_repeater_block_button_url' ); ?>" target="_blank"><?php the_sub_field( 'acf_repeater_block_button_text' ); ?></a>
+						<h2 class="c-repeater-block__title"><?php the_sub_field( 'acf_repeater_block_heading' ); ?></h2>
+						<span class="c-wysiwyg-content c-repeater-block__body u-block">
+							<?php the_sub_field( 'acf_repeater_block_main' ); ?>
+						</span>
+
+						<?php
+						/* If has button/link */
+						if ( !empty( get_sub_field( 'acf_repeater_block_button_url' ) ) ) : ?>
+
+							<a class="c-repeater-block__button c-btn c-read-more c-read-more--smaller"  href="<?php the_sub_field( 'acf_repeater_block_button_url' ); ?>" target="_blank"><?php the_sub_field( 'acf_repeater_block_button_text' ); ?></a>
+
+						<?php endif; ?>
 
 						<?php
 						if ( !empty( $repeater_image ) ) : ?>
