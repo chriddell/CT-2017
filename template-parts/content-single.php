@@ -135,6 +135,31 @@ endif;
 							default:
 								_e( 'Learn more', 'otm' );
 						endswitch; ?>
+
+						<?php
+						/* Embed Azalead script (to track link follows) if one of these pages */ 
+						if ( is_single( 655 ) ) : ?>
+
+							<!-- Conversion Pixel - CP MiFID II Video - DO NOT MODIFY -->
+							<script src="https://secure.adnxs.com/px?id=846473&t=1" type="text/javascript"></script>
+							<!-- End of Conversion Pixel -->
+
+						<?php 
+						elseif ( is_single( 633 ) ) : ?>
+
+							<!-- Conversion Pixel - CP MiFID II Webinar - DO NOT MODIFY -->
+							<script src="https://secure.adnxs.com/px?id=846472&t=1" type="text/javascript"></script>
+							<!-- End of Conversion Pixel -->
+
+						<?php
+						elseif ( is_single( 630 ) ) : ?>
+
+							<!-- Conversion Pixel - CP MiFID II White Paper - DO NOT MODIFY -->
+							<script src="https://secure.adnxs.com/px?id=846471&t=1" type="text/javascript"></script>
+							<!-- End of Conversion Pixel -->
+
+						<?php
+						endif; ?>
 					</a>
 			<?php 
 				endif; ?>

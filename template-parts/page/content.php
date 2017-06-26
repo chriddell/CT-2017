@@ -22,16 +22,16 @@ $img = get_field('featured_image'); ?>
 
 			<header class="c-article__header">
 				<?php
-				the_title( '<h1 class="c-article-title c-section-title c-article__title">', '</h1>' ); ?>
+					the_title( '<h1 class="c-article-title c-section-title c-article__title">', '</h1>' ); ?>
 			</header>
 
 			<?php
-			/* Loop ACF repeater */
-			if ( have_rows( 'acf_repeater_block' ) ) : ?>
+				/* Loop ACF repeater */
+				if ( have_rows( 'acf_repeater_block' ) ) : ?>
 
 				<div class="c-article__main c-wyswiyg-content u-clearfix u-no-borders">
 
-					<?php
+				<?php
 					while ( have_rows( 'acf_repeater_block' ) ) : the_row(); 
 
 						// ACF
@@ -39,26 +39,44 @@ $img = get_field('featured_image'); ?>
 
 						<section class="c-repeater-block l-col-12">
 
-							<?php
+						<?php
 							/* If has image */
 							if ( !empty( $repeater_image ) ) : ?>
 
 								<span class="c-repeater-block__main l-col-12 l-col-med-6">
 
-							<?php endif; ?>
+						<?php
+							endif; ?>
 
 							<h2 class="c-repeater-block__title"><?php the_sub_field( 'acf_repeater_block_heading' ); ?></h2>
 							<span class="c-wysiwyg-content c-repeater-block__body u-block">
 								<?php the_sub_field( 'acf_repeater_block_main' ); ?>
 							</span>
 
-							<?php
-							/* If has button/link */
-							if ( !empty( get_sub_field( 'acf_repeater_block_button_url' ) ) ) : ?>
+						<?php
+							/* If has URL */
+							if ( get_sub_field( 'acf_repeater_block_button_url' ) ) : ?>
 
-								<a class="c-repeater-block__button c-btn c-read-more c-read-more--smaller"  href="<?php the_sub_field( 'acf_repeater_block_button_url' ); ?>" target="_blank"><?php the_sub_field( 'acf_repeater_block_button_text' ); ?></a>
+								<a class="c-repeater-block__button c-btn c-read-more c-read-more--smaller" href="<?php the_sub_field( 'acf_repeater_block_button_url' ); ?>" target="_blank"><?php the_sub_field( 'acf_repeater_block_button_text' ); ?></a>
 
-							<?php endif; ?>
+						<?php
+							/* If has overlay (form) */
+							elseif ( get_sub_field( 'acf_repeater_block_form_id' ) ) : ?>
+
+								<a class="c-repeater-block__button c-btn c-read-more c-read-more--smaller" data-rel="lightcase" type="inline" href="#overlay-<?php the_sub_field( 'acf_repeater_block_form_id' ); ?>"><?php the_sub_field( 'acf_repeater_block_button_text' ); ?></a>
+
+								<div class="c-lightbox__inner" id="overlay-<?php the_sub_field( 'acf_repeater_block_form_id' ); ?>">
+									<h1 class="u-heading c-lightbox__title" id="overlay-title">Watch the webinar</h1>
+							  	<form id="mktoForm_<?php the_sub_field( 'acf_repeater_block_form_id' ); ?>" class="c-form c-form--marketo c-form--contact u-marketo"></form>
+
+							  	<script type="text/javascript" id="vidyard_embed_code_8MqzAPC6ie9qUoYniZHhAH" src="//play.vidyard.com/<?php the_sub_field( 'acf_repeater_block_vidyard_embed_code' ); ?>.js?v=3.1.1&type=inline"></script>
+							  </div><!-- / .c-lightbox__inner -->
+
+							  <!-- External Marketo form script -->
+							  <script src="//app-ab17.marketo.com/js/forms2/js/forms2.min.js"></script>
+
+						<?php 
+							endif; ?>
 
 							<?php
 							/* If has image */
@@ -88,7 +106,7 @@ $img = get_field('featured_image'); ?>
 				?>
 
 			<?php
-			endif; ?>
+				endif; ?>
 			</div>
 
 		</article>
