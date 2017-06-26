@@ -78,7 +78,7 @@
 		transform: translateY(-2px);
 
 		// Remove hover effect on touch
-		.touch & {
+		.touchevents & {
 			transform: none;
 		}
 	}

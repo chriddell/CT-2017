@@ -28,7 +28,7 @@
 		width: 100%;
 	}
 
-	.touch & {
+	.touchevents & {
 		/**
 		 * Calculate width and height
 		 * using vw so we can keep it
@@ -82,7 +82,7 @@
 	.c-content-block:hover & {
 		transform: scale(1.1);
 
-		.touch & {
+		.touchevents & {
 			transform: none;
 		}
 	}

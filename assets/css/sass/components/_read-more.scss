@@ -35,8 +35,8 @@
 	.c-read-more__parent:hover &:after {
 		transform: translateX(5px);
 
-		// Remove hover on .touch
-		.touch & {
+		// Remove hover on touch
+		.touchevents & {
 			transform: none;
 		}
 	}

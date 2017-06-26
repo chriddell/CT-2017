@@ -70,8 +70,8 @@
 
 		transition: transform 0.25s;
 
-		.touch & {
-			transform: none !important; // remove hover effects on .touch
+		.touchevents & {
+			transform: none !important; // remove hover effects on touch
 		}
 	}
 

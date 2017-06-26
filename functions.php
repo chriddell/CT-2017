@@ -47,7 +47,7 @@ function otm_enqueue_scripts() {
 	========================================================================== */
 
 	// Enqueue modernizr separately b/c faster
-	wp_enqueue_script( 'modernizr', 'https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js', '3.3.1', true );
+	wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/assets/js/lib/modernizr-custom-3.5.0.min.js', '3.5.0', true );
 
 	// Enqueue built versions of app and vendor scripts
 	wp_enqueue_script( 'main-js', get_template_directory_uri() . '/assets/js/app/built/app.min.js', array( 'jquery' ), '1.0.0', true );

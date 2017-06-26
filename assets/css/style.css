@@ -2075,7 +2075,7 @@ a:hover {
           transform: translateX(5px);
 }
 
-.touch .c-read-more:hover:after, .touch
+.touchevents .c-read-more:hover:after, .touchevents
 .c-read-more__parent:hover .c-read-more:after {
   -webkit-transform: none;
       -ms-transform: none;
@@ -2110,7 +2110,7 @@ a:hover {
   }
 }
 
-.no-touch .c-btn:hover, .c-btn:focus {
+.no-touchevents .c-btn:hover, .c-btn:focus {
   background-color: #235164;
   color: #FFFFFF;
   text-decoration: none;
@@ -2122,7 +2122,7 @@ a:hover {
   background-color: transparent;
 }
 
-.no-touch .c-btn--white:hover, .c-btn--white:focus {
+.no-touchevents .c-btn--white:hover, .c-btn--white:focus {
   background-color: #FFFFFF;
   color: #333132;
 }
@@ -2530,7 +2530,7 @@ a:hover {
           transform: translateY(-2px);
 }
 
-.touch .c-site-header__title-link:hover {
+.touchevents .c-site-header__title-link:hover {
   -webkit-transform: none;
       -ms-transform: none;
           transform: none;
@@ -2821,7 +2821,7 @@ a:hover {
           transition: transform 0.25s;
 }
 
-.touch .c-carousel__control:after {
+.touchevents .c-carousel__control:after {
   -webkit-transform: none !important;
       -ms-transform: none !important;
           transform: none !important;
@@ -2947,7 +2947,7 @@ a:hover {
   width: 100%;
 }
 
-.touch .c-content-block {
+.touchevents .c-content-block {
   /**
 		 * Calculate width and height
 		 * using vw so we can keep it
@@ -2960,7 +2960,7 @@ a:hover {
 }
 
 @media (min-width: 767px) {
-  .touch .c-content-block {
+  .touchevents .c-content-block {
     width: 100%;
     height: auto;
   }
@@ -3007,7 +3007,7 @@ a:hover {
           transform: scale(1.1);
 }
 
-.touch .c-content-block:hover .c-content-block__img {
+.touchevents .c-content-block:hover .c-content-block__img {
   -webkit-transform: none;
       -ms-transform: none;
           transform: none;
