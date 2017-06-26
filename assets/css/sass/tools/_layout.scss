@@ -52,8 +52,13 @@
 }
 
 .l-pre-footer {
-  padding-top: 40px;
+  padding-top: 45px;
   padding-bottom: 40px;
+
+  @include respond-to( 'tablet' ) {
+    padding-top: 55px;
+    padding-bottom: 50px;
+  }
 }
 
 /**

@@ -12,6 +12,10 @@
 	display: none; // overwritten by JS
 
 	font-size: 20px;
+
+	&:focus {
+		outline: 0;
+	}
 }
 
 .c-lightbox__title {
@@ -26,4 +30,9 @@
 	@include respond-to( 'tablet' ) {
 		color: $clrLightGrey !important;
 	}
+}
+
+// Hide vidyard videos inside lightbox by default
+.c-lightbox__inner .vidyard_player {
+	display: none;
 }

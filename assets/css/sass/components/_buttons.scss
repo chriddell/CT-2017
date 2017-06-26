@@ -23,7 +23,8 @@
 	}
 
 	// Only add hover effects if no touch
-	.no-touch &:hover {
+	.no-touch &:hover,
+	&:focus {
 		background-color: $clrDarkTeal;
 		color: #FFFFFF;
 
@@ -35,7 +36,8 @@
 		color: #FFFFFF;
 		background-color: transparent;
 
-		.no-touch &:hover {
+		.no-touch &:hover,
+		&:focus {
 			background-color: #FFFFFF;
 			color: $clrDarkestGrey;
 		}

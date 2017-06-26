@@ -56,5 +56,5 @@ function swapMarketoStyles() {
   $('.c-form--marketo input[type="text"], .c-form--marketo input[type="email"], .c-form--marketo textarea').addClass('c-form__input--text');
   $('.c-form--marketo textarea').addClass('c-form__input--textarea');
   $('.c-form--marketo button[type="submit"]').addClass('c-form__input c-form__input--submit c-btn c-btn--submit c-read-more');
-  $('.c-form--marketo select').addClass('c-form__input--select');
+  $('.c-form--marketo select').addClass('c-form__input--select').parents( '.mktoFormRow' ).addClass('c-form__input-group--50');;
 }

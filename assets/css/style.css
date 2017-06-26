@@ -101,8 +101,15 @@
 }
 
 .l-pre-footer {
-  padding-top: 40px;
+  padding-top: 45px;
   padding-bottom: 40px;
+}
+
+@media (min-width: 767px) {
+  .l-pre-footer {
+    padding-top: 55px;
+    padding-bottom: 50px;
+  }
 }
 
 /**
@@ -1449,7 +1456,6 @@ a:hover {
 
 .owl-carousel.owl-grab {
   cursor: move;
-  cursor: -webkit-grab;
   cursor: grab;
 }
 
@@ -2007,12 +2013,6 @@ a:hover {
   min-height: 475px;
 }
 
-@media (min-width: 767px) {
-  #lightcase-content {
-    height: 475px;
-  }
-}
-
 .lightcase-contentInner {
   height: auto !important;
 }
@@ -2110,7 +2110,7 @@ a:hover {
   }
 }
 
-.no-touch .c-btn:hover {
+.no-touch .c-btn:hover, .c-btn:focus {
   background-color: #235164;
   color: #FFFFFF;
   text-decoration: none;
@@ -2122,7 +2122,7 @@ a:hover {
   background-color: transparent;
 }
 
-.no-touch .c-btn--white:hover {
+.no-touch .c-btn--white:hover, .c-btn--white:focus {
   background-color: #FFFFFF;
   color: #333132;
 }
@@ -2190,11 +2190,37 @@ a:hover {
   color: #333132;
 }
 
+.c-form__input-group {
+  width: 100%;
+  float: left;
+  margin-left: 0;
+  margin-right: 0;
+  position: relative;
+}
+
+@media (min-width: 767px) {
+  .c-form__input-group--50 {
+    width: 49.6183206107%;
+    float: left;
+    margin-right: 0.7633587786%;
+  }
+  .c-form__input-group--50 + .c-form__input-group--50 {
+    width: 49.6183206107%;
+    float: right;
+    margin-right: 0;
+  }
+}
+
 .c-form__input {
   display: block;
-  border: 2px solid #d7d7d7;
+  border: 2px solid #D7D7D7;
   box-sizing: border-box;
   background-color: #FFFFFF;
+}
+
+.c-form__input:focus {
+  border-color: #235164;
+  outline: none;
 }
 
 .c-form__input--text {
@@ -2202,11 +2228,6 @@ a:hover {
   padding: 15px;
   margin-bottom: 15px;
   border-radius: 5px;
-}
-
-.c-form__input--text:focus {
-  border-color: #235164;
-  outline: none;
 }
 
 .c-form__input--text.mktoInvalid, .c-form__input--text.mktoInvalid::-webkit-input-placeholder, .c-form__input--text.mktoInvalid::-webkit-input-placeholder {
@@ -2225,11 +2246,30 @@ a:hover {
   color: #333132;
 }
 
-.c-form__input--submit {
+.c-form__input--select {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  position: relative;
   font-family: "myriad-pro", Helvetica, Arial, sans-serif;
+  background-image: url(../media/img/dropdown-icon.svg);
+  background-repeat: no-repeat;
+  background-position: calc( 100% - 15px) center;
+  background-size: 14px 8px;
+  color: #333132;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.c-form__input--submit {
+  width: 100%;
+  float: right;
   border-color: #235164;
+  font-family: "myriad-pro", Helvetica, Arial, sans-serif;
   background-color: #235164;
   color: #FFFFFF;
+  cursor: pointer;
 }
 
 @media (min-width: 767px) {
@@ -2239,22 +2279,26 @@ a:hover {
   }
 }
 
-/* 'Request Information' form
+/* Marketo forms
    ========================================================================== */
-.c-form--contact {
+.c-form--marketo {
   font-size: 18px;
 }
 
-.c-form--contact .c-form__input-group {
-  width: 100%;
-  float: left;
-  margin-left: 0;
-  margin-right: 0;
-  position: relative;
+.c-form--marketo ::-webkit-input-placeholder,
+.c-form--marketo ::-webkit-input-placeholder {
+  font-family: "myriad-pro", Helvetica, Arial, sans-serif;
+  color: #333132;
+}
+
+.c-form--marketo ::placeholder,
+.c-form--marketo ::-webkit-input-placeholder {
+  font-family: "myriad-pro", Helvetica, Arial, sans-serif;
+  color: #333132;
 }
 
 @media (min-width: 767px) {
-  .c-form--contact .c-form__input-group:nth-of-type(1) {
+  .c-form--marketo .c-form__input-group:nth-of-type(1) {
     width: 49.6183206107%;
     float: left;
     margin-right: 0.7633587786%;
@@ -2262,7 +2306,7 @@ a:hover {
 }
 
 @media (min-width: 767px) {
-  .c-form--contact .c-form__input-group:nth-of-type(2) {
+  .c-form--marketo .c-form__input-group:nth-of-type(2) {
     width: 49.6183206107%;
     float: right;
     margin-right: 0;
@@ -2270,30 +2314,11 @@ a:hover {
 }
 
 @media (min-width: 767px) {
-  .c-form--contact .c-form__submit-group {
+  .c-form--marketo .c-form__submit-group {
     width: 41.2213740458%;
     float: right;
     margin-right: 0;
   }
-}
-
-.c-form--contact .c-form__input--submit {
-  width: 100%;
-  float: right;
-  cursor: pointer;
-}
-
-/* Marketo forms
-   ========================================================================== */
-.c-form--marketo ::-webkit-input-placeholder,
-.c-form--marketo ::-webkit-input-placeholder {
-  font-family: "myriad-pro", Helvetica, Arial, sans-serif;
-  color: #333132;
-}
-.c-form--marketo ::placeholder,
-.c-form--marketo ::-webkit-input-placeholder {
-  font-family: "myriad-pro", Helvetica, Arial, sans-serif;
-  color: #333132;
 }
 
 .mktoError {
@@ -2320,6 +2345,10 @@ a:hover {
   font-size: 20px;
 }
 
+.c-lightbox__inner:focus {
+  outline: 0;
+}
+
 .c-lightbox__title {
   font-size: 24px;
   color: #333132;
@@ -2333,6 +2362,10 @@ a:hover {
   .c-lightbox__copy {
     color: #6d6e71 !important;
   }
+}
+
+.c-lightbox__inner .vidyard_player {
+  display: none;
 }
 
 /* ==========================================================================
@@ -2721,12 +2754,10 @@ a:hover {
 		already exist).
    ========================================================================== */
 .c-carousel {
-  cursor: -webkit-grab;
   cursor: grab;
 }
 
 .c-carousel:active {
-  cursor: -webkit-grabbing;
   cursor: grabbing;
 }
 
@@ -3768,7 +3799,7 @@ a.c-content-filter__input {
 }
 
 .u-clearfix:after, .c-menu:after,
-.c-form--contact:after {
+.c-form--marketo:after {
   content: '';
   display: table;
   clear: both;

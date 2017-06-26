@@ -13,17 +13,39 @@
 ::placeholder,
 ::-webkit-input-placeholder {
 	font-family: $fontMain;
+
 	color: $clrDarkestGrey;
+}
+
+.c-form__input-group {
+	@include span( 12 );
+
+	position: relative;
+}
+
+.c-form__input-group--50 {
+	@include respond-to( 'tablet' ) {
+		@include span( 6 );
+
+		& + & {
+			@include span( 6 last );
+		}
+	}
 }
 
 .c-form__input {
 	display: block;
 
-	border: 2px solid #d7d7d7;
+	border: 2px solid #D7D7D7;
 
 	box-sizing: border-box;
 
 	background-color: #FFFFFF;
+
+	&:focus {
+  	border-color: $clrDarkTeal;
+  	outline: none;
+  }
 }
 
 .c-form__input--text {
@@ -33,11 +55,6 @@
   margin-bottom: 15px;
 
   border-radius: 5px;
-
-  &:focus {
-  	border-color: $clrDarkTeal;
-  	outline: none;
-  }
   	
   // Error
   &.mktoInvalid,
@@ -54,12 +71,39 @@
   }
 }
 
-.c-form__input--submit {
+.c-form__input--select {
+	width: 100%;
+
+	padding: 15px;
+	margin-bottom: 15px;
+
+	position: relative;
+
 	font-family: $fontMain;
+	
+	background-image: url( ../media/img/dropdown-icon.svg );
+	background-repeat: no-repeat;
+	background-position: calc( 100% - 15px ) center;
+	background-size: 14px 8px;
+
+	color: $clrDarkestGrey;
+
+	appearance: none; // remove default browser <select> appearance
+}
+
+.c-form__input--submit {
+	width: 100%;
+
+	float: right;
 
 	border-color: $clrDarkTeal;
+
+	font-family: $fontMain;
+
 	background-color: $clrDarkTeal;
 	color: #FFFFFF;
+
+	cursor: pointer;
 
 	@include respond-to( 'tablet' ) {
 		background-color: transparent;
@@ -67,21 +111,24 @@
 	}
 }
 
-/* 'Request Information' form
+/* Marketo forms
    ========================================================================== */
 
-.c-form--contact {
+.c-form--marketo {
 	font-size: 18px;
 
 	@extend %clearfix;
 
-	.c-form__input-group {
-		@include span( 12 );
-
-		position: relative;
+	// Some Marketo styles which we need
+	// specificity to overwrite
+	::placeholder,
+	::-webkit-input-placeholder {
+		font-family: $fontMain;
+		color: $clrDarkestGrey;
 	}
 
-	// First two inputs side-by-side
+	// First two inputs side-by-side 
+	// first and last name
 	.c-form__input-group:nth-of-type(1) {
 		@include respond-to( 'tablet' ) {
 			@include span( 6 );
@@ -96,30 +143,8 @@
 
 	.c-form__submit-group {
 		@include respond-to( 'tablet' ) {
-			@include span( 5 last )
+			@include span( 5 last );
 		}
-	}
-
-	.c-form__input--submit {
-		width: 100%;
-
-		float: right;
-
-		cursor: pointer;
-	}
-}
-
-/* Marketo forms
-   ========================================================================== */
-
-.c-form--marketo {
-
-	// Some Marketo styles which we need
-	// specificity to overwrite
-	::placeholder,
-	::-webkit-input-placeholder {
-		font-family: $fontMain;
-		color: $clrDarkestGrey;
 	}
 }
 

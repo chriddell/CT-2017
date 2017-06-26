@@ -36,7 +36,7 @@
 
 	@include respond-to( 'tablet' ) {
 		// force height because we load elements within it dynamically
-		height: 475px;
+		// height: 475px;
 	}
 }
 
