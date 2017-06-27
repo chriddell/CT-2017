@@ -11,3 +11,48 @@
 	// which we need to overwrite
 	width: 100% !important;
 }
+
+/**
+ * Vidyard responsive css for inline embed
+ *
+ * Fix from Marketo landing pages
+ * supplied by Elin @ Advent
+ *
+ */
+
+.v-innerContainer {
+	width: 100% !important;
+  height: 0;
+
+  padding: 56.25% 0 0 0; /* Video aspect ratio */
+
+  position: relative; 
+  display: block;
+
+  /* Use the following 2 lines to align centrally */
+  max-width: 640px; /* Width of player */
+}
+
+.v-outerContainer {
+  max-height: 360px; /* Height of player */
+
+  overflow: hidden;
+}
+
+.vidyard_player {
+	width: 100%;
+  height: 100%;
+  max-width: 640px;   /* Dimensions of player */
+  max-height: 360px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.vidyard_player > span {
+  width: 100% !important;
+  height: 100% !important;
+
+  margin: 0 auto !important;
+}
