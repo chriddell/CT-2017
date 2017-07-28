@@ -40,7 +40,7 @@
 
 					// Load a Marketo form
 					// http://developers.marketo.com/javascript-api/forms/api-reference/
-					MktoForms2.loadForm("//app-ab17.marketo.com", "694-KCV-926", getFormID(), function(form){ 
+					MktoForms2.loadForm("//app-ab17.marketo.com", "694-KCV-926", getFormID(), function( form ){ 
 
 						// Add an onSuccess handler
 	    			form.onSuccess( function( values, followUpUrl ) {
@@ -61,7 +61,7 @@
 		        	else {
 
 		        		// Find the video markup (from vidyard: https://www.vidyard.com/developers/)
-		        		var vidyardContainer 	= lightcase.get( 'case' ).find( '.vidyard_player' ),
+		        		var vidyardContainer 	= lightcase.get( 'case' ).find( '.v-outerContainer' ),
 		        				vidyardIframe			= vidyardContainer.find('iframe');
 
 		        		// Show the container

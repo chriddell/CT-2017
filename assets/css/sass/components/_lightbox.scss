@@ -31,8 +31,3 @@
 		color: $clrLightGrey !important;
 	}
 }
-
-// Hide vidyard videos inside lightbox by default
-.c-lightbox__inner .vidyard_player {
-	display: none;
-}

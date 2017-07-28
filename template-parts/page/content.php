@@ -68,8 +68,12 @@ $img = get_field('featured_image'); ?>
 								<div class="c-lightbox__inner" id="overlay-<?php the_sub_field( 'acf_repeater_block_form_id' ); ?>">
 									<h1 class="u-heading c-lightbox__title" id="overlay-title">Watch the webinar</h1>
 							  	<form id="mktoForm_<?php the_sub_field( 'acf_repeater_block_form_id' ); ?>" class="c-form c-form--marketo c-form--contact u-marketo"></form>
-
-							  	<script type="text/javascript" id="vidyard_embed_code_8MqzAPC6ie9qUoYniZHhAH" src="//play.vidyard.com/<?php the_sub_field( 'acf_repeater_block_vidyard_embed_code' ); ?>.js?v=3.1.1&type=inline"></script>
+									
+									<div class="v-outerContainer">
+										<div class="v-innerContainer">
+							  			<script type="text/javascript" id="vidyard_embed_code_8MqzAPC6ie9qUoYniZHhAH" src="//play.vidyard.com/<?php the_sub_field( 'acf_repeater_block_vidyard_embed_code' ); ?>.js?v=3.1.1&type=inline"></script>
+							  		</div>
+							  	</div>
 							  </div><!-- / .c-lightbox__inner -->
 
 							  <!-- External Marketo form script -->

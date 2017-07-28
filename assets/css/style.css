@@ -2081,6 +2081,10 @@ a:hover {
   margin: 0 auto !important;
 }
 
+.c-lightbox__inner .v-outerContainer {
+  display: none;
+}
+
 /* Components
    ========================================================================== */
 /* ==========================================================================
@@ -2406,10 +2410,6 @@ a:hover {
   }
 }
 
-.c-lightbox__inner .vidyard_player {
-  display: none;
-}
-
 /* ==========================================================================
     BLOCK LINK
 
@@ -2664,7 +2664,7 @@ a:hover {
     "Contact Us"
    ========================================================================== */
 .c-pre-footer {
-  background-color: #333132;
+  background-color: #1c7293;
   color: #FFFFFF;
   text-align: center;
 }

@@ -56,3 +56,8 @@
 
   margin: 0 auto !important;
 }
+
+// Hide vidyard videos inside lightbox by default
+.c-lightbox__inner .v-outerContainer {
+  display: none;
+}
