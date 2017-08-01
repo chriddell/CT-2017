@@ -135,7 +135,7 @@ function otm_show_related_posts() {
 						while ( $my_query->have_posts() ) : $my_query->the_post();
 
 							// Get the template for the post content
-							get_template_part( 'template-parts/content-related' );
+							get_template_part( 'template-parts/post/content-related' );
 
 						endwhile;
 					echo '</aside>';
@@ -150,6 +150,43 @@ function otm_show_related_posts() {
 	$post = $orig_post;
 	wp_reset_query();
 }
+
+/**
+ * Custom post-type:
+ * Case Study
+ *
+ */
+function otm_targeted_case_study_init() {
+
+	// labels across the admin
+	$labels = array(
+
+		'name'              => 'Case Studies',
+		'singular_name'     => 'Case Study',
+		'search_items'      => 'Search Case Studies',
+		'all_items'         => 'All Case Studies',
+		'parent_item'       => 'Parent Case Study',
+		'parent_item_colon' => 'Parent Case Study:',
+		'edit_item'         => 'Edit Case Study',
+		'update_item'       => 'Update Case Study',
+		'add_new_item'      => 'Add New Case Study',
+		'new_item_name'     => 'New Case Study',
+		'menu_name'         => 'Case Studies'
+	);
+
+	register_post_type( 'targeted-case-study',
+
+		array(
+
+			'labels' 				=> $labels,
+			'public'        => true,
+			'has_archive'   => false,
+			'menu_icon'     => 'dashicons-media-text',
+			'rewrite'				=> array( 'slug' => 'case-study', 'with_front' => false )
+		)
+	);
+}
+add_action( 'init', 'otm_targeted_case_study_init' );
 
 /**
  * Custom Taxonomy:
@@ -286,7 +323,7 @@ function otm_show_featured_posts() {
 		while ( $my_query->have_posts() ) : $my_query->the_post();
 
 			// Get specific template-part
-			get_template_part( 'template-parts/content-featured' );
+			get_template_part( 'template-parts/post/content-featured' );
 
 		endwhile;
 	endif;
@@ -388,7 +425,7 @@ function otm_ajax_return_posts() {
     	$my_query->the_post();
 
     	// store markup for post in var
-    	$post_markup = load_template_part( 'template-parts/content' );
+    	$post_markup = load_template_part( 'template-parts/post/content' );
 
     	// add markup for this post to all_post_markup
       $all_posts_markup = $all_posts_markup . ' ' . $post_markup;
@@ -439,3 +476,19 @@ function otm_custom_og_image() {
 	}
 }
 add_action( 'wp_head', 'otm_custom_og_image', 5 );
+
+/**
+ * ACF Admin style hacks
+ */
+function otm_custom_admin_css() {
+	echo '<style>
+		.acf_postbox .field_type-message p.label {
+			display: block !important;
+		}
+
+		.acf_postbox .field textarea {
+			min-height: 0;
+		}
+	</style>';
+}
+add_action( 'admin_head', 'otm_custom_admin_css' );

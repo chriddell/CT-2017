@@ -2764,6 +2764,10 @@ a:hover {
   }
 }
 
+.c-case-study-title {
+  font-size: 24px;
+}
+
 /* ==========================================================================
     MENU
    
@@ -3539,6 +3543,10 @@ a.c-content-filter__input {
   }
 }
 
+.c-article__in-page-form {
+  margin-top: 30px;
+}
+
 /* WYSIWYG Content
    ========================================================================== */
 .c-article__main {
@@ -3550,25 +3558,25 @@ a.c-content-filter__input {
   margin-bottom: 40px;
 }
 
-.c-article__main p,
-.c-article__main ol,
-.c-article__main ul,
-.c-article__main h1,
-.c-article__main h2,
-.c-article__main h3,
-.c-article__main h4 {
+.c-article__main p:not([class*="c-"]),
+.c-article__main ol:not([class*="c-"]),
+.c-article__main ul:not([class*="c-"]),
+.c-article__main h1:not([class*="c-"]),
+.c-article__main h2:not([class*="c-"]),
+.c-article__main h3:not([class*="c-"]),
+.c-article__main h4:not([class*="c-"]) {
   margin-top: 0;
   margin-bottom: 15px;
 }
 
-.c-article__main ol,
-.c-article__main ul {
+.c-article__main ol:not([class*="c-"]),
+.c-article__main ul:not([class*="c-"]) {
   padding: 0;
   counter-reset: item;
 }
 
-.c-article__main ol > li,
-.c-article__main ul > li {
+.c-article__main ol:not([class*="c-"]) > li,
+.c-article__main ul:not([class*="c-"]) > li {
   margin: 0;
   padding: 0 0 0 1em;
   text-indent: -1.5em;
@@ -3576,8 +3584,8 @@ a.c-content-filter__input {
   counter-increment: item;
 }
 
-.c-article__main ol > li:before,
-.c-article__main ul > li:before {
+.c-article__main ol:not([class*="c-"]) > li:before,
+.c-article__main ul:not([class*="c-"]) > li:before {
   width: 1em;
   padding-right: 0.5em;
   display: inline-block;
@@ -3585,11 +3593,11 @@ a.c-content-filter__input {
   text-align: right;
 }
 
-.c-article__main ol > li:before {
+.c-article__main ol:not([class*="c-"]) > li:before {
   content: counter(item) ".";
 }
 
-.c-article__main ul > li:before {
+.c-article__main ul:not([class*="c-"]) > li:before {
   content: '\2022';
 }
 
@@ -3668,6 +3676,67 @@ a.c-content-filter__input {
 .c-article__main h3,
 .c-article__main h4 {
   font-size: 20px;
+}
+
+/* ==========================================================================
+    TABLES
+
+    - apply .c-table to container
+    - apply .c-table-cell to each cell
+   ========================================================================== */
+.c-table {
+  width: 100%;
+  padding: 0;
+  margin: 0 0 40px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  overflow: hidden;
+}
+
+.c-table-cell,
+.c-table-intro {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.c-table-intro {
+  padding: 20px;
+  margin: 0;
+  background-color: #235164;
+  color: #FFFFFF;
+  font-weight: normal;
+}
+
+.c-table-cell {
+  padding: 15px 10px;
+  background-color: #D8E6E8;
+  text-align: center;
+  list-style: none;
+}
+
+@media (min-width: 767px) {
+  .c-table-cell {
+    width: 50%;
+    padding: 15px 50px;
+  }
+}
+
+.c-table-cell:nth-of-type(even) {
+  background-color: #C3D9E2;
+}
+
+@media (min-width: 767px) {
+  .c-table-cell:nth-of-type(4n-2), .c-table-cell:nth-of-type(4n-1) {
+    background-color: #C3D9E2;
+  }
+  .c-table-cell:not(:nth-of-type(4n-2)):not(:nth-of-type(4n-1)) {
+    background-color: #D8E6E8;
+  }
 }
 
 /* ==========================================================================

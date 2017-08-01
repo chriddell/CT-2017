@@ -21,9 +21,9 @@ get_header(); ?>
 			otm_set_post_views( get_the_ID() );
 
 			if ( is_single() ) :
-				get_template_part( 'template-parts/content-single', get_post_format() );
+				get_template_part( 'template-parts/post/single/content', get_post_type() );
 			else :
-				get_template_part( 'template-parts/content', get_post_format() );
+				get_template_part( 'template-parts/post/content', get_post_format() );
 			endif;
 
 		endwhile; // End of the loop.

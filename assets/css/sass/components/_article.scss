@@ -63,6 +63,10 @@
 	}
 }
 
+.c-article__in-page-form {
+	margin-top: 30px;
+}
+
 /* WYSIWYG Content
    ========================================================================== */
 
@@ -76,21 +80,23 @@
 		margin-bottom: 40px;
 	}
 	
-	p,
-	ol,
-	ul,
-	h1,
-	h2,
-	h3,
-	h4 {
+	p:not([class*="c-"]),
+	ol:not([class*="c-"]),
+	ul:not([class*="c-"]),
+	h1:not([class*="c-"]),
+	h2:not([class*="c-"]),
+	h3:not([class*="c-"]),
+	h4:not([class*="c-"]) {
 		margin-top: 0;
 		margin-bottom: 15px;
 	}
 
 	// Lists
 
-	ol,
-	ul {
+	ol:not([class*="c-"]),
+	ul:not([class*="c-"]) { 
+		// use [class*=] selector to make sure styles
+		// are only applied to Wordpress WYSWIYG lists
 	  padding: 0;
 
 	  counter-reset: item;
@@ -117,12 +123,11 @@
 		}
 	}
 
-	ol > li:before {
+	ol:not([class*="c-"]) > li:before {
 		content: counter(item) ".";
 	}
 
-	ul > li {
-		
+	ul:not([class*="c-"]) > li {
 		&:before {
 			content: '\2022';
 		}
