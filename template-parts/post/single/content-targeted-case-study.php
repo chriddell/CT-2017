@@ -13,20 +13,6 @@
 
 $img = get_field( 'featured_image' );
 
-/**
- * Get the category of the post.
- * This will return only ONE category,
- * because we're using radio-buttons-for-taxonomies
- * plugin (https://en-gb.wordpress.org/plugins/radio-buttons-for-taxonomies/)
- *
- */
-$categories = get_the_category();
-$category_slug = '';
-if ( !empty( $categories ) ) : 
-	$category_name = esc_html( $categories[0]->name );
-	$category_slug = $categories[0]->slug;
-endif;
-
 ?>
 
 <div class="l-hero l-hero--single c-hero c-hero--single" id="hero" style="background-image: url(<?php echo $img['url']; ?>);"></div>
