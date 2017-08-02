@@ -10,7 +10,7 @@
  * @version 1.0
  */
 
-$img = get_field('featured_image');
+$img = get_field( 'featured_image' );
 
 /**
  * Get the category of the post.

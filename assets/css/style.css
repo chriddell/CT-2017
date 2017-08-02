@@ -2377,6 +2377,14 @@ a:hover {
   color: #FF0000;
 }
 
+/* In-page (ie. not in an overlay/lightbox) forms
+   ========================================================================== */
+.c-form--in-page .c-form__submit-group,
+.c-form--in-page .c-form__input--submit {
+  float: left;
+  clear: both;
+}
+
 /* ==========================================================================
     HERO
    

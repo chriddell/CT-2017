@@ -11,7 +11,7 @@
  * @version 1.0
  */
 
-$img 		= get_field( 'featured_image' );
+$img = get_field( 'featured_image' );
 
 /**
  * Get the category of the post.
@@ -41,7 +41,7 @@ endif;
 					if ( have_rows( 'acf_bullet_table_repeater' ) ) : ?>
 
 					<ul class="c-table">
-						<!--<h2 class="c-table-intro l-col-12"><?php the_field( 'acf_bullet_table_intro_text' ); ?></h2>-->
+						<h2 class="c-table-intro l-col-12"><?php the_field( 'acf_bullet_table_intro_text' ); ?></h2>
 						<?php
 							while ( have_rows( 'acf_bullet_table_repeater' ) ) : the_row(); ?>
 								<li class="c-table-cell u-pos-rel"><?php the_sub_field( 'acf_bullet_table_bullet' ); ?></li>
@@ -60,9 +60,23 @@ endif;
 					) ); ?>
 			</div>
 
-			<aside class="c-article__in-page-form">
-				<p>Please enter your details for access to this detailed case study.</p>
-			</aside>
+			<?php
+				/**
+				 * Embed Marketo form using ACF value
+				 * and <script>, <form> tags exported
+				 * from Marketo.
+				 */
+				if ( get_field( 'acf_mkto_form_id' ) ) : ?>
+
+					<aside class="c-article__in-page-form">
+						<p>Please enter your details for access to this detailed case study.</p>
+						<script src="//app-ab17.marketo.com/js/forms2/js/forms2.min.js"></script>
+						<form id="mktoForm_<?php the_field( 'acf_mkto_form_id' ); ?>" class="u-marketo c-form c-form--marketo c-form--in-page u-marketo"></form>
+						<script>MktoForms2.loadForm("//app-ab17.marketo.com", "694-KCV-926", <?php the_field( 'acf_mkto_form_id' ); ?>);</script>
+					</aside>
+
+			<?php 
+				endif; ?>
 		</article>
 	</span>
 </div>
