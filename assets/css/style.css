@@ -3759,63 +3759,6 @@ a.c-content-filter__input {
 }
 
 /* ==========================================================================
-    TABLES
-
-    - apply .c-table to container
-    - apply .c-table-cell to each cell
-   ========================================================================== */
-.c-table {
-  width: 100%;
-  padding: 0;
-  margin: 0 0 40px;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: row wrap;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  overflow: hidden;
-}
-
-.c-table-cell,
-.c-table-intro {
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.c-table-intro {
-  font-weight: normal;
-}
-
-.c-table-cell {
-  padding: 15px 10px;
-  background-color: #D8E6E8;
-  text-align: center;
-  list-style: none;
-}
-
-@media (min-width: 767px) {
-  .c-table-cell {
-    width: 50%;
-    padding: 15px 50px;
-  }
-}
-
-.c-table-cell:nth-of-type(even) {
-  background-color: #C3D9E2;
-}
-
-@media (min-width: 767px) {
-  .c-table-cell:nth-of-type(4n-2), .c-table-cell:nth-of-type(4n-1) {
-    background-color: #C3D9E2;
-  }
-  .c-table-cell:not(:nth-of-type(4n-2)):not(:nth-of-type(4n-1)) {
-    background-color: #D8E6E8;
-  }
-}
-
-/* ==========================================================================
     SHARE
 
     Share icon and it's components, also animations.
