@@ -29,30 +29,28 @@ get_header(); ?>
 		<h2 class="c-section-title">What we're saying on our blog</h2>
 
 		<?php 
-			if ( is_page( 'mifid-ii-buy-side-impact' ) ) :
+			// Slug of target post
+			$target_post_slug = 'mifid-ii-brings-world-change-buy-side-not-just-europe'; 
 
-				// Slug of target post
-				$target_post_slug = 'mifid-ii-brings-world-change-buy-side-not-just-europe'; 
+			// Args for query
+			$args = array(
+				'name'				=> $target_post_slug,
+				'post_type'		=> 'post',
+				'post_status'	=> 'publish',
+				'numberposts'	=> 1
+			);
 
-				// Args for query
-				$args = array(
-					'name'				=> $target_post_slug,
-					'post_type'		=> 'post',
-					'post_status'	=> 'publish',
-					'numberposts'	=> 1
-				);
+			// Run query
+			$my_query = new WP_Query( $args );
 
-				// Run query
-				$my_query = new WP_Query( $args );
+			if ( $my_query->have_posts() ) :
+				while ( $my_query->have_posts() ) : $my_query->the_post();
+					get_template_part( 'template-parts/content-related' );
+				endwhile;
+			endif;
 
-				if ( $my_query->have_posts() ) :
-					while ( $my_query->have_posts() ) : $my_query->the_post();
-						get_template_part( 'template-parts/content-related' );
-					endwhile;
-				endif;
-
-				// Reset query
-				wp_reset_query(); ?>
+			// Reset query
+			wp_reset_query(); ?>
 
 	</span><!-- / .l-wrapper -->
 </div><!-- / .l-post-page-content -->
