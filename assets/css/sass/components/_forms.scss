@@ -20,6 +20,8 @@
 .c-form__input-group {
 	@include span( 12 );
 
+	margin-bottom: 15px;
+
 	position: relative;
 }
 
@@ -33,9 +35,11 @@
 	}
 }
 
+// Inputs & Labels
+
 .c-form__input {
 	display: block;
-
+	
 	border: 2px solid #D7D7D7;
 
 	box-sizing: border-box;
@@ -52,7 +56,6 @@
   width: 100%;
 
   padding: 15px;
-  margin-bottom: 15px;
 
   border-radius: 5px;
   	
@@ -75,7 +78,6 @@
 	width: 100%;
 
 	padding: 15px;
-	margin-bottom: 15px;
 
 	position: relative;
 
@@ -89,6 +91,25 @@
 	color: $clrDarkestGrey;
 
 	appearance: none; // remove default browser <select> appearance
+}
+
+.c-form__input--checkbox,
+.c-form__label--checkbox {
+	display: inline-block;
+
+	vertical-align: middle;
+}
+
+.c-form__input--checkbox {
+	margin-right: 15px;
+}
+
+.c-form__label--checkbox {
+	max-width: 90%;
+
+	@include respond-to( 'tablet' ) {
+		max-width: 450px;
+	}
 }
 
 .c-form__input--submit {
