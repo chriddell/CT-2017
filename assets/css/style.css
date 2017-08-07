@@ -2241,6 +2241,7 @@ a:hover {
   float: left;
   margin-left: 0;
   margin-right: 0;
+  margin-bottom: 15px;
   position: relative;
 }
 
@@ -2272,7 +2273,6 @@ a:hover {
 .c-form__input--text {
   width: 100%;
   padding: 15px;
-  margin-bottom: 15px;
   border-radius: 5px;
 }
 
@@ -2295,7 +2295,6 @@ a:hover {
 .c-form__input--select {
   width: 100%;
   padding: 15px;
-  margin-bottom: 15px;
   position: relative;
   font-family: "myriad-pro", Helvetica, Arial, sans-serif;
   background-image: url(../media/img/dropdown-icon.svg);
@@ -2306,6 +2305,26 @@ a:hover {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+}
+
+.c-form__input--checkbox,
+.c-form__label--checkbox {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c-form__input--checkbox {
+  margin-right: 15px;
+}
+
+.c-form__label--checkbox {
+  max-width: 90%;
+}
+
+@media (min-width: 767px) {
+  .c-form__label--checkbox {
+    max-width: 450px;
+  }
 }
 
 .c-form__input--submit {
@@ -2950,16 +2969,45 @@ a:hover {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+  box-sizing: border-box;
 }
 
 .c-hero--single {
   height: 260px;
   max-height: 90vh;
+  padding-top: 70px;
 }
 
 @media (min-width: 767px) {
   .c-hero--single {
     height: 330px;
+    padding-top: 110px;
+  }
+}
+
+.c-hero__title,
+.c-hero__subtitle {
+  margin: 0;
+  color: #FFFFFF;
+}
+
+.c-hero__title {
+  font-size: 34px;
+}
+
+@media (min-width: 767px) {
+  .c-hero__title {
+    font-size: 50px;
+  }
+}
+
+.c-hero__subtitle {
+  font-size: 20px;
+}
+
+@media (min-width: 767px) {
+  .c-hero__subtitle {
+    font-size: 32px;
   }
 }
 
@@ -3470,6 +3518,30 @@ a.c-content-filter__input {
 }
 
 /* ==========================================================================
+    LISTS
+   
+		Custom list styles.
+   ========================================================================== */
+.c-tick-list {
+  margin: 0 0 40px;
+  padding: 0;
+  list-style: none;
+}
+
+.c-tick-list__item {
+  padding: 15px 0 15px 50px;
+  background-image: url(../media/img/tick.svg);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 30px;
+}
+
+.c-tick-list__footer {
+  padding-bottom: 30px;
+  border-bottom: 1px solid #cccccc;
+}
+
+/* ==========================================================================
     TAG LIST
    ========================================================================== */
 .c-tag-list__item {
@@ -3713,10 +3785,6 @@ a.c-content-filter__input {
 }
 
 .c-table-intro {
-  padding: 20px;
-  margin: 0;
-  background-color: #235164;
-  color: #FFFFFF;
   font-weight: normal;
 }
 
@@ -3989,6 +4057,10 @@ a.c-content-filter__input {
 
 .u-bold {
   font-weight: bold;
+}
+
+.u-normal-weight {
+  font-weight: normal;
 }
 
 .u-base-font-size {
