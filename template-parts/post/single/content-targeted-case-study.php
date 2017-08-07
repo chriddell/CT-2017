@@ -29,7 +29,12 @@ endif;
 
 ?>
 
-<div class="l-hero l-hero--single c-hero c-hero--single" id="hero" style="background-image: url(<?php echo $img['url']; ?>);"></div>
+<div class="l-hero l-hero--single c-hero c-hero--single" id="hero" style="background-image: url(<?php echo $img['url']; ?>);">
+	<div class="l-wrapper u-pos-rel u-clearfix">
+		<h1 class="c-hero__title u-normal-weight"><?php the_field( 'acf_title' ); ?></h1>
+		<h2 class="c-hero__subtitle u-normal-weight"><?php the_field( 'acf_sub_title' ); ?></h2>
+	</div>
+</div>
 
 <div class="l-page-content c-page-content u-bg-white u-pos-rel" id="main-content">
 	<span class="l-wrapper u-pos-rel u-clearfix">
@@ -40,15 +45,15 @@ endif;
 				<?php
 					if ( have_rows( 'acf_bullet_table_repeater' ) ) : ?>
 
-					<ul class="c-table">
-						<h2 class="c-table-intro l-col-12"><?php the_field( 'acf_bullet_table_intro_text' ); ?></h2>
+					<ul class="c-tick-list">
+						<h2 class="u-normal-weight"><?php the_field( 'acf_bullet_table_intro_text' ); ?></h2>
 						<?php
 							while ( have_rows( 'acf_bullet_table_repeater' ) ) : the_row(); ?>
-								<li class="c-table-cell u-pos-rel"><?php the_sub_field( 'acf_bullet_table_bullet' ); ?></li>
+								<li class="c-tick-list__item u-pos-rel"><?php the_sub_field( 'acf_bullet_table_bullet' ); ?></li>
 						<?php 
 							endwhile; ?>
 					</ul>
-
+						<p class="c-tick-list__footer u-bold"><?php the_field( 'acf_bullets_date' ); ?></p>
 				<?php
 					endif; ?>
 
