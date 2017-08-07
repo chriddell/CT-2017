@@ -9,13 +9,42 @@
 	background-position: center center;
 	background-size: cover;
 	background-repeat: no-repeat;
+
+	box-sizing: border-box;
 }
 
 .c-hero--single {
 	height: 260px;
 	max-height: 90vh;
 
+	padding-top: 70px;
+
 	@include respond-to( 'tablet' ) {
 		height: 330px;
+
+		padding-top: 110px;
+	}
+}
+
+.c-hero__title,
+.c-hero__subtitle {
+	margin: 0;
+
+	color: #FFFFFF;
+}
+
+.c-hero__title {
+	font-size: 34px;
+
+	@include respond-to( 'tablet' ) {
+		font-size: 50px;
+	}
+}
+
+.c-hero__subtitle {
+	font-size: $baseFontSize;
+
+	@include respond-to( 'tablet' ) {
+		font-size: 32px;
 	}
 }

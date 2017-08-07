@@ -1,0 +1,26 @@
+/* ==========================================================================
+    LISTS
+   
+		Custom list styles.
+   ========================================================================== */
+
+.c-tick-list {
+	margin: 0 0 40px;
+	padding: 0;
+
+	list-style: none;
+}
+
+.c-tick-list__item {
+	padding: 15px 0 15px 50px;
+
+	background-image: url( ../media/img/tick.svg );
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 30px;	
+}
+
+.c-tick-list__footer {
+	padding-bottom: 30px;
+	border-bottom: 1px solid $clrBorders;
+}
