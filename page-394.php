@@ -45,7 +45,7 @@ get_header(); ?>
 
 			if ( $my_query->have_posts() ) :
 				while ( $my_query->have_posts() ) : $my_query->the_post();
-					get_template_part( 'template-parts/content-related' );
+					get_template_part( 'template-parts/post/content-related' );
 				endwhile;
 			endif;
 
