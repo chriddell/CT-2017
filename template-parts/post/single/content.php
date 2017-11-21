@@ -44,8 +44,13 @@ endif;
 						<?php
 						// Show author if category is Expert Insights
 						if ( $category_slug == 'blog' ) :
-							// Author
-							printf( __( '<p class="c-article__author c-article__meta-item l-col-12 l-col-sml-8">By %s</p>', 'otm' ), get_the_author() );
+
+							// Assign author bio to variable, so we can
+							// test if empty first
+							$author_bio = (!empty(get_the_author_meta('description'))) ? ', ' . get_the_author_meta('description') : '';
+
+							// Output author info
+							printf( __( '<p class="c-article__author c-article__meta-item l-col-12 l-col-sml-8">By %s%s</p>', 'otm' ), get_the_author(), $author_bio );
 							?>
 							<p class="c-article__date c-article__meta-item l-col-12 l-col-sml-4-last u-med-text-right"><?php the_date('jS F Y'); ?></p>
 						<?php else : ?>	
